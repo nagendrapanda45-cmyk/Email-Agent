@@ -1,0 +1,15 @@
+[
+  {
+    "message_id": "<CAAiPW9s5qr0ysUbCb-WTTFybatuhObvrYX-SQcCNvGpGnj0Nag@mail.gmail.com>",
+    "from": "Kshiraja <kshiraja.intelligenzit@gmail.com>",
+    "subject": "RE: RE: RE:",
+    "classification": "unknown",
+    "confidence": 0.0,
+    "reasoning": "skipped",
+    "errors": [
+      "[2026-05-12T08:15:47.279892+00:00] ingest_email: missing fields: ['body']",
+      "[2026-05-12T08:15:47.280391+00:00] classify_email: skipping due to prior errors"
+    ],
+    "failed_at": "2026-05-12T08:15:47.280842+00:00"
+  }
+]

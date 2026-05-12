@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Kshiraja",
+    "email": "kshiraja.intelligenzit@gmail.com",
+    "create_date": "2026-05-11T13:34:32.518265+00:00",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "<CAAiPW9vS8U-1QhTPV=dUc0Qn=aZEEqhm-K8jyxYWaa4pNgtmyA@mail.gmail.com>",
+    "original_subject": "Request for sales team demo",
+    "confidence": 0.97,
+    "reasoning": "The sender is a prospective customer who discovered the platform on LinkedIn and is requesting a demo for their sales team. This is a clear sales/demo inquiry with no indication of being an existing customer needing support."
+  },
+  {
+    "id": 1,
+    "name": "Dummy",
+    "email": "dummy.intelligenzit@gmail.com",
+    "create_date": "2026-05-12T07:41:42.453213+00:00",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "<CAMHZtwu=RsqqBsxF_F_kPg1La6RYdW0TUvDebcGge9C-OmGvhw@mail.gmail.com>",
+    "original_subject": "Not sure who to contact",
+    "confidence": 0.6,
+    "reasoning": "The sender's team is \"exploring\" the platform for potential internal usage, which signals a prospective customer evaluating the product (lead intent). While they also mention import errors, this appears to occur during evaluation/setup rather than from an established customer account. The primary intent is evaluation and setup guidance, with the technical issue being secondary to the purchase decision process."
+  }
+]

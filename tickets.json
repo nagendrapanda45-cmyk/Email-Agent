@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "message_id": "<CAAiPW9uFOMYbE3z3SHB8c-wdS7-5p7vO+ExwTJYbntedPzFaGw@mail.gmail.com>",
+    "from": "Kshiraja <kshiraja.intelligenzit@gmail.com>",
+    "subject": "Unable to reset my password",
+    "body": "Hi Support Team,\r\nI’ve been trying to reset my password since yesterday, but I never receive\r\nthe reset email. I checked spam as well.\r\nCan someone help me regain access to my account?\r\nThanks,\r\nRahul",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-05-11T13:36:50.644200+00:00",
+    "confidence": 0.98,
+    "reasoning": "Existing user reporting a password reset issue and requesting help regaining account access — a clear technical support request."
+  },
+  {
+    "id": 1,
+    "message_id": "<CAAiPW9vuGV5-s4KqqMkWngzBuf6fN1jXyajRez0Aqc_KszAMzw@mail.gmail.com>",
+    "from": "Kshiraja <kshiraja.intelligenzit@gmail.com>",
+    "subject": "Need information about account and pricing",
+    "body": "Hi,\r\nI’m currently using the free version, but I’m also facing issues with login\r\nverification emails not arriving.\r\nAt the same time, I wanted to understand whether your premium plans support\r\nmultiple users.\r\nPlease advise.\r\nRegards,\r\nSanjay",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-05-12T07:39:33.476162+00:00",
+    "confidence": 0.6,
+    "reasoning": "The sender is an existing free-tier user experiencing a technical issue (login verification emails not arriving), which is a support concern. They also ask about premium plan features (multi-user support), which is a lead signal. The login issue is the more urgent/actionable problem blocking their use of the product, so support is the primary intent, though the pricing inquiry lowers confidence."
+  }
+]
