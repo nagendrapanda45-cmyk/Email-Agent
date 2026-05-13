@@ -22,5 +22,77 @@
     "created_at": "2026-05-12T07:39:33.476162+00:00",
     "confidence": 0.6,
     "reasoning": "The sender is an existing free-tier user experiencing a technical issue (login verification emails not arriving), which is a support concern. They also ask about premium plan features (multi-user support), which is a lead signal. The login issue is the more urgent/actionable problem blocking their use of the product, so support is the primary intent, though the pricing inquiry lowers confidence."
+  },
+  {
+    "id": 1,
+    "message_id": "<CAAiPW9sjv74yjHvFon_+O7i+bizApppKGzgoTtCeLgmqwDt3GA@mail.gmail.com>",
+    "from": "Kshiraja <kshiraja.intelligenzit@gmail.com>",
+    "subject": "Unable to reset my password",
+    "body": "Hi Support team,\r\nI’ve been trying to reset my password since yesterday, but I never receive\r\nthe reset email. I checked spam as well.\r\nCan someone help me regain access to my account?\r\nThanks,\r\nRahul",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-05-12T10:35:21.690316+00:00",
+    "confidence": 0.98,
+    "reasoning": "The sender is an existing user reporting an account access issue (password reset email not arriving). This is a clear technical support request addressed to the support team."
+  },
+  {
+    "id": 1,
+    "message_id": "<CAAiPW9t24x8-wia7NTz-j1NDtzpATnkyhqpnk7hNDzMTKRn56w@mail.gmail.com>",
+    "from": "Kshiraja <kshiraja.intelligenzit@gmail.com>",
+    "subject": "Unable to reset my password",
+    "body": "Hi Support Team,\r\nI’ve been trying to reset my password since yesterday, but I never receive\r\nthe reset email. I checked spam as well.\r\nCan someone help me regain access to my account?\r\nThanks,\r\nRahul",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-05-13T06:23:42.660733+00:00",
+    "confidence": 0.98,
+    "reasoning": "The sender is an existing user experiencing a password reset issue and is unable to receive the reset email. They are explicitly asking the support team for help regaining account access, which is a clear technical/account support request."
+  },
+  {
+    "id": 1,
+    "message_id": "<CAAiPW9sYkDpXFAaiF_JPZ7FVTyhg4m2o7sxcbzAHO3y1s36n7A@mail.gmail.com>",
+    "from": "Kshiraja <kshiraja.intelligenzit@gmail.com>",
+    "subject": "Unable to reset my password",
+    "body": "Hi Support Team,\r\nI’ve been trying to reset my password since yesterday, but I never receive\r\nthe reset email. I checked spam as well.\r\nCan someone help me regain access to my account?\r\nThanks,\r\nRahul",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-05-13T06:38:40.511625+00:00",
+    "confidence": 0.98,
+    "reasoning": "The sender is an existing user reporting a password reset issue and requesting help regaining account access — a clear technical support request."
+  },
+  {
+    "id": 1,
+    "message_id": "<CAAiPW9uNc6ZYZFtVHKapcTvid8qFjCLgo+oi47Vk_fuMQ2WnDQ@mail.gmail.com>",
+    "from": "Kshiraja <kshiraja.intelligenzit@gmail.com>",
+    "subject": "Unable to reset my password",
+    "body": "Hi Support Team,\r\nI’ve been trying to reset my password since yesterday, but I never receive\r\nthe reset email. I checked spam as well.\r\nCan someone help me regain access to my account?\r\nThanks,\r\nRahul",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-05-13T06:43:00.320801+00:00",
+    "confidence": 0.98,
+    "reasoning": "The sender is an existing user reporting an account access issue (password reset emails not being received). This is a classic technical support request directed at the support team."
+  },
+  {
+    "id": 1,
+    "message_id": "<CAAiPW9stszsFcV43hQXbXXPJ=CGZmGdDG=5geVBCMwdONkv7Qg@mail.gmail.com>",
+    "from": "Kshiraja <kshiraja.intelligenzit@gmail.com>",
+    "subject": "Unable to reset my password",
+    "body": "Hi Support Team,\r\nI’ve been trying to reset my password since yesterday, but I never receive\r\nthe reset email. I checked spam as well.\r\nCan someone help me regain access to my account?\r\nThanks,\r\nRahul",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-05-13T09:43:49.406011+00:00",
+    "confidence": 0.98,
+    "reasoning": "The sender is an existing user requesting help with a password reset issue — they're not receiving the reset email and need to regain account access. This is a clear technical/account support request."
+  },
+  {
+    "id": 1,
+    "message_id": "<CAAiPW9vnYnThAbptYj_F8-=4aas-_gGS=kUdDqJ+wLi3L+1KiQ@mail.gmail.com>",
+    "from": "Kshiraja <kshiraja.intelligenzit@gmail.com>",
+    "subject": "Unable to reset my password",
+    "body": "Hi Support Team,\r\nI’ve been trying to reset my password since yesterday, but I never receive\r\nthe reset email. I checked spam as well.\r\nCan someone help me regain access to my account?\r\nThanks,\r\nRahul",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-05-13T09:58:36.716595+00:00",
+    "confidence": 0.98,
+    "reasoning": "The sender is an existing user experiencing a password reset issue and is unable to receive the reset email. They are explicitly asking the support team for help regaining account access, which is a clear technical/account support request."
   }
 ]

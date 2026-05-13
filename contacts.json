@@ -28,5 +28,20 @@
     "original_subject": "Not sure who to contact",
     "confidence": 0.6,
     "reasoning": "The sender's team is \"exploring\" the platform for potential internal usage, which signals a prospective customer evaluating the product (lead intent). While they also mention import errors, this appears to occur during evaluation/setup rather than from an established customer account. The primary intent is evaluation and setup guidance, with the technical issue being secondary to the purchase decision process."
+  },
+  {
+    "id": 1,
+    "name": "Kshiraja",
+    "email": "kshiraja.intelligenzit@gmail.com",
+    "create_date": "2026-05-12T10:34:48.821470+00:00",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "<CAAiPW9sh5TEw9TizNtpXn0+RG67=P8UEaGZjh1MLLckuFDt0Hg@mail.gmail.com>",
+    "original_subject": "Interested in enterprise pricing",
+    "confidence": 0.98,
+    "reasoning": "The sender is a prospective customer evaluating tools for a 250-employee company and explicitly requests enterprise pricing and integration information — a clear sales inquiry."
   }
 ]

@@ -2,6 +2,7 @@ import re
 from datetime import datetime, timezone
 from mock_odoo import odoo_client
 from json_output import append_contact, append_ticket
+from notifier import send_ticket_email
 
 
 class MockTicketQueue:
@@ -65,8 +66,15 @@ def route_support(state: dict) -> dict:
         email = state.get("parsed_email") or state.get("raw_email", {})
         result = ticket_queue.create_ticket(email, state.get("classification", "support"))
         ticket = result["ticket"]
-        append_ticket(ticket, state.get("confidence", 0.0), state.get("reasoning", ""))
+        confidence = state.get("confidence", 0.0)
+        reasoning = state.get("reasoning", "")
+        append_ticket(ticket, confidence, reasoning)
         logs.append(f"[{ts}] route_support: created ticket #{ticket['id']} → tickets.json")
+        try:
+            send_ticket_email(ticket, confidence, reasoning)
+            logs.append(f"[{ts}] route_support: notification email sent for ticket #{ticket['id']}")
+        except Exception as e:
+            logs.append(f"[{ts}] route_support: email notification failed: {e}")
         return {
             "routing_result": result,
             "logs": logs,
@@ -75,7 +83,6 @@ def route_support(state: dict) -> dict:
     except Exception as e:
         errors.append(f"[{ts}] route_support error: {e}")
         return {"routing_result": {"success": False, "error": str(e)}, "logs": logs, "errors": errors}
-
 
 def route_lead(state: dict) -> dict:
     logs = list(state.get("logs", []))
