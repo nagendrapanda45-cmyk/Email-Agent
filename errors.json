@@ -23,5 +23,18 @@
       "[2026-05-12T12:52:06.271005+00:00] classify_email error: Anthropic API error: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011Caxhv3ZQSkMj6NuV99mTk'}"
     ],
     "failed_at": "2026-05-12T12:52:23.960509+00:00"
+  },
+  {
+    "message_id": "<CAAiPW9stmBqEGq5odK8h7u4akPYZm2bwQK_URZaYUtmJJ7jYaQ@mail.gmail.com>",
+    "from": "Kshiraja <kshiraja.intelligenzit@gmail.com>",
+    "subject": "RE: RE: RE:",
+    "classification": "unknown",
+    "confidence": 0.0,
+    "reasoning": "skipped",
+    "errors": [
+      "[2026-05-13T10:22:49.999037+00:00] ingest_email: missing fields: ['body']",
+      "[2026-05-13T10:22:49.999491+00:00] classify_email: skipping due to prior errors"
+    ],
+    "failed_at": "2026-05-13T10:22:49.999938+00:00"
   }
 ]

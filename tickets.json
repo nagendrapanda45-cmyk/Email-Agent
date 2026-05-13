@@ -94,5 +94,37 @@
     "created_at": "2026-05-13T09:58:36.716595+00:00",
     "confidence": 0.98,
     "reasoning": "The sender is an existing user experiencing a password reset issue and is unable to receive the reset email. They are explicitly asking the support team for help regaining account access, which is a clear technical/account support request."
+  },
+  {
+    "id": 1,
+    "message_id": "<CAAiPW9uJMb+4Mwb2YQFaRDGnJBMPNyqwr3J2sDik3Q9CWcww8g@mail.gmail.com>",
+    "from": "Kshiraja <kshiraja.intelligenzit@gmail.com>",
+    "subject": "Need information about account and pricing",
+    "body": "Hi,\r\nI’m currently using the free version, but I’m also facing issues with login\r\nverification emails not arriving.\r\nAt the same time, I wanted to understand whether your premium plans support\r\nmultiple users.\r\nPlease advise.\r\nRegards,\r\nSanjay",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-05-13T10:22:17.876924+00:00",
+    "confidence": 0.6,
+    "reasoning": "The sender is an existing free-tier user experiencing a login verification email issue, which is a technical support problem. They also ask about premium plan multi-user support (a lead signal), but the active account issue blocking their usage appears to be the more urgent primary concern."
+  },
+  {
+    "id": 1,
+    "message_id": "<CAAiPW9vjdfmNR3f_KaA7QNa2v7VBnZzqM6c7213H36LitT+0Bw@mail.gmail.com>",
+    "from": "Kshiraja <kshiraja.intelligenzit@gmail.com>",
+    "subject": "Unable to reset my password",
+    "body": "Hi Support Team,\r\nI’ve been trying to reset my password since yesterday, but I never receive\r\nthe reset email. I checked spam as well.\r\nCan someone help me regain access to my account?\r\nThanks,\r\nRahul",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-05-13T11:50:10.050393+00:00",
+    "confidence": 0.98,
+    "reasoning": "The sender is an existing user reporting an account access issue (password reset email not arriving). This is a clear technical support request addressed to the support team.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 1562,
+      "output_tokens": 132,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.01111
+    }
   }
 ]

@@ -43,5 +43,89 @@
     "original_subject": "Interested in enterprise pricing",
     "confidence": 0.98,
     "reasoning": "The sender is a prospective customer evaluating tools for a 250-employee company and explicitly requests enterprise pricing and integration information — a clear sales inquiry."
+  },
+  {
+    "id": 1,
+    "name": "Kshiraja",
+    "email": "kshiraja.intelligenzit@gmail.com",
+    "create_date": "2026-05-13T10:24:56.805835+00:00",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "<CAAiPW9tGnTj57m1i7W_ymb=Fd-ZusM1Q3CW_5Ez3TV_rUZFehw@mail.gmail.com>",
+    "original_subject": "Request for sales team demo",
+    "confidence": 0.97,
+    "reasoning": "The sender is a prospective customer who discovered the platform on LinkedIn and is requesting a demo for their sales team, which is a classic sales lead signal indicating interest in evaluating the product."
+  },
+  {
+    "id": 1,
+    "name": "Kshiraja",
+    "email": "kshiraja.intelligenzit@gmail.com",
+    "create_date": "2026-05-13T11:29:47.882605+00:00",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "<CAAiPW9uNDPxiz7=TC8k30tfdmQ0ap-npdPgKf+CH5kdUC21pCA@mail.gmail.com>",
+    "original_subject": "Request for sales team demo",
+    "confidence": 0.97,
+    "reasoning": "The sender is a prospective customer who discovered the platform on LinkedIn and is requesting a demo for their sales team, which is a clear sales lead signal.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 1557,
+      "output_tokens": 140,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.011285
+    }
+  },
+  {
+    "id": 1,
+    "name": "Kshiraja",
+    "email": "kshiraja.intelligenzit@gmail.com",
+    "create_date": "2026-05-13T11:41:43.432377+00:00",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "<CAAiPW9tFD7Fo6Obxk1e+x6zjY+xD+x7i+o6UmueGTtSMcZh=gw@mail.gmail.com>",
+    "original_subject": "Request for sales team demo",
+    "confidence": 0.97,
+    "reasoning": "The sender is a prospective customer who discovered the platform on LinkedIn and is explicitly requesting a demo for their sales team. This is a classic sales lead inquiry with no indication of being an existing customer.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 1559,
+      "output_tokens": 157,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.01172
+    }
+  },
+  {
+    "id": 1,
+    "name": "Kshiraja",
+    "email": "kshiraja.intelligenzit@gmail.com",
+    "create_date": "2026-05-13T11:48:03.144748+00:00",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "<CAAiPW9uqnwHzY3G2S0sStL+r7g-Yz7gxqiBvQ+Xm0rmhSposJg@mail.gmail.com>",
+    "original_subject": "Request for sales team demo",
+    "confidence": 0.97,
+    "reasoning": "The sender is a prospective customer who discovered the platform on LinkedIn and is requesting a demo for their sales team. This is a classic sales lead inquiry with clear purchase evaluation intent.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 1559,
+      "output_tokens": 154,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.011644999999999999
+    }
   }
 ]

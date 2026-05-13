@@ -7,8 +7,8 @@ from langgraph.graph import END, StateGraph
 
 from email_classifier import ClassificationError, classify_email
 from routing import route_lead, route_support
-
 from json_output import append_error
+from notifier import send_error_email
 
 load_dotenv()
 
@@ -22,6 +22,7 @@ class EmailState(TypedDict):
     routing_result: dict
     errors: list
     logs: list
+    token_usage: dict
 
 
 # ---------------------------------------------------------------------------
@@ -56,19 +57,22 @@ def classify_email_node(state: EmailState) -> dict:
 
     if state.get("errors"):
         errors.append(f"[{ts}] classify_email: skipping due to prior errors")
-        return {"classification": "unknown", "confidence": 0.0, "reasoning": "skipped", "logs": logs, "errors": errors}
+        return {"classification": "unknown", "confidence": 0.0, "reasoning": "skipped",
+                "token_usage": {}, "logs": logs, "errors": errors}
 
     try:
         email = state.get("parsed_email") or state.get("raw_email", {})
         result = classify_email(email)
         logs.append(
             f"[{ts}] classify_email: classification={result.classification} "
-            f"confidence={result.confidence:.2f}"
+            f"confidence={result.confidence:.2f} "
+            f"cost=${result.token_usage.get('cost_usd', 0):.5f}"
         )
         return {
             "classification": result.classification,
             "confidence": result.confidence,
             "reasoning": result.reasoning,
+            "token_usage": result.token_usage,
             "logs": logs,
             "errors": errors,
         }
@@ -78,6 +82,7 @@ def classify_email_node(state: EmailState) -> dict:
             "classification": "unknown",
             "confidence": 0.0,
             "reasoning": str(e),
+            "token_usage": {},
             "logs": logs,
             "errors": errors,
         }
@@ -91,21 +96,40 @@ def handle_error(state: EmailState) -> dict:
     classification = state.get("classification", "unknown")
     confidence = state.get("confidence", 0.0)
     reasoning = state.get("reasoning", "")
+    token_usage = state.get("token_usage", {})
 
     try:
-        append_error(email, classification, confidence, reasoning, errors, ts)
+        append_error(email, classification, confidence, reasoning, errors, ts, token_usage)
         logs.append(f"[{ts}] handle_error: recorded to errors.json (confidence={confidence:.2f})")
     except Exception as e:
         logs.append(f"[{ts}] handle_error: failed to write errors.json: {e}")
+
+    try:
+        error_record = {
+            "message_id": email.get("message_id", ""),
+            "from": email.get("from", ""),
+            "subject": email.get("subject", ""),
+            "classification": classification,
+            "confidence": confidence,
+            "reasoning": reasoning,
+            "errors": errors,
+            "failed_at": ts,
+        }
+        send_error_email(error_record)
+        logs.append(f"[{ts}] handle_error: notification email sent")
+    except Exception as e:
+        logs.append(f"[{ts}] handle_error: email notification failed: {e}")
 
     return {
         "routing_result": {"success": False, "errors": errors},
         "logs": logs,
     }
 
+
 # ---------------------------------------------------------------------------
 # Conditional edge
 # ---------------------------------------------------------------------------
+
 def decide_route(state: EmailState) -> str:
     if state.get("errors"):
         return "handle_error"
@@ -129,7 +153,6 @@ def build_graph():
 
     graph.add_node("ingest_email", ingest_email)
     graph.add_node("classify_email", classify_email_node)
-
     graph.add_node("handle_support", route_support)
     graph.add_node("handle_lead", route_lead)
     graph.add_node("handle_error", handle_error)
@@ -169,6 +192,7 @@ def run_email(raw_email: dict) -> dict:
         "routing_result": {},
         "errors": [],
         "logs": [],
+        "token_usage": {},
     }
     return app.invoke(initial_state)
 
@@ -182,6 +206,10 @@ def print_result(state: dict):
     print(f"  Subject    : {email.get('subject', '')}")
     print(f"  Class      : {state.get('classification', '')}  (confidence: {state.get('confidence', 0):.2f})")
     print(f"  Reasoning  : {state.get('reasoning', '')}")
+    usage = state.get("token_usage", {})
+    if usage:
+        print(f"  Tokens     : in={usage.get('input_tokens',0)} out={usage.get('output_tokens',0)} "
+              f"cache_read={usage.get('cache_read_input_tokens',0)} cost=${usage.get('cost_usd',0):.5f}")
     routing = state.get("routing_result", {})
     if routing.get("ticket"):
         print(f"  Ticket #   : {routing['ticket']['id']} — status: {routing['ticket']['status']}")

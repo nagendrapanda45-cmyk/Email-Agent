@@ -1,5 +1,16 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+import time
 import anthropic
+
+MAX_RETRIES = 4
+RETRY_BACKOFF = [2, 4, 8, 16]
+RETRYABLE_STATUS_CODES = {529, 500, 502, 503, 504}
+
+# Pricing for claude-opus-4-7 per million tokens
+_PRICE_INPUT = 5.00
+_PRICE_OUTPUT = 25.00
+_PRICE_CACHE_WRITE = 6.25   # 25% surcharge on cache creation
+_PRICE_CACHE_READ = 0.50    # 90% discount on cache reads
 
 SYSTEM_PROMPT = """You are an email classification assistant for a SaaS company.
 
@@ -51,11 +62,26 @@ CLASSIFICATION_TOOL = {
 }
 
 
+def _calculate_cost(usage) -> float:
+    input_tokens = usage.input_tokens
+    output_tokens = usage.output_tokens
+    cache_creation = getattr(usage, "cache_creation_input_tokens", 0) or 0
+    cache_read = getattr(usage, "cache_read_input_tokens", 0) or 0
+    regular_input = max(0, input_tokens - cache_creation - cache_read)
+    return (
+        regular_input * _PRICE_INPUT / 1_000_000
+        + cache_creation * _PRICE_CACHE_WRITE / 1_000_000
+        + cache_read * _PRICE_CACHE_READ / 1_000_000
+        + output_tokens * _PRICE_OUTPUT / 1_000_000
+    )
+
+
 @dataclass
 class ClassificationResult:
     classification: str
     confidence: float
     reasoning: str
+    token_usage: dict = field(default_factory=dict)
 
 
 class ClassificationError(Exception):
@@ -76,28 +102,42 @@ Subject: {subject}
 
     client = anthropic.Anthropic()
 
-    try:
-        response = client.messages.create(
-            model="claude-opus-4-7",
-            max_tokens=1024,
-            system=[
-                {
-                    "type": "text",
-                    "text": SYSTEM_PROMPT,
-                    "cache_control": {"type": "ephemeral"},
-                }
-            ],
-            tools=[CLASSIFICATION_TOOL],
-            tool_choice={"type": "tool", "name": "classify_email"},
-            messages=[
-                {
-                    "role": "user",
-                    "content": f"Classify this email:\n\n{email_text}",
-                }
-            ],
-        )
-    except anthropic.APIError as e:
-        raise ClassificationError(f"Anthropic API error: {e}") from e
+    last_error = None
+    response = None
+    for attempt in range(MAX_RETRIES):
+        try:
+            response = client.messages.create(
+                model="claude-opus-4-7",
+                max_tokens=1024,
+                system=[
+                    {
+                        "type": "text",
+                        "text": SYSTEM_PROMPT,
+                        "cache_control": {"type": "ephemeral"},
+                    }
+                ],
+                tools=[CLASSIFICATION_TOOL],
+                tool_choice={"type": "tool", "name": "classify_email"},
+                messages=[
+                    {
+                        "role": "user",
+                        "content": f"Classify this email:\n\n{email_text}",
+                    }
+                ],
+            )
+            break
+        except anthropic.APIStatusError as e:
+            if e.status_code in RETRYABLE_STATUS_CODES and attempt < MAX_RETRIES - 1:
+                wait = RETRY_BACKOFF[attempt]
+                print(f"[classifier] API {e.status_code} on attempt {attempt + 1}/{MAX_RETRIES}, retrying in {wait}s...")
+                time.sleep(wait)
+                last_error = e
+                continue
+            raise ClassificationError(f"Anthropic API error: {e}") from e
+        except anthropic.APIError as e:
+            raise ClassificationError(f"Anthropic API error: {e}") from e
+    else:
+        raise ClassificationError(f"Anthropic API unavailable after {MAX_RETRIES} attempts: {last_error}")
 
     tool_use_block = next(
         (block for block in response.content if block.type == "tool_use"),
@@ -106,9 +146,19 @@ Subject: {subject}
     if tool_use_block is None:
         raise ClassificationError("Claude did not return a tool_use block")
 
+    usage = response.usage
+    token_usage = {
+        "input_tokens": usage.input_tokens,
+        "output_tokens": usage.output_tokens,
+        "cache_creation_input_tokens": getattr(usage, "cache_creation_input_tokens", 0) or 0,
+        "cache_read_input_tokens": getattr(usage, "cache_read_input_tokens", 0) or 0,
+        "cost_usd": _calculate_cost(usage),
+    }
+
     data = tool_use_block.input
     return ClassificationResult(
         classification=data["classification"],
         confidence=float(data["confidence"]),
         reasoning=data["reasoning"],
+        token_usage=token_usage,
     )
