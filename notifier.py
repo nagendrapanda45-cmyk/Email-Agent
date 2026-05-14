@@ -110,6 +110,7 @@ def send_lead_email(contact: dict, confidence: float, reasoning: str, priority: 
 
     rows = _table_rows([
         ("Contact ID",      f"#{contact['id']}"),
+        ("Classification",  "lead"),
         ("Priority",        f'<span style="color:{color};font-weight:bold">{priority}</span>'),
         ("Name",            contact.get("name", "")),
         ("Email",           contact.get("email", "")),
@@ -144,7 +145,7 @@ def send_error_email(error_record: dict):
     rows = _table_rows([
         ("From",                    error_record.get("from", "")),
         ("Subject",                 error_record.get("subject", "")),
-        ("Classification Attempted", error_record.get("classification", "unknown")),
+        ("Classification",           error_record.get("classification", "unknown")), 
         ("Confidence",              f"{confidence * 100:.0f}%"),
         ("Reasoning",               error_record.get("reasoning", "")),
         ("Failed At",               error_record.get("failed_at", "")),

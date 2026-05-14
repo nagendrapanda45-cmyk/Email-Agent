@@ -131,19 +131,20 @@ with tab1:
     if not tickets:
         st.info("No tickets yet. Send a support email to the watched inbox to get started.")
     else:
-        for r in reversed(tickets):
+        for idx, r in enumerate(reversed(tickets)):
             priority = r.get("priority", "Medium")
             label = f"#{r['id']} — {r.get('subject','')[:60]}  |  {priority_badge(priority)}  |  {r.get('created_at','')[:19]}"
             with st.expander(label):
                 col1, col2 = st.columns([2, 1])
                 with col1:
                     st.markdown(f"**From:** {r.get('from','')}")
+                    st.markdown(f"**Message ID:** {r.get('message_id','—')}")
                     st.markdown(f"**Priority:** {priority_badge(priority)}")
                     st.markdown(f"**Status:** {r.get('status','open').upper()}")
                     st.markdown(f"**Confidence:** {r.get('confidence',0):.0%}")
                     st.markdown(f"**Reasoning:** {r.get('reasoning','')}")
                     st.text_area("Body", r.get("body", ""), height=120,
-                                 disabled=True, key=f"t_{r['id']}_body")
+                                 disabled=True, key=f"ticket_{idx}_body")
                 with col2:
                     st.markdown("**Token Usage**")
                     u = r.get("token_usage", {})
@@ -159,7 +160,7 @@ with tab2:
     if not contacts:
         st.info("No leads yet. Send a sales inquiry to the watched inbox to get started.")
     else:
-        for r in reversed(contacts):
+        for idx, r in enumerate(reversed(contacts)):
             priority = r.get("priority", "Medium")
             label = f"#{r['id']} — {r.get('name','')} <{r.get('email','')}>  |  {priority_badge(priority)}  |  {r.get('create_date','')[:19]}"
             with st.expander(label):
@@ -167,6 +168,7 @@ with tab2:
                 with col1:
                     st.markdown(f"**Name:** {r.get('name','')}")
                     st.markdown(f"**Email:** {r.get('email','')}")
+                    st.markdown(f"**Message ID:** {r.get('message_id','—')}")
                     st.markdown(f"**Subject:** {r.get('original_subject','')}")
                     st.markdown(f"**Priority:** {priority_badge(priority)}")
                     st.markdown(f"**Stage:** {r.get('stage','new')}")
@@ -187,14 +189,15 @@ with tab3:
     if not errors:
         st.info("No errors yet.")
     else:
-        for i, r in enumerate(reversed(errors)):
+        for idx, r in enumerate(reversed(errors)):
             label = f"Error — {r.get('subject','')[:60]}  |  conf={r.get('confidence',0):.0%}  |  {r.get('failed_at','')[:19]}"
             with st.expander(label):
                 col1, col2 = st.columns([2, 1])
                 with col1:
                     st.markdown(f"**From:** {r.get('from','')}")
+                    st.markdown(f"**Message ID:** {r.get('message_id','—')}")
                     st.markdown(f"**Subject:** {r.get('subject','')}")
-                    st.markdown(f"**Classification attempted:** {r.get('classification','unknown')}")
+                    st.markdown(f"**Classification:** {r.get('classification','unknown')}")
                     st.markdown(f"**Confidence:** {r.get('confidence',0):.0%}")
                     st.markdown(f"**Reasoning:** {r.get('reasoning','')}")
                     if r.get("errors"):

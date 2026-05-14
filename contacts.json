@@ -127,5 +127,28 @@
       "cache_read_input_tokens": 0,
       "cost_usd": 0.011644999999999999
     }
+  },
+  {
+    "id": 2,
+    "name": "Kshiraja",
+    "email": "kshiraja.intelligenzit@gmail.com",
+    "create_date": "2026-05-14T12:59:05.505242+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "<CAAiPW9sNytyaB2t=oNG2ju4opr5PzYSGwxBHdoSMwZdq_1g-nw@mail.gmail.com>",
+    "original_subject": "Request for sales team demo",
+    "confidence": 0.97,
+    "reasoning": "The sender is a prospective customer who discovered the platform on LinkedIn and is requesting a demo for their sales team. This is a clear sales lead inquiry with no indication of being an existing customer.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 1557,
+      "output_tokens": 153,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.01161
+    }
   }
 ]

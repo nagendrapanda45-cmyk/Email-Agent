@@ -1,8 +1,14 @@
+import json
+import os
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
 from mock_odoo import odoo_client
 from json_output import append_contact, append_ticket
 from notifier import determine_priority, send_lead_email, send_ticket_email
+
+IST = timezone(timedelta(hours=5, minutes=30))
 
 
 class MockTicketQueue:
@@ -12,8 +18,20 @@ class MockTicketQueue:
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls._instance._tickets = []
-            cls._instance._next_id = 1
+            cls._instance._next_id = cls._next_available_id()
         return cls._instance
+
+    @staticmethod
+    def _next_available_id() -> int:
+        try:
+            filepath = Path(os.getenv("OUTPUT_DIR", ".")) / "tickets.json"
+            if filepath.exists():
+                data = json.loads(filepath.read_text(encoding="utf-8"))
+                if data:
+                    return max(t.get("id", 0) for t in data) + 1
+        except Exception:
+            pass
+        return 1
 
     def create_ticket(self, email: dict, classification: str) -> dict:
         ticket = {
@@ -24,7 +42,7 @@ class MockTicketQueue:
             "body": email.get("body", ""),
             "classification": classification,
             "status": "open",
-            "created_at": datetime.now(timezone.utc).isoformat(),
+            "created_at": datetime.now(IST).isoformat(),
         }
         self._tickets.append(ticket)
         self._next_id += 1
@@ -60,7 +78,7 @@ def _extract_name(from_field: str) -> str:
 def route_support(state: dict) -> dict:
     logs = list(state.get("logs", []))
     errors = list(state.get("errors", []))
-    ts = datetime.now(timezone.utc).isoformat()
+    ts = datetime.now(IST).isoformat()
 
     try:
         email = state.get("parsed_email") or state.get("raw_email", {})
@@ -89,7 +107,7 @@ def route_support(state: dict) -> dict:
 def route_lead(state: dict) -> dict:
     logs = list(state.get("logs", []))
     errors = list(state.get("errors", []))
-    ts = datetime.now(timezone.utc).isoformat()
+    ts = datetime.now(IST).isoformat()
 
     try:
         email = state.get("parsed_email") or state.get("raw_email", {})

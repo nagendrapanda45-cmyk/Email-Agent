@@ -81,7 +81,7 @@ def parse_message(raw_bytes: bytes, uid: str) -> dict | None:
         sender = f"{realname} <{addr}>" if realname else addr
 
         subject = _decode_header_field(msg.get("Subject", "(no subject)"))
-        message_id = msg.get("Message-ID", f"imap-uid-{uid}").strip()
+        message_id = _decode_header_field(msg.get("Message-ID")) or f"imap-uid-{uid}"
         body = _extract_body(msg)
 
         return {

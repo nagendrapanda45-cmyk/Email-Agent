@@ -1,7 +1,8 @@
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import TypedDict
 
+IST = timezone(timedelta(hours=5, minutes=30))
 from dotenv import load_dotenv
 from langgraph.graph import END, StateGraph
 
@@ -32,7 +33,7 @@ class EmailState(TypedDict):
 def ingest_email(state: EmailState) -> dict:
     logs = list(state.get("logs", []))
     errors = list(state.get("errors", []))
-    ts = datetime.now(timezone.utc).isoformat()
+    ts = datetime.now(IST).isoformat()
 
     raw = state.get("raw_email", {})
     required_fields = ["from", "subject", "body", "message_id"]
