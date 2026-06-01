@@ -6,7 +6,7 @@ from pathlib import Path
 OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "."))
 TICKETS_FILE = OUTPUT_DIR / "tickets.json"
 CONTACTS_FILE = OUTPUT_DIR / "contacts.json"
-ERRORS_FILE = OUTPUT_DIR / "errors.json"
+OTHERS_FILE = OUTPUT_DIR / "others.json"
 
 
 def _read_existing(filepath: Path) -> list:
@@ -48,8 +48,8 @@ def append_contact(contact: dict, confidence: float, reasoning: str, priority: s
     _atomic_write(CONTACTS_FILE, records)
 
 
-def append_error(email: dict, classification: str, confidence: float, reasoning: str,
-                 errors: list, failed_at: str, token_usage: dict):
+def append_others(email: dict, classification: str, confidence: float, reasoning: str,
+                  pipeline_errors: list, failed_at: str, token_usage: dict):
     record = {
         "message_id": email.get("message_id", ""),
         "from": email.get("from", ""),
@@ -57,10 +57,10 @@ def append_error(email: dict, classification: str, confidence: float, reasoning:
         "classification": classification,
         "confidence": confidence,
         "reasoning": reasoning,
-        "errors": errors,
+        "errors": pipeline_errors,
         "failed_at": failed_at,
         "token_usage": token_usage,
     }
-    records = _read_existing(ERRORS_FILE)
+    records = _read_existing(OTHERS_FILE)
     records.append(record)
-    _atomic_write(ERRORS_FILE, records)
+    _atomic_write(OTHERS_FILE, records)
