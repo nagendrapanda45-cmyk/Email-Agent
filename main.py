@@ -89,7 +89,7 @@ def classify_email_node(state: EmailState) -> dict:
         }
 
 
-def handle_error(state: EmailState) -> dict:
+def handle_others(state: EmailState) -> dict:
     logs = list(state.get("logs", []))
     ts = datetime.now(timezone.utc).isoformat()
     errors = state.get("errors", [])
@@ -100,26 +100,10 @@ def handle_error(state: EmailState) -> dict:
     token_usage = state.get("token_usage", {})
 
     try:
-        append_error(email, classification, confidence, reasoning, errors, ts, token_usage)
-        logs.append(f"[{ts}] handle_error: recorded to errors.json (confidence={confidence:.2f})")
+        append_others(email, classification, confidence, reasoning, errors, ts, token_usage)
+        logs.append(f"[{ts}] handle_others: recorded to others.json (confidence={confidence:.2f})")
     except Exception as e:
-        logs.append(f"[{ts}] handle_error: failed to write errors.json: {e}")
-
-    try:
-        error_record = {
-            "message_id": email.get("message_id", ""),
-            "from": email.get("from", ""),
-            "subject": email.get("subject", ""),
-            "classification": classification,
-            "confidence": confidence,
-            "reasoning": reasoning,
-            "errors": errors,
-            "failed_at": ts,
-        }
-        send_error_email(error_record)
-        logs.append(f"[{ts}] handle_error: notification email sent")
-    except Exception as e:
-        logs.append(f"[{ts}] handle_error: email notification failed: {e}")
+        logs.append(f"[{ts}] handle_others: failed to write others.json: {e}")
 
     return {
         "routing_result": {"success": False, "errors": errors},
