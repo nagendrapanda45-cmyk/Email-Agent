@@ -8,8 +8,7 @@ from langgraph.graph import END, StateGraph
 
 from email_classifier import ClassificationError, classify_email
 from routing import route_lead, route_support
-from json_output import append_error
-from notifier import send_error_email
+from json_output import append_others
 
 load_dotenv()
 
@@ -117,16 +116,16 @@ def handle_others(state: EmailState) -> dict:
 
 def decide_route(state: EmailState) -> str:
     if state.get("errors"):
-        return "handle_error"
+        return "handle_others"
     classification = state.get("classification", "unknown")
     confidence = state.get("confidence", 0.0)
     if confidence < 0.5 or classification == "unknown":
-        return "handle_error"
+        return "handle_others"
     if classification == "support":
         return "handle_support"
     if classification == "lead":
         return "handle_lead"
-    return "handle_error"
+    return "handle_others"
 
 
 # ---------------------------------------------------------------------------
@@ -140,7 +139,7 @@ def build_graph():
     graph.add_node("classify_email", classify_email_node)
     graph.add_node("handle_support", route_support)
     graph.add_node("handle_lead", route_lead)
-    graph.add_node("handle_error", handle_error)
+    graph.add_node("handle_others", handle_others)
 
     graph.set_entry_point("ingest_email")
     graph.add_edge("ingest_email", "classify_email")
@@ -150,12 +149,12 @@ def build_graph():
         {
             "handle_support": "handle_support",
             "handle_lead": "handle_lead",
-            "handle_error": "handle_error",
+            "handle_others": "handle_others",
         },
     )
     graph.add_edge("handle_support", END)
     graph.add_edge("handle_lead", END)
-    graph.add_edge("handle_error", END)
+    graph.add_edge("handle_others", END)
 
     return graph.compile()
 
@@ -283,7 +282,7 @@ if __name__ == "__main__":
         elif routing.get("contact"):
             routed = f"odoo #{routing['contact']['id']}"
         else:
-            routed = "error handler"
+            routed = "others handler"
         from_short = e.get("from", "")[:34]
         print(
             f"{e.get('message_id', ''):<10} {from_short:<35} "
