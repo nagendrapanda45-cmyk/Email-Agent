@@ -8,18 +8,38 @@ from dotenv import load_dotenv, set_key
 
 load_dotenv()
 
-st.set_page_config(page_title="Email Agent Dashboard", layout="wide")
-st.title("Email Agent Dashboard")
+st.set_page_config(
+    page_title="EID Parry — Email Agent",
+    layout="wide",
+    page_icon="📧",
+)
 
 ENV_PATH = Path(".env")
 OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "."))
+_LOGO_PATH = Path("assets/eid_parry_logo.svg")
+
+# ---------------------------------------------------------------------------
+# Header — logo + title
+# ---------------------------------------------------------------------------
+
+col_logo, col_title = st.columns([1, 6])
+with col_logo:
+    if _LOGO_PATH.exists():
+        st.image(str(_LOGO_PATH), width=180)
+with col_title:
+    st.title("Email Agent Dashboard")
+    st.caption("EID Parry (India) Limited — Powered by LangGraph & Claude")
 
 
 # ---------------------------------------------------------------------------
-# Sidebar — recipient settings
+# Sidebar — logo + recipient settings
 # ---------------------------------------------------------------------------
 
 with st.sidebar:
+    if _LOGO_PATH.exists():
+        st.image(str(_LOGO_PATH), width=220)
+        st.divider()
+
     st.header("Notification Recipients")
     st.caption("Enter the email address that should receive each notification type.")
 
@@ -33,17 +53,11 @@ with st.sidebar:
         value=os.getenv("LEAD_NOTIFY_EMAIL", ""),
         placeholder="sales-team@yourcompany.com",
     )
-    error_email = st.text_input(
-        "Error notifications",
-        value=os.getenv("ERROR_NOTIFY_EMAIL", ""),
-        placeholder="ops-team@yourcompany.com",
-    )
 
     if st.button("Save Settings", type="primary", use_container_width=True):
         ENV_PATH.touch(exist_ok=True)
         set_key(str(ENV_PATH), "TICKET_NOTIFY_EMAIL", ticket_email)
         set_key(str(ENV_PATH), "LEAD_NOTIFY_EMAIL", lead_email)
-        set_key(str(ENV_PATH), "ERROR_NOTIFY_EMAIL", error_email)
         load_dotenv(override=True)
         st.success("Saved to .env — restart poller.py to apply.")
 
@@ -67,8 +81,8 @@ def load_json(filepath: Path) -> list:
 
 tickets = load_json(OUTPUT_DIR / "tickets.json")
 contacts = load_json(OUTPUT_DIR / "contacts.json")
-errors = load_json(OUTPUT_DIR / "errors.json")
-all_records = tickets + contacts + errors
+others = load_json(OUTPUT_DIR / "others.json")
+all_records = tickets + contacts + others
 
 
 # ---------------------------------------------------------------------------
@@ -99,7 +113,7 @@ total_output = sum(record_output_tokens(r) for r in all_records)
 c1, c2, c3, c4, c5, c6 = st.columns(6)
 c1.metric("Tickets", len(tickets))
 c2.metric("Leads", len(contacts))
-c3.metric("Errors", len(errors))
+c3.metric("Others", len(others))
 c4.metric("Input Tokens", f"{total_input:,}")
 c5.metric("Output Tokens", f"{total_output:,}")
 c6.metric("Total Cost", f"${total_cost:.4f}")
@@ -125,7 +139,7 @@ def usage_summary(r: dict) -> str:
             f"cache_read={cr:,}  cost=${u.get('cost_usd',0):.5f}")
 
 
-tab1, tab2, tab3 = st.tabs(["🎫  Tickets", "👤  Leads", "⚠️  Errors"])
+tab1, tab2, tab3 = st.tabs(["🎫  Tickets", "👤  Leads", "🗂️  Others"])
 
 with tab1:
     if not tickets:
@@ -186,11 +200,11 @@ with tab2:
                         st.write("Not available")
 
 with tab3:
-    if not errors:
-        st.info("No errors yet.")
+    if not others:
+        st.info("No others yet.")
     else:
-        for idx, r in enumerate(reversed(errors)):
-            label = f"Error — {r.get('subject','')[:60]}  |  conf={r.get('confidence',0):.0%}  |  {r.get('failed_at','')[:19]}"
+        for idx, r in enumerate(reversed(others)):
+            label = f"Other — {r.get('subject','')[:60]}  |  conf={r.get('confidence',0):.0%}  |  {r.get('failed_at','')[:19]}"
             with st.expander(label):
                 col1, col2 = st.columns([2, 1])
                 with col1:
@@ -233,11 +247,12 @@ if all_records:
         u = r.get("token_usage", {})
         record_type = ("ticket" if "status" in r
                        else "lead" if "email" in r and "stage" in r
-                       else "error")
+                       else "other")
         rows.append({
             "Type": record_type,
             "Subject / Name": (r.get("subject") or r.get("original_subject") or r.get("name") or "")[:50],
             "From": r.get("from", r.get("email", ""))[:35],
+            "Message ID": r.get("message_id", ""),
             "Priority": r.get("priority", "—"),
             "Confidence": f"{r.get('confidence', 0):.0%}",
             "Input Tokens": u.get("input_tokens", 0),
@@ -253,6 +268,7 @@ if all_records:
         "Type": "TOTAL",
         "Subject / Name": "",
         "From": "",
+        "Message ID": "",
         "Priority": "",
         "Confidence": "",
         "Input Tokens": df["Input Tokens"].sum(),
