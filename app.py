@@ -16,7 +16,7 @@ st.set_page_config(
 
 ENV_PATH = Path(".env")
 OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "."))
-_LOGO_PATH = Path("assets/eid_parry_logo.svg")
+_LOGO_PATH = Path("EID-Parry_logo.jpeg")
 
 # ---------------------------------------------------------------------------
 # Header — logo + title
