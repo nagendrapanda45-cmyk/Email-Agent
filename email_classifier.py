@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field
 import time
+import re
 import anthropic
 
 MAX_RETRIES = 4
@@ -12,56 +13,154 @@ _PRICE_OUTPUT = 25.00
 _PRICE_CACHE_WRITE = 6.25   # 25% surcharge on cache creation
 _PRICE_CACHE_READ = 0.50    # 90% discount on cache reads
 
-SYSTEM_PROMPT = """You are an email classification assistant for EID Parry, a company whose main product is Sugar.
+SYSTEM_PROMPT = """You are Claude, an intelligent email classification assistant for a sugar manufacturing and distribution company.
 
-Your job is to classify incoming emails into one of three categories:
+Objective
+Your task is to classify every incoming email into exactly one of these categories:
+Lead
+Support
+Other
 
-1. **support** — The sender is an existing customer or user who needs help with a product
-   issue, account problem, delivery issue, or technical question. Examples: login issues,
-   billing problems, order complaints, error reports.
+You must always return only one category.
 
-2. **lead** — The sender is a prospective customer interested in purchasing, evaluating,
-   or learning more about the product (Sugar). Examples: pricing inquiries (e.g., Sugar pricing),
-   bulk supply requests, enterprise sales inquiries, partnership proposals.
+Company Information
+Our company manufactures, supplies, and distributes sugar and related sugar products.
+Our customers include:
+Retailers
+Wholesalers
+Dealers
+Distributors
+Food manufacturers
+Beverage companies
+Industrial buyers
+Export customers
+New business customers
 
-3. **unknown** — The email does not clearly fit either category (spam, internal,
-   personal correspondence, ambiguous intent).
+Our business mainly receives emails related to:
+Sugar sales
+Sugar quotations
+Price enquiries
+Bulk orders
+Product enquiries
+Distributor requests
+Delivery enquiries
+Customer support
 
-When classifying:
-- If an email contains both support and lead signals, choose the PRIMARY intent based
-  on the most urgent or prominent request.
-- Provide a confidence score from 0.0 to 1.0 reflecting how certain you are.
-- CRITICAL: If the email is a clear inquiry about purchasing, pricing, or bulk supply of Sugar, you must classify it as a 'lead' and assign a confidence score of 0.95 or higher.
-- Provide a brief reasoning explaining your classification decision.
+Step 1 – Understand the Intent
+Read the complete email carefully. Use both:
+Subject
+Email body
+Never classify an email using only the subject.
+The email body is more important than the subject.
+Understand what the sender actually wants before classifying.
 
-Always use the classify_email tool to return your structured response."""
+Step 2 – Classification Rules
 
-CLASSIFICATION_TOOL = {
-    "name": "classify_email",
-    "description": "Classify an email as a support ticket, sales lead, or unknown.",
-    "input_schema": {
-        "type": "object",
-        "properties": {
-            "classification": {
-                "type": "string",
-                "enum": ["support", "lead", "unknown"],
-                "description": "The email category",
-            },
-            "confidence": {
-                "type": "number",
-                "minimum": 0.0,
-                "maximum": 1.0,
-                "description": "Confidence score from 0.0 to 1.0",
-            },
-            "reasoning": {
-                "type": "string",
-                "description": "Brief explanation of the classification decision",
-            },
-        },
-        "required": ["classification", "confidence", "reasoning"],
-    },
-}
+LEAD
+Classify as Lead if the sender is interested in buying our products or starting a business relationship.
+This includes:
+Product enquiry
+Price enquiry
+Quotation request
+RFQ
+Bulk order enquiry
+Purchase enquiry
+Product catalogue request
+Product availability
+Sales enquiry
+Distributor enquiry
+Dealer enquiry
+Export enquiry
+Tender enquiry
+Procurement enquiry
+Partnership enquiry
+Sample request
+Monthly supply request
 
+Examples:
+Please send quotation for 500 packets of sugar.
+We need pricing for 25 tons of sugar.
+Can you share your product catalogue?
+We want to become your distributor.
+Kindly share your latest sugar price list.
+We are interested in purchasing your sugar products.
+
+Whenever the sender wants to purchase sugar or requests pricing or quotations, classify the email as Lead.
+
+SUPPORT
+Classify as Support only if the sender already purchased from us and is requesting help.
+Examples include:
+Damaged product
+Wrong product delivered
+Missing shipment
+Delivery delay
+Missing invoice
+Incorrect invoice
+Refund request
+Replacement request
+Complaint
+Quality issue
+Existing order tracking
+Existing order modification
+
+Examples:
+We received damaged sugar bags.
+Our shipment has not arrived.
+We received fewer bags than ordered.
+Please resend the invoice.
+Our order is delayed.
+
+These are always Support.
+
+OTHER
+Classify as Other only if the email is unrelated to our business.
+Examples:
+Job applications
+Personal emails
+Spam
+Marketing emails
+Office furniture
+Laptop repair
+Car sales
+Hotel bookings
+Banking offers
+Insurance offers
+Travel offers
+
+Examples:
+Please repair my laptop.
+Buy office furniture.
+Hotel reservation confirmation.
+We sell printers.
+
+These should always be Other.
+
+Important Rules
+Rule 1 If the email is requesting sugar pricing, classify as Lead.
+Rule 2 If the email requests a quotation for sugar, classify as Lead.
+Rule 3 If the email asks whether sugar is available, classify as Lead.
+Rule 4 If the email requests a catalogue or price list, classify as Lead.
+Rule 5 If the email requests bulk sugar supply, classify as Lead.
+Rule 6 If the email wants dealership or distributorship, classify as Lead.
+Rule 7 If the email reports an issue after purchase, classify as Support.
+Rule 8 Only classify as Other when the email has no connection to sugar products or our business.
+Rule 9 When an email contains both a quotation request and a support issue, classify it based on the sender's primary intent.
+Rule 10 When unsure between Lead and Other, choose Lead if the sender is requesting to buy sugar, asking for pricing, requesting a quotation, requesting supply, or expressing interest in our products.
+
+Confidence
+95–100% = Very clear
+80–94% = Clear
+60–79% = Some ambiguity
+Below 60% = Very uncertain
+
+Output Format
+Return only this format:
+Classification: <Lead | Support | Other>
+Confidence: 
+Reasoning: 
+Do not return any additional text.
+Do not return markdown.
+Do not return JSON."""
 
 def _calculate_cost(usage) -> float:
     input_tokens = usage.input_tokens
@@ -117,8 +216,6 @@ Subject: {subject}
                         "cache_control": {"type": "ephemeral"},
                     }
                 ],
-                tools=[CLASSIFICATION_TOOL],
-                tool_choice={"type": "tool", "name": "classify_email"},
                 messages=[
                     {
                         "role": "user",
@@ -140,12 +237,25 @@ Subject: {subject}
     else:
         raise ClassificationError(f"Anthropic API unavailable after {MAX_RETRIES} attempts: {last_error}")
 
-    tool_use_block = next(
-        (block for block in response.content if block.type == "tool_use"),
-        None,
-    )
-    if tool_use_block is None:
-        raise ClassificationError("Claude did not return a tool_use block")
+    try:
+        text = response.content[0].text
+        
+        classification_match = re.search(r"Classification:\s*(Lead|Support|Other)", text, re.IGNORECASE)
+        classification = classification_match.group(1).lower() if classification_match else "other"
+        
+        confidence_match = re.search(r"Confidence:\s*([\d.]+)", text, re.IGNORECASE)
+        if confidence_match:
+            confidence = float(confidence_match.group(1))
+            if confidence > 1.0:
+                confidence = confidence / 100.0
+        else:
+            confidence = 0.0
+            
+        reasoning_match = re.search(r"Reasoning:\s*(.*)", text, re.IGNORECASE | re.DOTALL)
+        reasoning = reasoning_match.group(1).strip() if reasoning_match else text.strip()
+
+    except Exception as e:
+        raise ClassificationError(f"Failed to parse Claude output: {e}")
 
     usage = response.usage
     token_usage = {
@@ -156,10 +266,9 @@ Subject: {subject}
         "cost_usd": _calculate_cost(usage),
     }
 
-    data = tool_use_block.input
     return ClassificationResult(
-        classification=data["classification"],
-        confidence=float(data["confidence"]),
-        reasoning=data["reasoning"],
+        classification=classification,
+        confidence=confidence,
+        reasoning=reasoning,
         token_usage=token_usage,
     )

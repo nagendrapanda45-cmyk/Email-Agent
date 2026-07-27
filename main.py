@@ -57,7 +57,7 @@ def classify_email_node(state: EmailState) -> dict:
 
     if state.get("errors"):
         errors.append(f"[{ts}] classify_email: skipping due to prior errors")
-        return {"classification": "unknown", "confidence": 0.0, "reasoning": "skipped",
+        return {"classification": "other", "confidence": 0.0, "reasoning": "skipped",
                 "token_usage": {}, "logs": logs, "errors": errors}
 
     try:
@@ -79,7 +79,7 @@ def classify_email_node(state: EmailState) -> dict:
     except ClassificationError as e:
         errors.append(f"[{ts}] classify_email error: {e}")
         return {
-            "classification": "unknown",
+            "classification": "other",
             "confidence": 0.0,
             "reasoning": str(e),
             "token_usage": {},
@@ -93,7 +93,7 @@ def handle_others(state: EmailState) -> dict:
     ts = datetime.now(timezone.utc).isoformat()
     errors = state.get("errors", [])
     email = state.get("parsed_email") or state.get("raw_email", {})
-    classification = state.get("classification", "unknown")
+    classification = state.get("classification", "other")
     confidence = state.get("confidence", 0.0)
     reasoning = state.get("reasoning", "")
     token_usage = state.get("token_usage", {})
@@ -117,9 +117,9 @@ def handle_others(state: EmailState) -> dict:
 def decide_route(state: EmailState) -> str:
     if state.get("errors"):
         return "handle_others"
-    classification = state.get("classification", "unknown")
+    classification = state.get("classification", "other")
     confidence = state.get("confidence", 0.0)
-    if confidence < 0.5 or classification == "unknown":
+    if confidence < 0.5 or classification == "other":
         return "handle_others"
     if classification == "support":
         return "handle_support"
