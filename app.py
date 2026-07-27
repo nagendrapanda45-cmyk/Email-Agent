@@ -70,6 +70,7 @@ with st.sidebar:
 # Data loading
 # ---------------------------------------------------------------------------
 
+
 def load_json(filepath: Path) -> list:
     if filepath.exists():
         try:
@@ -88,6 +89,7 @@ all_records = tickets + contacts + others
 # ---------------------------------------------------------------------------
 # Cost helpers
 # ---------------------------------------------------------------------------
+
 
 def record_cost(r: dict) -> float:
     return r.get("token_usage", {}).get("cost_usd", 0.0)
@@ -125,6 +127,7 @@ st.divider()
 # Tabs
 # ---------------------------------------------------------------------------
 
+
 def priority_badge(priority: str) -> str:
     colors = {"Urgent": "🔴", "High": "🟠", "Medium": "🔵", "Low": "🟢"}
     return f"{colors.get(priority, '⚪')} {priority}"
@@ -135,67 +138,82 @@ def usage_summary(r: dict) -> str:
     if not u:
         return "—"
     cr = u.get("cache_read_input_tokens", 0)
-    return (f"in={u.get('input_tokens',0):,}  out={u.get('output_tokens',0):,}  "
-            f"cache_read={cr:,}  cost=${u.get('cost_usd',0):.5f}")
+    return (
+        f"in={u.get('input_tokens', 0):,}  out={u.get('output_tokens', 0):,}  "
+        f"cache_read={cr:,}  cost=${u.get('cost_usd', 0):.5f}"
+    )
 
 
 tab1, tab2, tab3 = st.tabs(["🎫  Tickets", "👤  Leads", "🗂️  Others"])
 
 with tab1:
     if not tickets:
-        st.info("No tickets yet. Send a support email to the watched inbox to get started.")
+        st.info(
+            "No tickets yet. Send a support email to the watched inbox to get started."
+        )
     else:
         for idx, r in enumerate(reversed(tickets)):
             priority = r.get("priority", "Medium")
-            label = f"#{r['id']} — {r.get('subject','')[:60]}  |  {priority_badge(priority)}  |  {r.get('created_at','')[:19]}"
+            label = f"#{r['id']} — {r.get('subject', '')[:60]}  |  {priority_badge(priority)}  |  {r.get('created_at', '')[:19]}"
             with st.expander(label):
                 col1, col2 = st.columns([2, 1])
                 with col1:
-                    st.markdown(f"**From:** {r.get('from','')}")
-                    st.markdown(f"**Message ID:** {r.get('message_id','—')}")
+                    st.markdown(f"**From:** {r.get('from', '')}")
+                    st.markdown(f"**Message ID:** {r.get('message_id', '—')}")
                     st.markdown(f"**Priority:** {priority_badge(priority)}")
-                    st.markdown(f"**Status:** {r.get('status','open').upper()}")
-                    st.markdown(f"**Confidence:** {r.get('confidence',0):.0%}")
-                    st.markdown(f"**Reasoning:** {r.get('reasoning','')}")
-                    st.text_area("Body", r.get("body", ""), height=120,
-                                 disabled=True, key=f"ticket_{idx}_body")
+                    st.markdown(f"**Status:** {r.get('status', 'open').upper()}")
+                    st.markdown(f"**Confidence:** {r.get('confidence', 0):.0%}")
+                    st.markdown(f"**Reasoning:** {r.get('reasoning', '')}")
+                    st.text_area(
+                        "Body",
+                        r.get("body", ""),
+                        height=120,
+                        disabled=True,
+                        key=f"ticket_{idx}_body",
+                    )
                 with col2:
                     st.markdown("**Token Usage**")
                     u = r.get("token_usage", {})
                     if u:
-                        st.metric("Input tokens", f"{u.get('input_tokens',0):,}")
-                        st.metric("Output tokens", f"{u.get('output_tokens',0):,}")
-                        st.metric("Cache read", f"{u.get('cache_read_input_tokens',0):,}")
-                        st.metric("Cost (USD)", f"${u.get('cost_usd',0):.5f}")
+                        st.metric("Input tokens", f"{u.get('input_tokens', 0):,}")
+                        st.metric("Output tokens", f"{u.get('output_tokens', 0):,}")
+                        st.metric(
+                            "Cache read", f"{u.get('cache_read_input_tokens', 0):,}"
+                        )
+                        st.metric("Cost (USD)", f"${u.get('cost_usd', 0):.5f}")
                     else:
                         st.write("Not available")
 
 with tab2:
     if not contacts:
-        st.info("No leads yet. Send a sales inquiry to the watched inbox to get started.")
+        st.info(
+            "No leads yet. Send a sales inquiry to the watched inbox to get started."
+        )
     else:
         for idx, r in enumerate(reversed(contacts)):
             priority = r.get("priority", "Medium")
-            label = f"#{r['id']} — {r.get('name','')} <{r.get('email','')}>  |  {priority_badge(priority)}  |  {r.get('create_date','')[:19]}"
+            label = f"#{r['id']} — {r.get('name', '')} <{r.get('email', '')}>  |  {priority_badge(priority)}  |  {r.get('create_date', '')[:19]}"
             with st.expander(label):
                 col1, col2 = st.columns([2, 1])
                 with col1:
-                    st.markdown(f"**Name:** {r.get('name','')}")
-                    st.markdown(f"**Email:** {r.get('email','')}")
-                    st.markdown(f"**Message ID:** {r.get('message_id','—')}")
-                    st.markdown(f"**Subject:** {r.get('original_subject','')}")
+                    st.markdown(f"**Name:** {r.get('name', '')}")
+                    st.markdown(f"**Email:** {r.get('email', '')}")
+                    st.markdown(f"**Message ID:** {r.get('message_id', '—')}")
+                    st.markdown(f"**Subject:** {r.get('original_subject', '')}")
                     st.markdown(f"**Priority:** {priority_badge(priority)}")
-                    st.markdown(f"**Stage:** {r.get('stage','new')}")
-                    st.markdown(f"**Confidence:** {r.get('confidence',0):.0%}")
-                    st.markdown(f"**Reasoning:** {r.get('reasoning','')}")
+                    st.markdown(f"**Stage:** {r.get('stage', 'new')}")
+                    st.markdown(f"**Confidence:** {r.get('confidence', 0):.0%}")
+                    st.markdown(f"**Reasoning:** {r.get('reasoning', '')}")
                 with col2:
                     st.markdown("**Token Usage**")
                     u = r.get("token_usage", {})
                     if u:
-                        st.metric("Input tokens", f"{u.get('input_tokens',0):,}")
-                        st.metric("Output tokens", f"{u.get('output_tokens',0):,}")
-                        st.metric("Cache read", f"{u.get('cache_read_input_tokens',0):,}")
-                        st.metric("Cost (USD)", f"${u.get('cost_usd',0):.5f}")
+                        st.metric("Input tokens", f"{u.get('input_tokens', 0):,}")
+                        st.metric("Output tokens", f"{u.get('output_tokens', 0):,}")
+                        st.metric(
+                            "Cache read", f"{u.get('cache_read_input_tokens', 0):,}"
+                        )
+                        st.metric("Cost (USD)", f"${u.get('cost_usd', 0):.5f}")
                     else:
                         st.write("Not available")
 
@@ -204,16 +222,18 @@ with tab3:
         st.info("No others yet.")
     else:
         for idx, r in enumerate(reversed(others)):
-            label = f"Other — {r.get('subject','')[:60]}  |  conf={r.get('confidence',0):.0%}  |  {r.get('failed_at','')[:19]}"
+            label = f"Other — {r.get('subject', '')[:60]}  |  conf={r.get('confidence', 0):.0%}  |  {r.get('failed_at', '')[:19]}"
             with st.expander(label):
                 col1, col2 = st.columns([2, 1])
                 with col1:
-                    st.markdown(f"**From:** {r.get('from','')}")
-                    st.markdown(f"**Message ID:** {r.get('message_id','—')}")
-                    st.markdown(f"**Subject:** {r.get('subject','')}")
-                    st.markdown(f"**Classification:** {r.get('classification','unknown')}")
-                    st.markdown(f"**Confidence:** {r.get('confidence',0):.0%}")
-                    st.markdown(f"**Reasoning:** {r.get('reasoning','')}")
+                    st.markdown(f"**From:** {r.get('from', '')}")
+                    st.markdown(f"**Message ID:** {r.get('message_id', '—')}")
+                    st.markdown(f"**Subject:** {r.get('subject', '')}")
+                    st.markdown(
+                        f"**Classification:** {r.get('classification', 'unknown')}"
+                    )
+                    st.markdown(f"**Confidence:** {r.get('confidence', 0):.0%}")
+                    st.markdown(f"**Reasoning:** {r.get('reasoning', '')}")
                     if r.get("errors"):
                         for err in r["errors"]:
                             st.error(err)
@@ -221,10 +241,12 @@ with tab3:
                     st.markdown("**Token Usage**")
                     u = r.get("token_usage", {})
                     if u:
-                        st.metric("Input tokens", f"{u.get('input_tokens',0):,}")
-                        st.metric("Output tokens", f"{u.get('output_tokens',0):,}")
-                        st.metric("Cache read", f"{u.get('cache_read_input_tokens',0):,}")
-                        st.metric("Cost (USD)", f"${u.get('cost_usd',0):.5f}")
+                        st.metric("Input tokens", f"{u.get('input_tokens', 0):,}")
+                        st.metric("Output tokens", f"{u.get('output_tokens', 0):,}")
+                        st.metric(
+                            "Cache read", f"{u.get('cache_read_input_tokens', 0):,}"
+                        )
+                        st.metric("Cost (USD)", f"${u.get('cost_usd', 0):.5f}")
                     else:
                         st.write("Not available")
 
@@ -237,6 +259,7 @@ st.divider()
 st.subheader("Token Usage & Cost — All Records")
 
 if all_records:
+
     def ts_key(r: dict) -> str:
         return r.get("created_at") or r.get("create_date") or r.get("failed_at") or ""
 
@@ -245,37 +268,49 @@ if all_records:
     rows = []
     for r in sorted_records[:50]:
         u = r.get("token_usage", {})
-        record_type = ("ticket" if "status" in r
-                       else "lead" if "email" in r and "stage" in r
-                       else "other")
-        rows.append({
-            "Type": record_type,
-            "Subject / Name": (r.get("subject") or r.get("original_subject") or r.get("name") or "")[:50],
-            "From": r.get("from", r.get("email", ""))[:35],
-            "Message ID": r.get("message_id", ""),
-            "Priority": r.get("priority", "—"),
-            "Confidence": f"{r.get('confidence', 0):.0%}",
-            "Input Tokens": u.get("input_tokens", 0),
-            "Output Tokens": u.get("output_tokens", 0),
-            "Cache Read": u.get("cache_read_input_tokens", 0),
-            "Cost (USD)": round(u.get("cost_usd", 0.0), 6),
-        })
+        record_type = (
+            "ticket"
+            if "status" in r
+            else "lead"
+            if "email" in r and "stage" in r
+            else "other"
+        )
+        rows.append(
+            {
+                "Type": record_type,
+                "Subject / Name": (
+                    r.get("subject") or r.get("original_subject") or r.get("name") or ""
+                )[:50],
+                "From": r.get("from", r.get("email", ""))[:35],
+                "Message ID": r.get("message_id", ""),
+                "Priority": r.get("priority", "—"),
+                "Confidence": f"{r.get('confidence', 0):.0%}",
+                "Input Tokens": u.get("input_tokens", 0),
+                "Output Tokens": u.get("output_tokens", 0),
+                "Cache Read": u.get("cache_read_input_tokens", 0),
+                "Cost (USD)": round(u.get("cost_usd", 0.0), 6),
+            }
+        )
 
     df = pd.DataFrame(rows)
     st.dataframe(df, use_container_width=True, hide_index=True)
 
-    total_row = pd.DataFrame([{
-        "Type": "TOTAL",
-        "Subject / Name": "",
-        "From": "",
-        "Message ID": "",
-        "Priority": "",
-        "Confidence": "",
-        "Input Tokens": df["Input Tokens"].sum(),
-        "Output Tokens": df["Output Tokens"].sum(),
-        "Cache Read": df["Cache Read"].sum(),
-        "Cost (USD)": round(df["Cost (USD)"].sum(), 6),
-    }])
+    total_row = pd.DataFrame(
+        [
+            {
+                "Type": "TOTAL",
+                "Subject / Name": "",
+                "From": "",
+                "Message ID": "",
+                "Priority": "",
+                "Confidence": "",
+                "Input Tokens": df["Input Tokens"].sum(),
+                "Output Tokens": df["Output Tokens"].sum(),
+                "Cache Read": df["Cache Read"].sum(),
+                "Cost (USD)": round(df["Cost (USD)"].sum(), 6),
+            }
+        ]
+    )
     st.dataframe(total_row, use_container_width=True, hide_index=True)
 else:
     st.info("No records yet.")

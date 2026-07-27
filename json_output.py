@@ -32,24 +32,45 @@ def _atomic_write(filepath: Path, data: list):
         raise
 
 
-def append_ticket(ticket: dict, confidence: float, reasoning: str, priority: str, token_usage: dict):
-    record = {**ticket, "confidence": confidence, "reasoning": reasoning,
-              "priority": priority, "token_usage": token_usage}
+def append_ticket(
+    ticket: dict, confidence: float, reasoning: str, priority: str, token_usage: dict
+):
+    record = {
+        **ticket,
+        "confidence": confidence,
+        "reasoning": reasoning,
+        "priority": priority,
+        "token_usage": token_usage,
+    }
     records = _read_existing(TICKETS_FILE)
     records.append(record)
     _atomic_write(TICKETS_FILE, records)
 
 
-def append_contact(contact: dict, confidence: float, reasoning: str, priority: str, token_usage: dict):
-    record = {**contact, "confidence": confidence, "reasoning": reasoning,
-              "priority": priority, "token_usage": token_usage}
+def append_contact(
+    contact: dict, confidence: float, reasoning: str, priority: str, token_usage: dict
+):
+    record = {
+        **contact,
+        "confidence": confidence,
+        "reasoning": reasoning,
+        "priority": priority,
+        "token_usage": token_usage,
+    }
     records = _read_existing(CONTACTS_FILE)
     records.append(record)
     _atomic_write(CONTACTS_FILE, records)
 
 
-def append_others(email: dict, classification: str, confidence: float, reasoning: str,
-                  pipeline_errors: list, failed_at: str, token_usage: dict):
+def append_others(
+    email: dict,
+    classification: str,
+    confidence: float,
+    reasoning: str,
+    pipeline_errors: list,
+    failed_at: str,
+    token_usage: dict,
+):
     record = {
         "message_id": email.get("message_id", ""),
         "from": email.get("from", ""),

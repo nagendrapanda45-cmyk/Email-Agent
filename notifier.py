@@ -7,17 +7,43 @@ SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587
 
 _URGENT_KEYWORDS = {
-    "urgent", "asap", "immediately", "emergency", "critical", "deadline",
-    "right now", "time-sensitive", "broken", "outage", "cannot access",
-    "locked out", "not working", "production issue", "escalate", "down",
+    "urgent",
+    "asap",
+    "immediately",
+    "emergency",
+    "critical",
+    "deadline",
+    "right now",
+    "time-sensitive",
+    "broken",
+    "outage",
+    "cannot access",
+    "locked out",
+    "not working",
+    "production issue",
+    "escalate",
+    "down",
 }
 _HIGH_KEYWORDS = {
-    "important", "priority", "soon", "quickly", "end of day", "eod",
-    "today", "pressing", "needed", "by tomorrow",
+    "important",
+    "priority",
+    "soon",
+    "quickly",
+    "end of day",
+    "eod",
+    "today",
+    "pressing",
+    "needed",
+    "by tomorrow",
 }
 _LOW_KEYWORDS = {
-    "whenever", "no rush", "when you get a chance", "not urgent",
-    "eventually", "low priority", "no hurry",
+    "whenever",
+    "no rush",
+    "when you get a chance",
+    "not urgent",
+    "eventually",
+    "low priority",
+    "no hurry",
 }
 
 
@@ -68,28 +94,37 @@ def _table_rows(rows: list[tuple]) -> str:
 
 
 def send_ticket_email(ticket: dict, confidence: float, reasoning: str, priority: str):
-    recipient = os.environ.get("TICKET_NOTIFY_EMAIL") or os.environ.get("SUPPORT_NOTIFY_EMAIL", "")
+    recipient = os.environ.get("TICKET_NOTIFY_EMAIL") or os.environ.get(
+        "SUPPORT_NOTIFY_EMAIL", ""
+    )
     if not recipient:
         raise ValueError("TICKET_NOTIFY_EMAIL not set")
 
     color = _priority_color(priority)
-    body_preview = ticket.get("body", "")[:500] + ("…" if len(ticket.get("body", "")) > 500 else "")
+    body_preview = ticket.get("body", "")[:500] + (
+        "…" if len(ticket.get("body", "")) > 500 else ""
+    )
 
-    rows = _table_rows([
-        ("Ticket ID",       f"#{ticket['id']}"),
-        ("Priority",        f'<span style="color:{color};font-weight:bold">{priority}</span>'),
-        ("Status",          ticket.get("status", "open").upper()),
-        ("From",            ticket.get("from", "")),
-        ("Subject",         ticket.get("subject", "")),
-        ("Classification",  ticket.get("classification", "")),
-        ("Confidence",      f"{confidence * 100:.0f}%"),
-        ("Reasoning",       reasoning),
-        ("Created At",      ticket.get("created_at", "")),
-        ("Message ID",      ticket.get("message_id", "")),
-    ])
+    rows = _table_rows(
+        [
+            ("Ticket ID", f"#{ticket['id']}"),
+            (
+                "Priority",
+                f'<span style="color:{color};font-weight:bold">{priority}</span>',
+            ),
+            ("Status", ticket.get("status", "open").upper()),
+            ("From", ticket.get("from", "")),
+            ("Subject", ticket.get("subject", "")),
+            ("Classification", ticket.get("classification", "")),
+            ("Confidence", f"{confidence * 100:.0f}%"),
+            ("Reasoning", reasoning),
+            ("Created At", ticket.get("created_at", "")),
+            ("Message ID", ticket.get("message_id", "")),
+        ]
+    )
 
     html = f"""<!DOCTYPE html><html><body style="font-family:Arial,sans-serif;color:#222;max-width:700px;margin:auto;padding:24px;">
-  <h2 style="color:{color};">New Support Ticket #{ticket['id']} — {priority}</h2>
+  <h2 style="color:{color};">New Support Ticket #{ticket["id"]} — {priority}</h2>
   <p style="color:#555;">A new support ticket has been created by the Email Agent.</p>
   <table style="border-collapse:collapse;width:100%;margin-top:16px;">{rows}</table>
   <h3 style="margin-top:28px;border-bottom:1px solid #ddd;padding-bottom:6px;">Email Body</h3>
@@ -97,33 +132,46 @@ def send_ticket_email(ticket: dict, confidence: float, reasoning: str, priority:
   <p style="margin-top:24px;font-size:12px;color:#999;">Sent automatically by the LangGraph Email Agent.</p>
 </body></html>"""
 
-    _send(f"[{priority}] New Support Ticket #{ticket['id']} — {ticket.get('subject', '')}", html, recipient)
+    _send(
+        f"[{priority}] New Support Ticket #{ticket['id']} — {ticket.get('subject', '')}",
+        html,
+        recipient,
+    )
 
 
-def send_lead_email(contact: dict, confidence: float, reasoning: str, priority: str, source_email: dict):
+def send_lead_email(
+    contact: dict, confidence: float, reasoning: str, priority: str, source_email: dict
+):
     recipient = os.environ.get("LEAD_NOTIFY_EMAIL", "")
     if not recipient:
         raise ValueError("LEAD_NOTIFY_EMAIL not set")
 
     color = _priority_color(priority)
-    body_preview = source_email.get("body", "")[:500] + ("…" if len(source_email.get("body", "")) > 500 else "")
+    body_preview = source_email.get("body", "")[:500] + (
+        "…" if len(source_email.get("body", "")) > 500 else ""
+    )
 
-    rows = _table_rows([
-        ("Contact ID",      f"#{contact['id']}"),
-        ("Classification",  "lead"),
-        ("Priority",        f'<span style="color:{color};font-weight:bold">{priority}</span>'),
-        ("Name",            contact.get("name", "")),
-        ("Email",           contact.get("email", "")),
-        ("Subject",         contact.get("original_subject", "")),
-        ("Stage",           contact.get("stage", "new")),
-        ("Confidence",      f"{confidence * 100:.0f}%"),
-        ("Reasoning",       reasoning),
-        ("Created At",      contact.get("create_date", "")),
-        ("Message ID",      contact.get("message_id", "")),
-    ])
+    rows = _table_rows(
+        [
+            ("Contact ID", f"#{contact['id']}"),
+            ("Classification", "lead"),
+            (
+                "Priority",
+                f'<span style="color:{color};font-weight:bold">{priority}</span>',
+            ),
+            ("Name", contact.get("name", "")),
+            ("Email", contact.get("email", "")),
+            ("Subject", contact.get("original_subject", "")),
+            ("Stage", contact.get("stage", "new")),
+            ("Confidence", f"{confidence * 100:.0f}%"),
+            ("Reasoning", reasoning),
+            ("Created At", contact.get("create_date", "")),
+            ("Message ID", contact.get("message_id", "")),
+        ]
+    )
 
     html = f"""<!DOCTYPE html><html><body style="font-family:Arial,sans-serif;color:#222;max-width:700px;margin:auto;padding:24px;">
-  <h2 style="color:{color};">New Sales Lead #{contact['id']} — {priority}</h2>
+  <h2 style="color:{color};">New Sales Lead #{contact["id"]} — {priority}</h2>
   <p style="color:#555;">A new lead has been captured by the Email Agent.</p>
   <table style="border-collapse:collapse;width:100%;margin-top:16px;">{rows}</table>
   <h3 style="margin-top:28px;border-bottom:1px solid #ddd;padding-bottom:6px;">Original Email Body</h3>
@@ -131,7 +179,11 @@ def send_lead_email(contact: dict, confidence: float, reasoning: str, priority: 
   <p style="margin-top:24px;font-size:12px;color:#999;">Sent automatically by the LangGraph Email Agent.</p>
 </body></html>"""
 
-    _send(f"[{priority}] New Lead #{contact['id']} — {contact.get('name', '')} <{contact.get('email', '')}>", html, recipient)
+    _send(
+        f"[{priority}] New Lead #{contact['id']} — {contact.get('name', '')} <{contact.get('email', '')}>",
+        html,
+        recipient,
+    )
 
 
 def send_error_email(error_record: dict):
@@ -142,15 +194,17 @@ def send_error_email(error_record: dict):
     confidence = error_record.get("confidence", 0.0)
     error_list = error_record.get("errors", [])
 
-    rows = _table_rows([
-        ("From",                    error_record.get("from", "")),
-        ("Subject",                 error_record.get("subject", "")),
-        ("Classification",           error_record.get("classification", "unknown")), 
-        ("Confidence",              f"{confidence * 100:.0f}%"),
-        ("Reasoning",               error_record.get("reasoning", "")),
-        ("Failed At",               error_record.get("failed_at", "")),
-        ("Message ID",              error_record.get("message_id", "")),
-    ])
+    rows = _table_rows(
+        [
+            ("From", error_record.get("from", "")),
+            ("Subject", error_record.get("subject", "")),
+            ("Classification", error_record.get("classification", "unknown")),
+            ("Confidence", f"{confidence * 100:.0f}%"),
+            ("Reasoning", error_record.get("reasoning", "")),
+            ("Failed At", error_record.get("failed_at", "")),
+            ("Message ID", error_record.get("message_id", "")),
+        ]
+    )
 
     error_block = ""
     if error_list:

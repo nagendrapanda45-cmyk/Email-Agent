@@ -9,22 +9,11 @@ if not os.getenv("ANTHROPIC_API_KEY"):
     print("ERROR: ANTHROPIC_API_KEY environment variable not set.")
     sys.exit(1)
 
-from main import TEST_EMAILS, run_email
+from config import MIN_CONFIDENCE_THRESHOLD
+from main import run_email
 from mock_odoo import odoo_client
 from routing import ticket_queue
-
-EXPECTED_CLASSIFICATIONS = [
-    "lead",    # Need quotation for 100 MT
-    "lead",    # Looking for wholesale supply
-    "lead",    # Can you export to Dubai?
-    "lead",    # Interested in dealership
-    "support", # Shipment delayed
-    "support", # Invoice missing
-    "support", # Password reset
-    "other",   # Job application
-    "other",   # Hotel booking
-    "other",   # Printer sale
-]
+from test_data import EXPECTED_CLASSIFICATIONS, TEST_EMAILS
 
 
 def run_tests():
@@ -34,7 +23,9 @@ def run_tests():
     passed = 0
     failed = 0
 
-    for i, (email, expected) in enumerate(zip(TEST_EMAILS, EXPECTED_CLASSIFICATIONS), start=1):
+    for i, (email, expected) in enumerate(
+        zip(TEST_EMAILS, EXPECTED_CLASSIFICATIONS), start=1
+    ):
         print(f"\n--- Test {i}: {email['subject']} ---")
         state = run_email(email)
 
@@ -53,7 +44,6 @@ def run_tests():
             print(f"  FAIL — unexpected errors: {errors}")
             ok = False
 
-        from config import MIN_CONFIDENCE_THRESHOLD
         if confidence < MIN_CONFIDENCE_THRESHOLD:
             print(f"  FAIL — confidence too low: {confidence:.2f}")
             ok = False

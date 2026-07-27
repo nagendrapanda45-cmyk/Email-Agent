@@ -1,6 +1,7 @@
-from dataclasses import dataclass, field
-import time
 import re
+import time
+from dataclasses import dataclass, field
+
 import anthropic
 
 from config import BUSINESS_CONTEXT
@@ -12,15 +13,16 @@ RETRYABLE_STATUS_CODES = {529, 500, 502, 503, 504}
 # Pricing for claude-opus-4-7 per million tokens
 _PRICE_INPUT = 5.00
 _PRICE_OUTPUT = 25.00
-_PRICE_CACHE_WRITE = 6.25   # 25% surcharge on cache creation
-_PRICE_CACHE_READ = 0.50    # 90% discount on cache reads
+_PRICE_CACHE_WRITE = 6.25  # 25% surcharge on cache creation
+_PRICE_CACHE_READ = 0.50  # 90% discount on cache reads
+
 
 def generate_system_prompt() -> str:
     company = BUSINESS_CONTEXT.get("Company Name", "Company")
     industry = BUSINESS_CONTEXT.get("Industry", "Business")
     products = "\n- ".join(BUSINESS_CONTEXT.get("Products", []))
     customers = "\n- ".join(BUSINESS_CONTEXT.get("Customers", []))
-    
+
     return f"""You are Claude, an intelligent email classification assistant for {company}, operating in the {industry} industry.
 
 Objective
@@ -94,6 +96,7 @@ Do not return any additional text.
 Do not return markdown.
 Do not return JSON."""
 
+
 def _calculate_cost(usage) -> float:
     input_tokens = usage.input_tokens
     output_tokens = usage.output_tokens
@@ -160,7 +163,9 @@ Subject: {subject}
         except anthropic.APIStatusError as e:
             if e.status_code in RETRYABLE_STATUS_CODES and attempt < MAX_RETRIES - 1:
                 wait = RETRY_BACKOFF[attempt]
-                print(f"[classifier] API {e.status_code} on attempt {attempt + 1}/{MAX_RETRIES}, retrying in {wait}s...")
+                print(
+                    f"[classifier] API {e.status_code} on attempt {attempt + 1}/{MAX_RETRIES}, retrying in {wait}s..."
+                )
                 time.sleep(wait)
                 last_error = e
                 continue
@@ -168,14 +173,20 @@ Subject: {subject}
         except anthropic.APIError as e:
             raise ClassificationError(f"Anthropic API error: {e}") from e
     else:
-        raise ClassificationError(f"Anthropic API unavailable after {MAX_RETRIES} attempts: {last_error}")
+        raise ClassificationError(
+            f"Anthropic API unavailable after {MAX_RETRIES} attempts: {last_error}"
+        )
 
     try:
         text = response.content[0].text
-        
-        classification_match = re.search(r"Classification:\s*(Lead|Support|Other)", text, re.IGNORECASE)
-        classification = classification_match.group(1).lower() if classification_match else "other"
-        
+
+        classification_match = re.search(
+            r"Classification:\s*(Lead|Support|Other)", text, re.IGNORECASE
+        )
+        classification = (
+            classification_match.group(1).lower() if classification_match else "other"
+        )
+
         confidence_match = re.search(r"Confidence:\s*([\d.]+)", text, re.IGNORECASE)
         if confidence_match:
             confidence = float(confidence_match.group(1))
@@ -183,9 +194,13 @@ Subject: {subject}
                 confidence = confidence / 100.0
         else:
             confidence = 0.0
-            
-        reasoning_match = re.search(r"Reasoning:\s*(.*)", text, re.IGNORECASE | re.DOTALL)
-        reasoning = reasoning_match.group(1).strip() if reasoning_match else text.strip()
+
+        reasoning_match = re.search(
+            r"Reasoning:\s*(.*)", text, re.IGNORECASE | re.DOTALL
+        )
+        reasoning = (
+            reasoning_match.group(1).strip() if reasoning_match else text.strip()
+        )
 
     except Exception as e:
         raise ClassificationError(f"Failed to parse Claude output: {e}")
@@ -194,7 +209,8 @@ Subject: {subject}
     token_usage = {
         "input_tokens": usage.input_tokens,
         "output_tokens": usage.output_tokens,
-        "cache_creation_input_tokens": getattr(usage, "cache_creation_input_tokens", 0) or 0,
+        "cache_creation_input_tokens": getattr(usage, "cache_creation_input_tokens", 0)
+        or 0,
         "cache_read_input_tokens": getattr(usage, "cache_read_input_tokens", 0) or 0,
         "cost_usd": _calculate_cost(usage),
     }

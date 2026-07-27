@@ -22,7 +22,7 @@ BUSINESS_CONTEXT = {
         "Procurement teams",
         "Corporate buyers",
         "Government buyers",
-    ]
+    ],
 }
 
 # The minimum confidence required to automatically route an email to a support/lead queue.

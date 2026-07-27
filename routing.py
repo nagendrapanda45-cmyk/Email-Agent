@@ -4,8 +4,8 @@ import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from mock_odoo import odoo_client
 from json_output import append_contact, append_ticket
+from mock_odoo import odoo_client
 from notifier import determine_priority, send_lead_email, send_ticket_email
 
 IST = timezone(timedelta(hours=5, minutes=30))
@@ -87,21 +87,31 @@ def route_support(state: dict) -> dict:
         token_usage = state.get("token_usage", {})
         priority = determine_priority(email)
 
-        result = ticket_queue.create_ticket(email, state.get("classification", "support"))
+        result = ticket_queue.create_ticket(
+            email, state.get("classification", "support")
+        )
         ticket = result["ticket"]
         append_ticket(ticket, confidence, reasoning, priority, token_usage)
-        logs.append(f"[{ts}] route_support: created ticket #{ticket['id']} priority={priority} → tickets.json")
+        logs.append(
+            f"[{ts}] route_support: created ticket #{ticket['id']} priority={priority} → tickets.json"
+        )
 
         try:
             send_ticket_email(ticket, confidence, reasoning, priority)
-            logs.append(f"[{ts}] route_support: notification email sent for ticket #{ticket['id']}")
+            logs.append(
+                f"[{ts}] route_support: notification email sent for ticket #{ticket['id']}"
+            )
         except Exception as e:
             logs.append(f"[{ts}] route_support: email notification failed: {e}")
 
         return {"routing_result": result, "logs": logs, "errors": errors}
     except Exception as e:
         errors.append(f"[{ts}] route_support error: {e}")
-        return {"routing_result": {"success": False, "error": str(e)}, "logs": logs, "errors": errors}
+        return {
+            "routing_result": {"success": False, "error": str(e)},
+            "logs": logs,
+            "errors": errors,
+        }
 
 
 def route_lead(state: dict) -> dict:
@@ -122,15 +132,23 @@ def route_lead(state: dict) -> dict:
         result = odoo_client.create_contact(sender_email, sender_name, email)
         contact = result["contact"]
         append_contact(contact, confidence, reasoning, priority, token_usage)
-        logs.append(f"[{ts}] route_lead: created Odoo contact #{contact['id']} priority={priority} → contacts.json")
+        logs.append(
+            f"[{ts}] route_lead: created Odoo contact #{contact['id']} priority={priority} → contacts.json"
+        )
 
         try:
             send_lead_email(contact, confidence, reasoning, priority, email)
-            logs.append(f"[{ts}] route_lead: notification email sent for contact #{contact['id']}")
+            logs.append(
+                f"[{ts}] route_lead: notification email sent for contact #{contact['id']}"
+            )
         except Exception as e:
             logs.append(f"[{ts}] route_lead: email notification failed: {e}")
 
         return {"routing_result": result, "logs": logs, "errors": errors}
     except Exception as e:
         errors.append(f"[{ts}] route_lead error: {e}")
-        return {"routing_result": {"success": False, "error": str(e)}, "logs": logs, "errors": errors}
+        return {
+            "routing_result": {"success": False, "error": str(e)},
+            "logs": logs,
+            "errors": errors,
+        }

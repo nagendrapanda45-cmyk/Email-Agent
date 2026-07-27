@@ -67,6 +67,7 @@ def _extract_body(msg: email.message.Message) -> str:
     # Minimal HTML tag strip when only HTML is available
     if html:
         import re
+
         return re.sub(r"<[^>]+>", " ", html).strip()
 
     return ""
@@ -185,4 +186,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
