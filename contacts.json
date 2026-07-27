@@ -725,5 +725,856 @@
       "cache_read_input_tokens": 0,
       "cost_usd": 0.0051
     }
+  },
+  {
+    "id": 6,
+    "name": "Tender",
+    "email": "gov@example.com",
+    "create_date": "2026-07-27T23:58:00.012513+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-005",
+    "original_subject": "Government Tender Enquiry",
+    "confidence": 0.95,
+    "reasoning": "The email is a tender enquiry from a government buyer looking to purchase 5000 MT of refined sugar. This is a clear commercial enquiry and request for quotation, so I classify it as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 781,
+      "output_tokens": 62,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005455
+    }
+  },
+  {
+    "id": 7,
+    "name": "Procurement",
+    "email": "procure@bakery.com",
+    "create_date": "2026-07-27T23:58:05.741795+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-006",
+    "original_subject": "Monthly Supply Contract",
+    "confidence": 0.95,
+    "reasoning": "The email is from a procurement team at a bakery company, indicating they are interested in purchasing 10 tons of brown sugar on a monthly basis. This is a clear commercial enquiry about our products, so I classify it as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 778,
+      "output_tokens": 68,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0055899999999999995
+    }
+  },
+  {
+    "id": 8,
+    "name": "Factory",
+    "email": "ops@bev.com",
+    "create_date": "2026-07-27T23:58:11.128403+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-007",
+    "original_subject": "Liquid Sugar bulk pricing",
+    "confidence": 0.95,
+    "reasoning": "The email indicates that the sender is interested in purchasing a large quantity of 50,000 liters of liquid sugar per month for their beverage plant, which is a clear commercial enquiry about our products. This should be classified as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 777,
+      "output_tokens": 69,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00561
+    }
+  },
+  {
+    "id": 9,
+    "name": "Retailer",
+    "email": "owner@supermarket.com",
+    "create_date": "2026-07-27T23:58:17.280293+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-008",
+    "original_subject": "Product Catalogue request",
+    "confidence": 0.95,
+    "reasoning": "The sender is a retailer requesting our product catalogue and distributor prices, which indicates a clear commercial interest in our products. This is a typical lead inquiry, as the sender is looking to potentially purchase our products for their retail business.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 771,
+      "output_tokens": 65,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00548
+    }
+  },
+  {
+    "id": 10,
+    "name": "Import",
+    "email": "import@europe.com",
+    "create_date": "2026-07-27T23:58:23.575801+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-009",
+    "original_subject": "Export capabilities to EU",
+    "confidence": 0.95,
+    "reasoning": "The email is a clear request for a quotation on raw sugar, indicating a commercial interest in purchasing our products. The sender is asking about our EU export capabilities, which suggests they are looking to import our sugar. This is a genuine lead for a potential sale.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 773,
+      "output_tokens": 71,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00564
+    }
+  },
+  {
+    "id": 11,
+    "name": "Bakery",
+    "email": "sales@sweettooth.com",
+    "create_date": "2026-07-27T23:58:29.750222+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-010",
+    "original_subject": "Sample request",
+    "confidence": 0.95,
+    "reasoning": "The email indicates that the sender is interested in purchasing our refined sugar products, specifically requesting a sample before placing a bulk order. This demonstrates clear commercial intent, so I have classified it as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 777,
+      "output_tokens": 58,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0053349999999999995
+    }
+  },
+  {
+    "id": 12,
+    "name": "Distributor",
+    "email": "dist@region.com",
+    "create_date": "2026-07-27T23:58:36.205494+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-011",
+    "original_subject": "Exclusive distributorship",
+    "confidence": 0.95,
+    "reasoning": "The sender is expressing a clear commercial interest in becoming an exclusive distributor for our products in their region. This is a genuine lead for a potential business relationship, so I have classified it as Lead with high confidence.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 772,
+      "output_tokens": 61,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005385
+    }
+  },
+  {
+    "id": 13,
+    "name": "Sweets",
+    "email": "purchase@sweets.com",
+    "create_date": "2026-07-27T23:58:42.417294+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-012",
+    "original_subject": "RFQ: 50 MT Brown Sugar",
+    "confidence": 0.95,
+    "reasoning": "This email is a clear request for a quotation on 50 MT of brown sugar, indicating a genuine commercial interest in purchasing our products. The sender is explicitly asking for pricing information, which aligns with the Lead classification criteria. There is no mention of any existing customer issues or unrelated requests, so I am highly confident this should be categorized as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 780,
+      "output_tokens": 93,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.006225
+    }
+  },
+  {
+    "id": 14,
+    "name": "Corporate",
+    "email": "gifts@corp.com",
+    "create_date": "2026-07-27T23:58:49.102100+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-013",
+    "original_subject": "Corporate gifting bulk order",
+    "confidence": 0.95,
+    "reasoning": "This email is a clear request for a bulk order of our premium sugar cubes, indicating a commercial interest in our products. The sender is interested in purchasing a large quantity (2000 boxes) of our sugar cubes for corporate gifting purposes. This aligns with the Lead classification criteria as the sender is making a commercial enquiry about our products.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 777,
+      "output_tokens": 90,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.006135
+    }
+  },
+  {
+    "id": 15,
+    "name": "Trading",
+    "email": "trade@global.com",
+    "create_date": "2026-07-27T23:58:55.005944+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-014",
+    "original_subject": "Tender for Sugar Supply",
+    "confidence": 0.95,
+    "reasoning": "The email indicates that the sender is participating in a global tender and needs a quote from the company for sugar supply. This suggests a clear commercial interest in purchasing the company's sugar products, which qualifies as a lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 773,
+      "output_tokens": 62,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005415
+    }
+  },
+  {
+    "id": 16,
+    "name": "Vendor",
+    "email": "vendor@platform.com",
+    "create_date": "2026-07-27T23:59:02.079624+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-015",
+    "original_subject": "Become a vendor",
+    "confidence": 0.9,
+    "reasoning": "This email is a lead as the sender is expressing interest in becoming a vendor and selling our sugar products on their B2B wholesale platform. They are requesting to discuss pricing, which indicates a genuine commercial interest in our offerings.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 774,
+      "output_tokens": 63,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005445
+    }
+  },
+  {
+    "id": 17,
+    "name": "Restaurant",
+    "email": "chef@diner.com",
+    "create_date": "2026-07-27T23:59:08.038593+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-016",
+    "original_subject": "Sugar packets for restaurant",
+    "confidence": 0.9,
+    "reasoning": "This email is a lead as the sender is inquiring about purchasing a large quantity of our sugar products (50,000 single-serve sugar sachets per month) for their restaurant business. This represents a genuine commercial interest in our offerings, so it should be classified as a lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 776,
+      "output_tokens": 76,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00578
+    }
+  },
+  {
+    "id": 18,
+    "name": "Beverages",
+    "email": "supply@drink.com",
+    "create_date": "2026-07-27T23:59:14.223418+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-017",
+    "original_subject": "Availability of industrial sugar",
+    "confidence": 0.95,
+    "reasoning": "The email is clearly a commercial inquiry about purchasing our industrial sugar product in large quantities (2 truckloads). The sender is interested in our product and wants to know the availability and packaging details, which indicates a genuine lead for a potential sale.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 777,
+      "output_tokens": 69,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00561
+    }
+  },
+  {
+    "id": 19,
+    "name": "Caterer",
+    "email": "cater@events.com",
+    "create_date": "2026-07-27T23:59:20.303718+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-018",
+    "original_subject": "Event supply",
+    "confidence": 0.95,
+    "reasoning": "The email indicates that the sender is interested in purchasing a large quantity of our sugar products for an upcoming catering event. This is a clear commercial enquiry, and I am very confident that the primary intent is a lead for a potential bulk purchase.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 776,
+      "output_tokens": 68,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00558
+    }
+  },
+  {
+    "id": 20,
+    "name": "Hospitality",
+    "email": "purchase@hotel.com",
+    "create_date": "2026-07-27T23:59:27.691554+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-019",
+    "original_subject": "Annual contract renewal",
+    "confidence": 0.95,
+    "reasoning": "The email indicates that the sender is interested in signing an annual contract for their 5 hotels, which suggests a genuine commercial interest in our products. The request for a rate card further confirms this. Therefore, I have classified this as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 774,
+      "output_tokens": 68,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00557
+    }
+  },
+  {
+    "id": 21,
+    "name": "Reseller",
+    "email": "resell@market.com",
+    "create_date": "2026-07-27T23:59:35.923392+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-020",
+    "original_subject": "Reseller terms",
+    "confidence": 0.95,
+    "reasoning": "The email contains a specific query about our reseller terms, particularly the minimum order quantity. This indicates a commercial interest in potentially becoming a reseller of our products, which falls under the Lead classification.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 766,
+      "output_tokens": 58,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00528
+    }
+  },
+  {
+    "id": 1,
+    "name": "Enquiry",
+    "email": "enquiry@example.com",
+    "create_date": "2026-07-28T00:12:05.130263+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-000",
+    "original_subject": "Product Enquiry",
+    "confidence": 0.95,
+    "reasoning": "The email clearly indicates the sender is interested in purchasing 500 bags of sugar, which is a commercial enquiry about our products. This is a strong lead for a potential sale.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 765,
+      "output_tokens": 55,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0052
+    }
+  },
+  {
+    "id": 2,
+    "name": "Buyer",
+    "email": "buyer@example.com",
+    "create_date": "2026-07-28T00:12:13.372631+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-001",
+    "original_subject": "Need quotation for 100 MT",
+    "confidence": 0.95,
+    "reasoning": "The email clearly expresses interest in purchasing 100 metric tons of refined sugar, which is one of our core products. This is a direct product enquiry and commercial request, so it should be classified as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 773,
+      "output_tokens": 63,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00544
+    }
+  },
+  {
+    "id": 3,
+    "name": "Wholesale",
+    "email": "ws@example.com",
+    "create_date": "2026-07-28T00:12:19.494049+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-002",
+    "original_subject": "Looking for wholesale supply",
+    "confidence": 0.95,
+    "reasoning": "The email is from a potential new customer who is looking to purchase our products in bulk or wholesale quantities. The sender expresses interest in discussing rates, indicating a clear commercial intent to establish a business relationship. This aligns with the criteria for a Lead classification.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 771,
+      "output_tokens": 70,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005605
+    }
+  },
+  {
+    "id": 4,
+    "name": "Export",
+    "email": "ex@example.com",
+    "create_date": "2026-07-28T00:12:25.940448+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-003",
+    "original_subject": "Can you export to Dubai?",
+    "confidence": 0.95,
+    "reasoning": "The email indicates that the sender is based in the UAE and is interested in importing the company's products. This is a clear commercial enquiry about the company's export capabilities, which fits the criteria for a Lead classification.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 774,
+      "output_tokens": 62,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00542
+    }
+  },
+  {
+    "id": 5,
+    "name": "Dealer",
+    "email": "dlr@example.com",
+    "create_date": "2026-07-28T00:12:32.756813+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-004",
+    "original_subject": "Interested in dealership",
+    "confidence": 0.95,
+    "reasoning": "The email indicates that the sender is interested in becoming a dealer for our products, which represents a clear commercial enquiry and interest in purchasing our products. This aligns with the Lead classification criteria.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 775,
+      "output_tokens": 57,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0053
+    }
+  },
+  {
+    "id": 6,
+    "name": "Tender",
+    "email": "gov@example.com",
+    "create_date": "2026-07-28T00:12:38.797548+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-005",
+    "original_subject": "Government Tender Enquiry",
+    "confidence": 0.95,
+    "reasoning": "This email is a government tender enquiry for the supply of a large quantity of 5000 MT of refined sugar. This indicates a clear commercial interest in purchasing our products, which classifies it as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 781,
+      "output_tokens": 62,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005455
+    }
+  },
+  {
+    "id": 7,
+    "name": "Procurement",
+    "email": "procure@bakery.com",
+    "create_date": "2026-07-28T00:12:46.144494+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-006",
+    "original_subject": "Monthly Supply Contract",
+    "confidence": 0.95,
+    "reasoning": "This email is a clear commercial enquiry about purchasing 10 tons of brown sugar per month, which indicates a genuine interest in our products. The sender is requesting pricing, which is a typical lead generation activity. Therefore, I classify this as a Lead with very high confidence.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 778,
+      "output_tokens": 74,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00574
+    }
+  },
+  {
+    "id": 8,
+    "name": "Factory",
+    "email": "ops@bev.com",
+    "create_date": "2026-07-28T00:12:52.658866+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-007",
+    "original_subject": "Liquid Sugar bulk pricing",
+    "confidence": 0.95,
+    "reasoning": "The email is a clear inquiry about purchasing liquid sugar in bulk quantities, indicating a genuine commercial interest from the sender. This meets the criteria for classification as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 777,
+      "output_tokens": 51,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00516
+    }
+  },
+  {
+    "id": 9,
+    "name": "Retailer",
+    "email": "owner@supermarket.com",
+    "create_date": "2026-07-28T00:12:59.666428+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-008",
+    "original_subject": "Product Catalogue request",
+    "confidence": 0.95,
+    "reasoning": "The sender is requesting information about our product catalogue and distributor prices, indicating genuine commercial interest in purchasing our retail products. This is a clear lead for a potential new customer.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 771,
+      "output_tokens": 53,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00518
+    }
+  },
+  {
+    "id": 10,
+    "name": "Import",
+    "email": "import@europe.com",
+    "create_date": "2026-07-28T00:13:05.671896+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-009",
+    "original_subject": "Export capabilities to EU",
+    "confidence": 0.95,
+    "reasoning": "This email is a clear lead as the sender is interested in sourcing raw sugar from us and has requested a quotation. The sender has expressed a specific commercial interest in our products, indicating they are looking to start a business relationship.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 773,
+      "output_tokens": 65,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00549
+    }
+  },
+  {
+    "id": 11,
+    "name": "Bakery",
+    "email": "sales@sweettooth.com",
+    "create_date": "2026-07-28T00:13:11.774832+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-010",
+    "original_subject": "Sample request",
+    "confidence": 0.95,
+    "reasoning": "The email indicates the sender is interested in purchasing our refined sugar products, requesting a sample before placing a bulk order. This is a clear commercial enquiry, so I have classified it as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 777,
+      "output_tokens": 58,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0053349999999999995
+    }
+  },
+  {
+    "id": 12,
+    "name": "Distributor",
+    "email": "dist@region.com",
+    "create_date": "2026-07-28T00:13:19.582317+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-011",
+    "original_subject": "Exclusive distributorship",
+    "confidence": 0.95,
+    "reasoning": "The email is from a distributor who wants to become an exclusive distributor for our brand in their region. This indicates a clear commercial interest and desire to establish a business relationship, which aligns with the Lead classification criteria.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 772,
+      "output_tokens": 63,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005435000000000001
+    }
+  },
+  {
+    "id": 13,
+    "name": "Sweets",
+    "email": "purchase@sweets.com",
+    "create_date": "2026-07-28T00:13:25.661285+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-012",
+    "original_subject": "RFQ: 50 MT Brown Sugar",
+    "confidence": 0.95,
+    "reasoning": "The email is a clear request for a quotation on 50 MT of brown sugar, indicating a commercial interest in purchasing our products. This should be classified as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 780,
+      "output_tokens": 54,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0052499999999999995
+    }
+  },
+  {
+    "id": 14,
+    "name": "Corporate",
+    "email": "gifts@corp.com",
+    "create_date": "2026-07-28T00:13:32.048049+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-013",
+    "original_subject": "Corporate gifting bulk order",
+    "confidence": 0.95,
+    "reasoning": "This email clearly expresses interest in purchasing a large quantity of 2000 boxes of our premium sugar cubes for corporate gifting purposes. This is a genuine commercial enquiry, indicating the sender's intent to make a bulk purchase of our products. Therefore, I classify this as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 777,
+      "output_tokens": 78,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005835
+    }
+  },
+  {
+    "id": 15,
+    "name": "Trading",
+    "email": "trade@global.com",
+    "create_date": "2026-07-28T00:13:39.093019+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-014",
+    "original_subject": "Tender for Sugar Supply",
+    "confidence": 0.9,
+    "reasoning": "The sender is expressing interest in purchasing sugar from us as part of a tender process. This indicates a clear commercial intent and interest in our products, so I classify this as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 773,
+      "output_tokens": 55,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00524
+    }
+  },
+  {
+    "id": 16,
+    "name": "Vendor",
+    "email": "vendor@platform.com",
+    "create_date": "2026-07-28T00:13:45.074849+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-015",
+    "original_subject": "Become a vendor",
+    "confidence": 0.9,
+    "reasoning": "The email indicates the sender is interested in purchasing the company's sugar products for their B2B wholesale platform. This suggests a genuine commercial interest, which classifies it as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 774,
+      "output_tokens": 55,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005245
+    }
+  },
+  {
+    "id": 17,
+    "name": "Restaurant",
+    "email": "chef@diner.com",
+    "create_date": "2026-07-28T00:13:51.302978+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-016",
+    "original_subject": "Sugar packets for restaurant",
+    "confidence": 0.95,
+    "reasoning": "The email is a product inquiry for 50,000 custom sugar sachets per month, which indicates a commercial interest in purchasing our products. This is a clear lead request, as the sender is looking to make a bulk purchase for their restaurant business.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 776,
+      "output_tokens": 69,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005605000000000001
+    }
+  },
+  {
+    "id": 18,
+    "name": "Beverages",
+    "email": "supply@drink.com",
+    "create_date": "2026-07-28T00:13:58.360827+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-017",
+    "original_subject": "Availability of industrial sugar",
+    "confidence": 0.95,
+    "reasoning": "The email is a clear commercial enquiry about purchasing industrial grade sugar in 50kg bags, with a specific request for 2 truckloads. This indicates a genuine interest in our industrial sugar products, which classifies it as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 777,
+      "output_tokens": 69,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00561
+    }
+  },
+  {
+    "id": 19,
+    "name": "Caterer",
+    "email": "cater@events.com",
+    "create_date": "2026-07-28T00:14:04.782446+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-018",
+    "original_subject": "Event supply",
+    "confidence": 0.95,
+    "reasoning": "The email is a request for a large, commercial purchase of 5 tons of our product, indicating a genuine interest in our offerings. This is a clear lead for a potential bulk order.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 776,
+      "output_tokens": 57,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005305000000000001
+    }
+  },
+  {
+    "id": 20,
+    "name": "Hospitality",
+    "email": "purchase@hotel.com",
+    "create_date": "2026-07-28T00:14:11.214725+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-019",
+    "original_subject": "Annual contract renewal",
+    "confidence": 0.95,
+    "reasoning": "The email indicates that the sender is interested in signing an annual contract for their 5 hotels, which suggests a commercial interest in purchasing our products. This is a clear lead for a potential bulk or wholesale purchase.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 774,
+      "output_tokens": 61,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0053950000000000005
+    }
+  },
+  {
+    "id": 21,
+    "name": "Reseller",
+    "email": "resell@market.com",
+    "create_date": "2026-07-28T00:14:17.332908+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-020",
+    "original_subject": "Reseller terms",
+    "confidence": 0.95,
+    "reasoning": "The email is inquiring about the minimum order quantity for resellers, which indicates commercial interest in purchasing our products. This is a clear lead as the sender is interested in becoming a reseller or distributor of our products.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 766,
+      "output_tokens": 63,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005405
+    }
   }
 ]

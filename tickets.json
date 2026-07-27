@@ -206,5 +206,445 @@
       "cache_read_input_tokens": 0,
       "cost_usd": 0.00763
     }
+  },
+  {
+    "id": 1,
+    "message_id": "msg-021",
+    "from": "Customer A <custA@example.com>",
+    "subject": "Shipment delayed",
+    "body": "My order #12345 was supposed to arrive yesterday but I haven't received it yet.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-27T23:59:42.500832+05:30",
+    "confidence": 0.95,
+    "reasoning": "This email is from an existing customer who is requesting help with a delayed shipment for their existing order #12345. This is clearly a support-related issue, and not a new commercial enquiry or unrelated request. The intent is straightforward, indicating a high confidence level.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 774,
+      "output_tokens": 75,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005745
+    }
+  },
+  {
+    "id": 2,
+    "message_id": "msg-022",
+    "from": "Customer B <custB@example.com>",
+    "subject": "Invoice missing",
+    "body": "The delivery was received, but the invoice was not attached. Can you email it?",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-27T23:59:49.498630+05:30",
+    "confidence": 0.95,
+    "reasoning": "The email is from an existing customer requesting help with an invoice, which is a support-related issue. The sender has already received the delivery, indicating an existing purchase, and is simply asking for the invoice to be emailed. This is clearly a support request, and the intent is very clear.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 770,
+      "output_tokens": 78,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0058
+    }
+  },
+  {
+    "id": 3,
+    "message_id": "msg-023",
+    "from": "Customer C <custC@example.com>",
+    "subject": "Password reset",
+    "body": "I am locked out of my wholesale ordering portal account. Can you help reset my password?",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-27T23:59:57.309645+05:30",
+    "confidence": 0.95,
+    "reasoning": "The email indicates that the sender is an existing customer who is having trouble accessing their wholesale ordering account. This is a support issue related to an existing purchase, so it should be classified as Support.",
+    "priority": "Urgent",
+    "token_usage": {
+      "input_tokens": 771,
+      "output_tokens": 57,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00528
+    }
+  },
+  {
+    "id": 4,
+    "message_id": "msg-024",
+    "from": "Complaint <comp@angry.com>",
+    "subject": "Quality issue - Urgent",
+    "body": "The last batch of sugar bags we received were damp and clumpy. This is unacceptable. Order #999.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:00:04.913646+05:30",
+    "confidence": 0.95,
+    "reasoning": "The email is from an existing customer reporting a quality issue with a previous order, which is a support-related request. The sender is asking for help with an existing purchase, so this should be classified as Support.",
+    "priority": "Urgent",
+    "token_usage": {
+      "input_tokens": 782,
+      "output_tokens": 61,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005435000000000001
+    }
+  },
+  {
+    "id": 5,
+    "message_id": "msg-025",
+    "from": "Returns <return@shop.com>",
+    "subject": "Damaged goods in transit",
+    "body": "3 bags of refined sugar were torn during unloading. I want a refund for the damaged goods.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:00:11.039108+05:30",
+    "confidence": 0.95,
+    "reasoning": "The email is from an existing customer requesting a refund for damaged goods, which is a support request. The sender's intent is clear - they are asking for help with an existing purchase issue.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 777,
+      "output_tokens": 57,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0053100000000000005
+    }
+  },
+  {
+    "id": 6,
+    "message_id": "msg-026",
+    "from": "Accounts <acct@buyer.com>",
+    "subject": "Incorrect billing",
+    "body": "Your invoice INV-004 charges us for 50 tons, but we only ordered and received 40 tons.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:00:17.484023+05:30",
+    "confidence": 0.95,
+    "reasoning": "This email is from an existing customer regarding an issue with their previous order and invoice. The sender is requesting help with an incorrect billing amount, which is a support-related issue. There is no indication of a new product inquiry or commercial interest, so this should be classified as Support.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 780,
+      "output_tokens": 75,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005775
+    }
+  },
+  {
+    "id": 7,
+    "message_id": "msg-027",
+    "from": "Logistics <log@trans.com>",
+    "subject": "Missing items",
+    "body": "Our driver noted that the pallet was short by 5 bags. Please check your loading dock.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:00:23.814507+05:30",
+    "confidence": 0.95,
+    "reasoning": "This email is from an existing customer reporting a delivery issue with missing items. The sender is requesting support regarding a shipment problem, which indicates they have already purchased products from us. Therefore, this should be classified as a Support inquiry.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 773,
+      "output_tokens": 65,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00549
+    }
+  },
+  {
+    "id": 8,
+    "message_id": "msg-028",
+    "from": "User <user@portal.com>",
+    "subject": "Website down?",
+    "body": "I'm trying to track my order but the dealer portal keeps giving a 500 error.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:00:30.738847+05:30",
+    "confidence": 0.95,
+    "reasoning": "The email indicates that the sender is an existing customer trying to track their order, but is experiencing technical issues with the dealer portal. This is a clear support request, as the sender is seeking help with an existing purchase or order.",
+    "priority": "Urgent",
+    "token_usage": {
+      "input_tokens": 771,
+      "output_tokens": 64,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005455
+    }
+  },
+  {
+    "id": 9,
+    "message_id": "msg-029",
+    "from": "Client <client@corp.com>",
+    "subject": "Modify my order",
+    "body": "Can I add 2 more tons of brown sugar to my pending order #777 before it ships?",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:00:36.835553+05:30",
+    "confidence": 0.95,
+    "reasoning": "The email indicates that the sender is an existing customer requesting a modification to an existing order, which is a support request. The sender is not making a new commercial enquiry, but rather seeking assistance with an existing purchase, so this should be classified as a Support request.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 775,
+      "output_tokens": 72,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0056749999999999995
+    }
+  },
+  {
+    "id": 10,
+    "message_id": "msg-030",
+    "from": "Store <store@retail.com>",
+    "subject": "Replacement request",
+    "body": "The sugar sachets we got yesterday had the wrong branding. We need them replaced ASAP.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:00:43.957785+05:30",
+    "confidence": 0.95,
+    "reasoning": "The email is from an existing customer requesting a replacement for a product they already purchased, so this should be classified as a Support request.",
+    "priority": "Urgent",
+    "token_usage": {
+      "input_tokens": 773,
+      "output_tokens": 45,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00499
+    }
+  },
+  {
+    "id": 11,
+    "message_id": "msg-031",
+    "from": "Manager <mgr@branch.com>",
+    "subject": "Where is my truck?",
+    "body": "The truck was dispatched 2 days ago but hasn't reached our warehouse.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:00:50.598844+05:30",
+    "confidence": 0.95,
+    "reasoning": "The sender is an existing customer inquiring about a delivery issue with an order, which is a support request. They are not making a new purchase inquiry, so this should be classified as Support.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 772,
+      "output_tokens": 57,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005285
+    }
+  },
+  {
+    "id": 12,
+    "message_id": "msg-032",
+    "from": "Billing <bill@corp.com>",
+    "subject": "Need ledger statement",
+    "body": "Please send the ledger statement for our account for the last financial year.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:00:57.154869+05:30",
+    "confidence": 0.95,
+    "reasoning": "The email is from an existing customer requesting a ledger statement, which is a support request related to their previous purchases. There is no indication of a new commercial inquiry or lead, so this should be classified as a Support request.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 769,
+      "output_tokens": 64,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005445
+    }
+  },
+  {
+    "id": 13,
+    "message_id": "msg-033",
+    "from": "Support <supp@client.com>",
+    "subject": "Account suspension",
+    "body": "Why is my purchasing account suspended? We cleared all dues last week.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:01:03.359029+05:30",
+    "confidence": 0.95,
+    "reasoning": "The email is from an existing customer asking about a problem with their purchasing account, specifically that it has been suspended. This indicates they are an existing customer seeking support for an issue they are facing, so I classify this as a Support request.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 766,
+      "output_tokens": 66,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0054800000000000005
+    }
+  },
+  {
+    "id": 14,
+    "message_id": "msg-034",
+    "from": "Admin <admin@buy.com>",
+    "subject": "Change delivery address",
+    "body": "Please change the delivery address for order #444 to our new warehouse in Pune.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:01:09.874068+05:30",
+    "confidence": 0.95,
+    "reasoning": "This email is from an existing customer requesting a change to the delivery address for an existing order, which is a support issue. The sender is an existing customer asking for help with an existing purchase, so this should be classified as Support.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 770,
+      "output_tokens": 65,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005475
+    }
+  },
+  {
+    "id": 15,
+    "message_id": "msg-035",
+    "from": "Quality <qa@food.com>",
+    "subject": "Certificate of Analysis missing",
+    "body": "You forgot to attach the COA for the liquid sugar batch delivered today. Send it now.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:01:16.127139+05:30",
+    "confidence": 0.95,
+    "reasoning": "The sender is an existing customer reporting a problem with a recent delivery, specifically that the Certificate of Analysis (COA) was missing. This indicates they have already purchased from us and are requesting support for an existing issue, so I classify this as Support.",
+    "priority": "High",
+    "token_usage": {
+      "input_tokens": 772,
+      "output_tokens": 69,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005585
+    }
+  },
+  {
+    "id": 16,
+    "message_id": "msg-041",
+    "from": "IT <it@services.com>",
+    "subject": "Laptop repair quote",
+    "body": "The motherboard replacement for your employee's laptop will cost $200.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:01:34.063291+05:30",
+    "confidence": 0.95,
+    "reasoning": "This email is from an existing customer (the IT department) requesting a repair/replacement quote for one of their employee's laptops. This indicates they are an existing customer seeking support for a product they have already purchased from us, which falls under the Support classification.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 767,
+      "output_tokens": 71,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00561
+    }
+  },
+  {
+    "id": 1,
+    "message_id": "msg-021",
+    "from": "Customer A <custA@example.com>",
+    "subject": "Shipment delayed",
+    "body": "My order #12345 was supposed to arrive yesterday but I haven't received it yet.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:14:23.639919+05:30",
+    "confidence": 0.95,
+    "reasoning": "The email indicates that the sender is an existing customer who has an issue with a delayed shipment for order #12345. This is a clear support request, as the sender is seeking help regarding an existing purchase rather than a new commercial enquiry.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 774,
+      "output_tokens": 68,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00557
+    }
+  },
+  {
+    "id": 2,
+    "message_id": "msg-022",
+    "from": "Customer B <custB@example.com>",
+    "subject": "Invoice missing",
+    "body": "The delivery was received, but the invoice was not attached. Can you email it?",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:14:29.794322+05:30",
+    "confidence": 0.95,
+    "reasoning": "This email is from an existing customer requesting help with a missing invoice. The sender has already received a delivery, indicating they are an existing customer, and they are asking for the associated invoice to be emailed to them. This is a clear support request, so I classify it as Support with high confidence.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 770,
+      "output_tokens": 79,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005825
+    }
+  },
+  {
+    "id": 3,
+    "message_id": "msg-023",
+    "from": "Customer C <custC@example.com>",
+    "subject": "Password reset",
+    "body": "I am locked out of my wholesale ordering portal account. Can you help reset my password?",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:14:36.634851+05:30",
+    "confidence": 0.95,
+    "reasoning": "The email is from an existing customer requesting assistance with resetting their password for the wholesale ordering portal, which indicates they are an existing customer seeking support. There is no mention of any new commercial interest or product enquiries, so this should be classified as a Support request.",
+    "priority": "Urgent",
+    "token_usage": {
+      "input_tokens": 771,
+      "output_tokens": 72,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005655
+    }
+  },
+  {
+    "id": 4,
+    "message_id": "msg-024",
+    "from": "Complaint <comp@angry.com>",
+    "subject": "Quality issue - Urgent",
+    "body": "The last batch of sugar bags we received were damp and clumpy. This is unacceptable. Order #999.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:14:42.932411+05:30",
+    "confidence": 0.95,
+    "reasoning": "This email is from an existing customer reporting a quality issue with a previous order. The sender is requesting help with an existing order, which classifies it as a support request.",
+    "priority": "Urgent",
+    "token_usage": {
+      "input_tokens": 782,
+      "output_tokens": 53,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005235
+    }
+  },
+  {
+    "id": 5,
+    "message_id": "msg-025",
+    "from": "Returns <return@shop.com>",
+    "subject": "Damaged goods in transit",
+    "body": "3 bags of refined sugar were torn during unloading. I want a refund for the damaged goods.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:14:49.210166+05:30",
+    "confidence": 0.95,
+    "reasoning": "The email is from an existing customer reporting damaged goods and requesting a refund, which is a support issue. The intent is clear and there is no mention of any new commercial inquiry, so this should be classified as Support.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 777,
+      "output_tokens": 63,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00546
+    }
+  },
+  {
+    "id": 6,
+    "message_id": "msg-026",
+    "from": "Accounts <acct@buyer.com>",
+    "subject": "Incorrect billing",
+    "body": "Your invoice INV-004 charges us for 50 tons, but we only ordered and received 40 tons.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-28T00:14:55.700804+05:30",
+    "confidence": 0.95,
+    "reasoning": "The email indicates the sender is an existing customer who received an incorrect invoice. They are requesting help with a billing issue related to an existing order, which falls under the Support category.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 780,
+      "output_tokens": 54,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0052499999999999995
+    }
   }
 ]

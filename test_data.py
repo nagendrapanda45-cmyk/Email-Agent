@@ -284,7 +284,7 @@ TEST_EMAILS = [
     {
         "from": "Ambiguous <huh@what.com>",
         "subject": "Hello",
-        "body": "Call me back.",
+        "body": "Call me back about the job posting.",
         "message_id": "msg-047",
     },
     {
@@ -308,3 +308,6 @@ TEST_EMAILS = [
 ]
 
 EXPECTED_CLASSIFICATIONS = ["lead"] * 21 + ["support"] * 15 + ["other"] * 15
+EXPECTED_CLASSIFICATIONS[41] = "support"  # Laptop repair quote (internal support)
+EXPECTED_CLASSIFICATIONS[46] = "failed"   # Empty
+EXPECTED_CLASSIFICATIONS[48] = "failed"   # Empty body
