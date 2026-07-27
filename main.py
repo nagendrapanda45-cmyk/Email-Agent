@@ -212,47 +212,28 @@ def print_result(state: dict):
 
 TEST_EMAILS = [
     {
-        "from": "Sarah Johnson <sarah.johnson@example.com>",
-        "subject": "Cannot log in to my account - urgent!",
-        "body": (
-            "Hi support team,\n\n"
-            "I've been locked out of my account since yesterday and I have a "
-            "critical deadline in 2 hours. I've tried resetting my password three "
-            "times but the reset email never arrives. I'm a paid subscriber on the "
-            "Professional plan. This is really urgent — please help ASAP!\n\n"
-            "Account email: sarah.johnson@example.com\n"
-            "Best, Sarah"
-        ),
+        "from": "Customer A <a@example.com>",
+        "subject": "Need Sugar pricing",
+        "body": "Hi, can you provide the latest pricing for sugar?",
         "message_id": "msg-001",
     },
     {
-        "from": "Michael Chen <m.chen@bigcorp.com>",
-        "subject": "Enterprise pricing inquiry - 500 seat license",
-        "body": (
-            "Hello,\n\n"
-            "I'm the CTO at BigCorp and we're evaluating solutions for our 500-person "
-            "engineering team. We're interested in your enterprise plan and would like "
-            "to schedule a demo with your sales team. Could you send over enterprise "
-            "pricing, volume discount information, and SSO/SAML capabilities?\n\n"
-            "We're looking to make a decision by end of quarter.\n\n"
-            "Best regards,\nMichael Chen\nCTO, BigCorp"
-        ),
+        "from": "Customer B <b@example.com>",
+        "subject": "Looking for bulk Sugar supply",
+        "body": "Hello, we are looking for a bulk supply of sugar for our factory. What are your wholesale rates?",
         "message_id": "msg-002",
     },
     {
-        "from": "Alex Rivera <alex@startup.io>",
-        "subject": "Question about my account + referral for a colleague",
-        "body": (
-            "Hey,\n\n"
-            "Two things:\n\n"
-            "1) I'm having trouble finding the bulk export feature in my dashboard — "
-            "can you point me to where that is?\n\n"
-            "2) My colleague at another company is very interested in your product "
-            "and would love to see a demo. Her name is Dana Park (dana@otherco.com) "
-            "and she leads a 200-person ops team looking for exactly what you offer.\n\n"
-            "Thanks!\nAlex"
-        ),
+        "from": "Customer C <c@example.com>",
+        "subject": "Need password reset",
+        "body": "Hi, I cannot access my wholesale portal account. Please help me reset my password.",
         "message_id": "msg-003",
+    },
+    {
+        "from": "Spammer <spam@example.com>",
+        "subject": "Buy cheap watches",
+        "body": "Click here to buy cheap watches!",
+        "message_id": "msg-004",
     },
 ]
 

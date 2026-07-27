@@ -13,10 +13,8 @@ from main import TEST_EMAILS, run_email
 from mock_odoo import odoo_client
 from routing import ticket_queue
 
-# Expected: support, lead, support (email #3 primary intent is a product question)
-# Claude may classify the mixed email as "lead" if it weights the referral higher;
-# we assert only that confidence >= 0.5 and no errors for the mixed case.
-EXPECTED_CLASSIFICATIONS = ["support", "lead", None]  # None = accept any valid classification
+# Expected: lead, lead, support, unknown
+EXPECTED_CLASSIFICATIONS = ["lead", "lead", "support", "unknown"]
 
 
 def run_tests():

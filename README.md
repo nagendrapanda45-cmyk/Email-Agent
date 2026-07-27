@@ -117,14 +117,14 @@ All output is written to the directory set by `OUTPUT_DIR` (default: project roo
   {
     "id": 1,
     "message_id": "<abc@mail.gmail.com>",
-    "from": "Sarah Johnson <sarah@example.com>",
-    "subject": "Cannot log in to my account",
-    "body": "...",
+    "from": "Customer C <c@example.com>",
+    "subject": "Need password reset",
+    "body": "Hi, I cannot access my wholesale portal account. Please help me reset my password.",
     "classification": "support",
     "status": "open",
     "created_at": "2026-05-11T10:32:00+00:00",
     "confidence": 0.97,
-    "reasoning": "Existing customer locked out with an urgent deadline."
+    "reasoning": "Existing customer needing help with account access."
   }
 ]
 ```
@@ -135,14 +135,14 @@ All output is written to the directory set by `OUTPUT_DIR` (default: project roo
 [
   {
     "id": 1,
-    "name": "Michael Chen",
-    "email": "m.chen@bigcorp.com",
+    "name": "Customer A",
+    "email": "a@example.com",
     "stage": "new",
     "tags": ["email-lead"],
-    "original_subject": "Enterprise pricing inquiry - 500 seat license",
+    "original_subject": "Need Sugar pricing",
     "created_at": "2026-05-11T10:33:00+00:00",
-    "confidence": 0.95,
-    "reasoning": "CTO requesting enterprise pricing and a demo."
+    "confidence": 0.99,
+    "reasoning": "Clear inquiry about purchasing and pricing for Sugar."
   }
 ]
 ```
