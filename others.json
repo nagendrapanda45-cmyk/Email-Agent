@@ -2576,5 +2576,209 @@
       "cache_read_input_tokens": 0,
       "cost_usd": 0.0053
     }
+  },
+  {
+    "message_id": "msg-036",
+    "from": "Applicant <app@example.com>",
+    "subject": "Job application",
+    "classification": "other",
+    "confidence": 0.95,
+    "reasoning": "This email is a job application, which is unrelated to our sugar products or business. It does not contain any commercial enquiry or request for support, so it should be classified as Other.",
+    "errors": [],
+    "failed_at": "2026-07-27T18:46:03.838281+00:00",
+    "token_usage": {
+      "input_tokens": 763,
+      "output_tokens": 57,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00524
+    }
+  },
+  {
+    "message_id": "msg-037",
+    "from": "Travel <travel@example.com>",
+    "subject": "Hotel booking",
+    "classification": "other",
+    "confidence": 0.9,
+    "reasoning": "This email is not about any of EID Parry's products or services. It appears to be a hotel booking confirmation, which is completely unrelated to the company's business. Therefore, I am classifying this as an \"Other\" email.",
+    "errors": [],
+    "failed_at": "2026-07-27T18:46:06.099732+00:00",
+    "token_usage": {
+      "input_tokens": 758,
+      "output_tokens": 69,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005515
+    }
+  },
+  {
+    "message_id": "msg-038",
+    "from": "Sales <sales@printers.com>",
+    "subject": "Printer sale",
+    "classification": "other",
+    "confidence": 0.9,
+    "reasoning": "This email is advertising the sale of printers, which is unrelated to EID Parry's core business of sugar manufacturing and distribution. There is no indication that the sender has any interest in purchasing EID Parry's products, so this should be classified as Other.",
+    "errors": [],
+    "failed_at": "2026-07-27T18:46:08.274121+00:00",
+    "token_usage": {
+      "input_tokens": 765,
+      "output_tokens": 75,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0057
+    }
+  },
+  {
+    "message_id": "msg-039",
+    "from": "Spam <win@lottery.com>",
+    "subject": "YOU WON!",
+    "classification": "other",
+    "confidence": 1.0,
+    "reasoning": "This email appears to be spam related to a lottery or prize claiming, which is completely unrelated to our business. There is no indication of any genuine commercial interest in our products. Therefore, I classify this as Other with very high confidence.",
+    "errors": [],
+    "failed_at": "2026-07-27T18:46:10.781781+00:00",
+    "token_usage": {
+      "input_tokens": 769,
+      "output_tokens": 66,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005495
+    }
+  },
+  {
+    "message_id": "msg-040",
+    "from": "HR <hr@agency.com>",
+    "subject": "Candidate profiles",
+    "classification": "other",
+    "confidence": 0.95,
+    "reasoning": "This email is about a job application and is completely unrelated to the company's business or products. It does not contain any commercial interest or requests for the company's products or services, so it should be classified as Other.",
+    "errors": [],
+    "failed_at": "2026-07-27T18:46:12.972573+00:00",
+    "token_usage": {
+      "input_tokens": 767,
+      "output_tokens": 63,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00541
+    }
+  },
+  {
+    "message_id": "msg-042",
+    "from": "Furniture <desk@office.com>",
+    "subject": "Ergonomic chairs",
+    "classification": "other",
+    "confidence": 0.9,
+    "reasoning": "This email is advertising ergonomic chairs, which is not related to our core business of manufacturing and distributing sugar products. The email does not contain any commercial enquiry about our sugar offerings or request for support on existing orders. Therefore, this email should be classified as Other.",
+    "errors": [],
+    "failed_at": "2026-07-27T18:46:21.414972+00:00",
+    "token_usage": {
+      "input_tokens": 767,
+      "output_tokens": 74,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005685
+    }
+  },
+  {
+    "message_id": "msg-043",
+    "from": "Bank <alerts@bank.com>",
+    "subject": "Account statement",
+    "classification": "other",
+    "confidence": 0.95,
+    "reasoning": "This email is from a bank sending the recipient their monthly account statement, which is unrelated to EID Parry's sugar business. There is no indication of any commercial interest or existing customer relationship, so this should be classified as Other.",
+    "errors": [],
+    "failed_at": "2026-07-27T18:46:23.924097+00:00",
+    "token_usage": {
+      "input_tokens": 758,
+      "output_tokens": 67,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005465
+    }
+  },
+  {
+    "message_id": "msg-044",
+    "from": "Newsletter <news@industry.com>",
+    "subject": "Weekly Sugar Trends",
+    "classification": "other",
+    "confidence": 0.95,
+    "reasoning": "This email is a newsletter about global sugar production trends, which is unrelated to any commercial interest or existing customer support request. It does not contain any lead generation or customer support elements, so I classify it as Other.",
+    "errors": [],
+    "failed_at": "2026-07-27T18:46:26.083688+00:00",
+    "token_usage": {
+      "input_tokens": 762,
+      "output_tokens": 62,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00536
+    }
+  },
+  {
+    "message_id": "msg-045",
+    "from": "Insurance <agent@insure.com>",
+    "subject": "Policy renewal",
+    "classification": "other",
+    "confidence": 0.95,
+    "reasoning": "This email is about renewing a factory fire insurance policy, which is completely unrelated to our sugar manufacturing and distribution business. It does not contain any commercial interest or requests related to our products, so it should be classified as Other.",
+    "errors": [],
+    "failed_at": "2026-07-27T18:46:28.406753+00:00",
+    "token_usage": {
+      "input_tokens": 764,
+      "output_tokens": 65,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005445
+    }
+  },
+  {
+    "message_id": "msg-047",
+    "from": "Ambiguous <huh@what.com>",
+    "subject": "Hello",
+    "classification": "other",
+    "confidence": 0.7,
+    "reasoning": "The email does not contain any information about purchasing our products or requesting support for an existing order. The email only mentions a job posting, which is unrelated to our business. Therefore, I classify this email as Other.",
+    "errors": [],
+    "failed_at": "2026-07-27T18:46:30.605453+00:00",
+    "token_usage": {
+      "input_tokens": 761,
+      "output_tokens": 62,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0053549999999999995
+    }
+  },
+  {
+    "message_id": "msg-049",
+    "from": "Marketing <promo@ad.com>",
+    "subject": "Boost your SEO",
+    "classification": "other",
+    "confidence": 1.0,
+    "reasoning": "This email is unrelated to our company's products and services. It appears to be a generic marketing email about SEO services, which is not relevant to our business. There is no mention of any interest in purchasing our sugar products, nor any indication that the sender is an existing customer requiring support. Therefore, this email should be classified as Other.",
+    "errors": [],
+    "failed_at": "2026-07-27T18:46:33.016204+00:00",
+    "token_usage": {
+      "input_tokens": 769,
+      "output_tokens": 88,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.006045
+    }
+  },
+  {
+    "message_id": "msg-050",
+    "from": "Event <invite@gala.com>",
+    "subject": "Charity Dinner",
+    "classification": "other",
+    "confidence": 0.95,
+    "reasoning": "This email is an invitation to a charity dinner event, which is completely unrelated to EID Parry's business of manufacturing and distributing sugar products. The email does not contain any commercial interest or requests regarding EID Parry's products, so it should be classified as Other.",
+    "errors": [],
+    "failed_at": "2026-07-27T18:46:35.151470+00:00",
+    "token_usage": {
+      "input_tokens": 765,
+      "output_tokens": 77,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00575
+    }
   }
 ]

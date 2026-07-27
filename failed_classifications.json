@@ -312,5 +312,33 @@
     ],
     "failed_at": "2026-07-27T18:32:10.610465+00:00",
     "token_usage": {}
+  },
+  {
+    "message_id": "msg-046",
+    "from": "Empty <no@body.com>",
+    "subject": "",
+    "classification": "failed",
+    "confidence": 0.0,
+    "reasoning": "skipped",
+    "errors": [
+      "[2026-07-28T00:16:28.458218+05:30] ingest_email: missing fields: ['subject', 'body']",
+      "[2026-07-27T18:46:28.459103+00:00] classify_email: skipping due to prior errors"
+    ],
+    "failed_at": "2026-07-27T18:46:28.460192+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-048",
+    "from": "Attachment Only <att@chment.com>",
+    "subject": "See attached",
+    "classification": "failed",
+    "confidence": 0.0,
+    "reasoning": "skipped",
+    "errors": [
+      "[2026-07-28T00:16:30.673851+05:30] ingest_email: missing fields: ['body']",
+      "[2026-07-27T18:46:30.674877+00:00] classify_email: skipping due to prior errors"
+    ],
+    "failed_at": "2026-07-27T18:46:30.676136+00:00",
+    "token_usage": {}
   }
 ]
