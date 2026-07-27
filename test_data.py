@@ -1,7 +1,13 @@
 # test_data.py
 
 TEST_EMAILS = [
-    # --- LEADS (1-20) ---
+    # --- LEADS (0-20) ---
+    {
+        "from": "Enquiry <enquiry@example.com>",
+        "subject": "Product Enquiry",
+        "body": "I need 500 bags of sugar.",
+        "message_id": "msg-000",
+    },
     {
         "from": "Buyer <buyer@example.com>",
         "subject": "Need quotation for 100 MT",
@@ -301,4 +307,4 @@ TEST_EMAILS = [
     },
 ]
 
-EXPECTED_CLASSIFICATIONS = ["lead"] * 20 + ["support"] * 15 + ["other"] * 15
+EXPECTED_CLASSIFICATIONS = ["lead"] * 21 + ["support"] * 15 + ["other"] * 15

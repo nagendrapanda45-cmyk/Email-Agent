@@ -496,5 +496,1595 @@
     ],
     "failed_at": "2026-07-27T16:47:02.770692+00:00",
     "token_usage": {}
+  },
+  {
+    "message_id": "msg-001",
+    "from": "Buyer <buyer@example.com>",
+    "subject": "Need quotation for 100 MT",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhFHvTx75MpT66wX7c'}",
+    "errors": [
+      "[2026-07-27T16:52:21.611776+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhFHvTx75MpT66wX7c'}"
+    ],
+    "failed_at": "2026-07-27T16:52:22.522489+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-002",
+    "from": "Wholesale <ws@example.com>",
+    "subject": "Looking for wholesale supply",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhHkm4MYAQY3H6LAYR'}",
+    "errors": [
+      "[2026-07-27T16:52:22.545520+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhHkm4MYAQY3H6LAYR'}"
+    ],
+    "failed_at": "2026-07-27T16:52:23.076008+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-003",
+    "from": "Export <ex@example.com>",
+    "subject": "Can you export to Dubai?",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhLBN3XxM3sU3jNKtT'}",
+    "errors": [
+      "[2026-07-27T16:52:23.104326+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhLBN3XxM3sU3jNKtT'}"
+    ],
+    "failed_at": "2026-07-27T16:52:23.631505+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-004",
+    "from": "Dealer <dlr@example.com>",
+    "subject": "Interested in dealership",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhNjeWtkokn63r3smm'}",
+    "errors": [
+      "[2026-07-27T16:52:23.663921+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhNjeWtkokn63r3smm'}"
+    ],
+    "failed_at": "2026-07-27T16:52:24.254354+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-005",
+    "from": "Tender <gov@example.com>",
+    "subject": "Government Tender Enquiry",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhR3JvRR9mcrKKedwF'}",
+    "errors": [
+      "[2026-07-27T16:52:24.280485+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhR3JvRR9mcrKKedwF'}"
+    ],
+    "failed_at": "2026-07-27T16:52:24.771673+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-006",
+    "from": "Procurement <procure@bakery.com>",
+    "subject": "Monthly Supply Contract",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhTsUD7EUfzVStsxwR'}",
+    "errors": [
+      "[2026-07-27T16:52:24.811994+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhTsUD7EUfzVStsxwR'}"
+    ],
+    "failed_at": "2026-07-27T16:52:25.443942+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-007",
+    "from": "Factory <ops@bev.com>",
+    "subject": "Liquid Sugar bulk pricing",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhWJoyrBpU8LT4BbsB'}",
+    "errors": [
+      "[2026-07-27T16:52:25.467044+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhWJoyrBpU8LT4BbsB'}"
+    ],
+    "failed_at": "2026-07-27T16:52:26.038617+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-008",
+    "from": "Retailer <owner@supermarket.com>",
+    "subject": "Product Catalogue request",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhYoPBwR6TfnUuJ3io'}",
+    "errors": [
+      "[2026-07-27T16:52:26.063056+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhYoPBwR6TfnUuJ3io'}"
+    ],
+    "failed_at": "2026-07-27T16:52:26.587317+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-009",
+    "from": "Import <import@europe.com>",
+    "subject": "Export capabilities to EU",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhb2ahAFNi5x4XvzQn'}",
+    "errors": [
+      "[2026-07-27T16:52:26.611629+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhb2ahAFNi5x4XvzQn'}"
+    ],
+    "failed_at": "2026-07-27T16:52:27.102042+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-010",
+    "from": "Bakery <sales@sweettooth.com>",
+    "subject": "Sample request",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhdVf8sWY9M7avF8nU'}",
+    "errors": [
+      "[2026-07-27T16:52:27.124231+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhdVf8sWY9M7avF8nU'}"
+    ],
+    "failed_at": "2026-07-27T16:52:27.715583+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-011",
+    "from": "Distributor <dist@region.com>",
+    "subject": "Exclusive distributorship",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhg4h2gzf1jWnWXSs5'}",
+    "errors": [
+      "[2026-07-27T16:52:27.739148+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhg4h2gzf1jWnWXSs5'}"
+    ],
+    "failed_at": "2026-07-27T16:52:28.657547+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-012",
+    "from": "Sweets <purchase@sweets.com>",
+    "subject": "RFQ: 50 MT Brown Sugar",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhjyqjC8zRmTsgKPXb'}",
+    "errors": [
+      "[2026-07-27T16:52:28.682634+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhjyqjC8zRmTsgKPXb'}"
+    ],
+    "failed_at": "2026-07-27T16:52:29.204554+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-013",
+    "from": "Corporate <gifts@corp.com>",
+    "subject": "Corporate gifting bulk order",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhnRvx3oeek4DB4Lc2'}",
+    "errors": [
+      "[2026-07-27T16:52:29.233118+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhnRvx3oeek4DB4Lc2'}"
+    ],
+    "failed_at": "2026-07-27T16:52:29.773280+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-014",
+    "from": "Trading <trade@global.com>",
+    "subject": "Tender for Sugar Supply",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhphbkfPwAbn4mrYWD'}",
+    "errors": [
+      "[2026-07-27T16:52:29.796725+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhphbkfPwAbn4mrYWD'}"
+    ],
+    "failed_at": "2026-07-27T16:52:30.346713+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-015",
+    "from": "Vendor <vendor@platform.com>",
+    "subject": "Become a vendor",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhsDfHKJHyNXMendbs'}",
+    "errors": [
+      "[2026-07-27T16:52:30.370790+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhsDfHKJHyNXMendbs'}"
+    ],
+    "failed_at": "2026-07-27T16:52:30.896973+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-016",
+    "from": "Restaurant <chef@diner.com>",
+    "subject": "Sugar packets for restaurant",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhuTqym47a7pmiarCP'}",
+    "errors": [
+      "[2026-07-27T16:52:30.917257+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhuTqym47a7pmiarCP'}"
+    ],
+    "failed_at": "2026-07-27T16:52:31.513222+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-017",
+    "from": "Beverages <supply@drink.com>",
+    "subject": "Availability of industrial sugar",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhx7bL9Bx8xkCA4dea'}",
+    "errors": [
+      "[2026-07-27T16:52:31.536906+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhx7bL9Bx8xkCA4dea'}"
+    ],
+    "failed_at": "2026-07-27T16:52:32.039844+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-018",
+    "from": "Caterer <cater@events.com>",
+    "subject": "Event supply",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhzbAhjokAsX83EVX4'}",
+    "errors": [
+      "[2026-07-27T16:52:32.063190+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSuhzbAhjokAsX83EVX4'}"
+    ],
+    "failed_at": "2026-07-27T16:52:32.617042+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-019",
+    "from": "Hospitality <purchase@hotel.com>",
+    "subject": "Annual contract renewal",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSui2rbQtR2EKB2q5kbu'}",
+    "errors": [
+      "[2026-07-27T16:52:32.645820+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSui2rbQtR2EKB2q5kbu'}"
+    ],
+    "failed_at": "2026-07-27T16:52:33.159079+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-020",
+    "from": "Reseller <resell@market.com>",
+    "subject": "Reseller terms",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSui59keaZjLL4mRAMdG'}",
+    "errors": [
+      "[2026-07-27T16:52:33.191331+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSui59keaZjLL4mRAMdG'}"
+    ],
+    "failed_at": "2026-07-27T16:52:33.685352+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-021",
+    "from": "Customer A <custA@example.com>",
+    "subject": "Shipment delayed",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSui7MxTxngrSXpvXqD4'}",
+    "errors": [
+      "[2026-07-27T16:52:33.706392+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSui7MxTxngrSXpvXqD4'}"
+    ],
+    "failed_at": "2026-07-27T16:52:34.207453+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-022",
+    "from": "Customer B <custB@example.com>",
+    "subject": "Invoice missing",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSui9jLMpWGUuhkY4nEW'}",
+    "errors": [
+      "[2026-07-27T16:52:34.234784+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSui9jLMpWGUuhkY4nEW'}"
+    ],
+    "failed_at": "2026-07-27T16:52:34.778214+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-001",
+    "from": "Buyer <buyer@example.com>",
+    "subject": "Need quotation for 100 MT",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvBqM5XTJG5iJgcDnfj'}",
+    "errors": [
+      "[2026-07-27T16:58:49.657286+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvBqM5XTJG5iJgcDnfj'}"
+    ],
+    "failed_at": "2026-07-27T16:58:50.319751+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-002",
+    "from": "Wholesale <ws@example.com>",
+    "subject": "Looking for wholesale supply",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvBsst2sRVyRVxmbYrd'}",
+    "errors": [
+      "[2026-07-27T16:58:50.347792+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvBsst2sRVyRVxmbYrd'}"
+    ],
+    "failed_at": "2026-07-27T16:58:50.922324+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-003",
+    "from": "Export <ex@example.com>",
+    "subject": "Can you export to Dubai?",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvBvfZAGVMgH4xKjQQN'}",
+    "errors": [
+      "[2026-07-27T16:58:50.944273+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvBvfZAGVMgH4xKjQQN'}"
+    ],
+    "failed_at": "2026-07-27T16:58:51.698522+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-004",
+    "from": "Dealer <dlr@example.com>",
+    "subject": "Interested in dealership",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvBydQR6dLKSYcyCExy'}",
+    "errors": [
+      "[2026-07-27T16:58:51.724864+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvBydQR6dLKSYcyCExy'}"
+    ],
+    "failed_at": "2026-07-27T16:58:52.313447+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-005",
+    "from": "Tender <gov@example.com>",
+    "subject": "Government Tender Enquiry",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvC2Fuc9LnEfnmj5Y95'}",
+    "errors": [
+      "[2026-07-27T16:58:52.341933+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvC2Fuc9LnEfnmj5Y95'}"
+    ],
+    "failed_at": "2026-07-27T16:58:52.899607+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-006",
+    "from": "Procurement <procure@bakery.com>",
+    "subject": "Monthly Supply Contract",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvC4yNNdSccktZ1g4EA'}",
+    "errors": [
+      "[2026-07-27T16:58:52.923402+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvC4yNNdSccktZ1g4EA'}"
+    ],
+    "failed_at": "2026-07-27T16:58:53.487197+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-007",
+    "from": "Factory <ops@bev.com>",
+    "subject": "Liquid Sugar bulk pricing",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvC7F3rmvWJ1cmQNoeD'}",
+    "errors": [
+      "[2026-07-27T16:58:53.511335+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvC7F3rmvWJ1cmQNoeD'}"
+    ],
+    "failed_at": "2026-07-27T16:58:54.011832+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-008",
+    "from": "Retailer <owner@supermarket.com>",
+    "subject": "Product Catalogue request",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCAF894EX279McDrEU'}",
+    "errors": [
+      "[2026-07-27T16:58:54.037804+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCAF894EX279McDrEU'}"
+    ],
+    "failed_at": "2026-07-27T16:58:54.708825+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-009",
+    "from": "Import <import@europe.com>",
+    "subject": "Export capabilities to EU",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCChTonyoJ7oJDyTAu'}",
+    "errors": [
+      "[2026-07-27T16:58:54.740617+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCChTonyoJ7oJDyTAu'}"
+    ],
+    "failed_at": "2026-07-27T16:58:55.290912+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-010",
+    "from": "Bakery <sales@sweettooth.com>",
+    "subject": "Sample request",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCF65TV9JUSPhv9THy'}",
+    "errors": [
+      "[2026-07-27T16:58:55.316375+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCF65TV9JUSPhv9THy'}"
+    ],
+    "failed_at": "2026-07-27T16:58:55.866434+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-011",
+    "from": "Distributor <dist@region.com>",
+    "subject": "Exclusive distributorship",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCHctHS5M3yCoE73jN'}",
+    "errors": [
+      "[2026-07-27T16:58:55.893830+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCHctHS5M3yCoE73jN'}"
+    ],
+    "failed_at": "2026-07-27T16:58:56.442053+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-012",
+    "from": "Sweets <purchase@sweets.com>",
+    "subject": "RFQ: 50 MT Brown Sugar",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCKy2MFggArySXgpBL'}",
+    "errors": [
+      "[2026-07-27T16:58:56.466727+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCKy2MFggArySXgpBL'}"
+    ],
+    "failed_at": "2026-07-27T16:58:56.994033+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-013",
+    "from": "Corporate <gifts@corp.com>",
+    "subject": "Corporate gifting bulk order",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCNFw133H2bq1iLnuP'}",
+    "errors": [
+      "[2026-07-27T16:58:57.024340+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCNFw133H2bq1iLnuP'}"
+    ],
+    "failed_at": "2026-07-27T16:58:57.520675+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-014",
+    "from": "Trading <trade@global.com>",
+    "subject": "Tender for Sugar Supply",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCQX7gW8Ke3StHMfP6'}",
+    "errors": [
+      "[2026-07-27T16:58:57.536902+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCQX7gW8Ke3StHMfP6'}"
+    ],
+    "failed_at": "2026-07-27T16:58:58.059573+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-015",
+    "from": "Vendor <vendor@platform.com>",
+    "subject": "Become a vendor",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCSujPtVLNgahvRtNt'}",
+    "errors": [
+      "[2026-07-27T16:58:58.083611+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCSujPtVLNgahvRtNt'}"
+    ],
+    "failed_at": "2026-07-27T16:58:58.726535+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-016",
+    "from": "Restaurant <chef@diner.com>",
+    "subject": "Sugar packets for restaurant",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCVjtXn57APTsVRK6L'}",
+    "errors": [
+      "[2026-07-27T16:58:58.749126+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCVjtXn57APTsVRK6L'}"
+    ],
+    "failed_at": "2026-07-27T16:58:59.278084+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-017",
+    "from": "Beverages <supply@drink.com>",
+    "subject": "Availability of industrial sugar",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCYByzLtyx5Lbvwrzq'}",
+    "errors": [
+      "[2026-07-27T16:58:59.303349+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCYByzLtyx5Lbvwrzq'}"
+    ],
+    "failed_at": "2026-07-27T16:58:59.860724+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-018",
+    "from": "Caterer <cater@events.com>",
+    "subject": "Event supply",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCahYPiAtBSjTyUrDR'}",
+    "errors": [
+      "[2026-07-27T16:58:59.885818+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCahYPiAtBSjTyUrDR'}"
+    ],
+    "failed_at": "2026-07-27T16:59:00.452914+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-019",
+    "from": "Hospitality <purchase@hotel.com>",
+    "subject": "Annual contract renewal",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCdLHwbR4n36L5au6m'}",
+    "errors": [
+      "[2026-07-27T16:59:00.487294+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCdLHwbR4n36L5au6m'}"
+    ],
+    "failed_at": "2026-07-27T16:59:01.053490+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-020",
+    "from": "Reseller <resell@market.com>",
+    "subject": "Reseller terms",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCfbECPqGzTYkNFNeJ'}",
+    "errors": [
+      "[2026-07-27T16:59:01.077025+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCfbECPqGzTYkNFNeJ'}"
+    ],
+    "failed_at": "2026-07-27T16:59:01.585797+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-021",
+    "from": "Customer A <custA@example.com>",
+    "subject": "Shipment delayed",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCi6Hn8vTaFxxqa7wA'}",
+    "errors": [
+      "[2026-07-27T16:59:01.612701+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCi6Hn8vTaFxxqa7wA'}"
+    ],
+    "failed_at": "2026-07-27T16:59:02.161905+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-022",
+    "from": "Customer B <custB@example.com>",
+    "subject": "Invoice missing",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCkm2NDBo4Bok9gNm1'}",
+    "errors": [
+      "[2026-07-27T16:59:02.185167+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCkm2NDBo4Bok9gNm1'}"
+    ],
+    "failed_at": "2026-07-27T16:59:02.817842+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-023",
+    "from": "Customer C <custC@example.com>",
+    "subject": "Password reset",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCoPXapk9s1MUhBkVM'}",
+    "errors": [
+      "[2026-07-27T16:59:02.846521+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCoPXapk9s1MUhBkVM'}"
+    ],
+    "failed_at": "2026-07-27T16:59:03.471197+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-024",
+    "from": "Complaint <comp@angry.com>",
+    "subject": "Quality issue - Urgent",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCr1nUGMNsyqyosbVw'}",
+    "errors": [
+      "[2026-07-27T16:59:03.493862+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCr1nUGMNsyqyosbVw'}"
+    ],
+    "failed_at": "2026-07-27T16:59:04.026347+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-025",
+    "from": "Returns <return@shop.com>",
+    "subject": "Damaged goods in transit",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCtSPNqcPnrb3BG3Uu'}",
+    "errors": [
+      "[2026-07-27T16:59:04.049481+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCtSPNqcPnrb3BG3Uu'}"
+    ],
+    "failed_at": "2026-07-27T16:59:04.590924+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-026",
+    "from": "Accounts <acct@buyer.com>",
+    "subject": "Incorrect billing",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCw5dqw5pnzYiP93rT'}",
+    "errors": [
+      "[2026-07-27T16:59:04.615541+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCw5dqw5pnzYiP93rT'}"
+    ],
+    "failed_at": "2026-07-27T16:59:05.242539+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-027",
+    "from": "Logistics <log@trans.com>",
+    "subject": "Missing items",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCycBvtohbfdCDxFkn'}",
+    "errors": [
+      "[2026-07-27T16:59:05.268473+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvCycBvtohbfdCDxFkn'}"
+    ],
+    "failed_at": "2026-07-27T16:59:05.798081+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-028",
+    "from": "User <user@portal.com>",
+    "subject": "Website down?",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvD1s8B6X2Lk9BrCaJM'}",
+    "errors": [
+      "[2026-07-27T16:59:05.826575+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvD1s8B6X2Lk9BrCaJM'}"
+    ],
+    "failed_at": "2026-07-27T16:59:06.498579+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-029",
+    "from": "Client <client@corp.com>",
+    "subject": "Modify my order",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvD4xQkzkPpw2oMudnV'}",
+    "errors": [
+      "[2026-07-27T16:59:06.521871+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvD4xQkzkPpw2oMudnV'}"
+    ],
+    "failed_at": "2026-07-27T16:59:07.132371+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-030",
+    "from": "Store <store@retail.com>",
+    "subject": "Replacement request",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvD7hcRcUWd1CLrSzGv'}",
+    "errors": [
+      "[2026-07-27T16:59:07.158739+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvD7hcRcUWd1CLrSzGv'}"
+    ],
+    "failed_at": "2026-07-27T16:59:07.759514+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-031",
+    "from": "Manager <mgr@branch.com>",
+    "subject": "Where is my truck?",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDALc7Hi95JBjbnbgc'}",
+    "errors": [
+      "[2026-07-27T16:59:07.781015+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDALc7Hi95JBjbnbgc'}"
+    ],
+    "failed_at": "2026-07-27T16:59:08.302673+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-032",
+    "from": "Billing <bill@corp.com>",
+    "subject": "Need ledger statement",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDCd2ekqpBpna6heJ3'}",
+    "errors": [
+      "[2026-07-27T16:59:08.328084+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDCd2ekqpBpna6heJ3'}"
+    ],
+    "failed_at": "2026-07-27T16:59:08.833296+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-033",
+    "from": "Support <supp@client.com>",
+    "subject": "Account suspension",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDKxoV7wnD4BRFDuMf'}",
+    "errors": [
+      "[2026-07-27T16:59:08.855986+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDKxoV7wnD4BRFDuMf'}"
+    ],
+    "failed_at": "2026-07-27T16:59:10.683574+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-034",
+    "from": "Admin <admin@buy.com>",
+    "subject": "Change delivery address",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDNsv4P1Lp2PZasaoF'}",
+    "errors": [
+      "[2026-07-27T16:59:10.718240+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDNsv4P1Lp2PZasaoF'}"
+    ],
+    "failed_at": "2026-07-27T16:59:11.232344+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-035",
+    "from": "Quality <qa@food.com>",
+    "subject": "Certificate of Analysis missing",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDRBpoPreewhHzuuRv'}",
+    "errors": [
+      "[2026-07-27T16:59:11.264247+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDRBpoPreewhHzuuRv'}"
+    ],
+    "failed_at": "2026-07-27T16:59:11.798821+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-036",
+    "from": "Applicant <app@example.com>",
+    "subject": "Job application",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDTh8tjdxG3fWjqV6D'}",
+    "errors": [
+      "[2026-07-27T16:59:11.830953+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDTh8tjdxG3fWjqV6D'}"
+    ],
+    "failed_at": "2026-07-27T16:59:12.358608+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-037",
+    "from": "Travel <travel@example.com>",
+    "subject": "Hotel booking",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDWEBqTLezVc6FxdsX'}",
+    "errors": [
+      "[2026-07-27T16:59:12.385044+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDWEBqTLezVc6FxdsX'}"
+    ],
+    "failed_at": "2026-07-27T16:59:12.957387+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-038",
+    "from": "Sales <sales@printers.com>",
+    "subject": "Printer sale",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDYc4UidDYKBtBBJi2'}",
+    "errors": [
+      "[2026-07-27T16:59:12.997030+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDYc4UidDYKBtBBJi2'}"
+    ],
+    "failed_at": "2026-07-27T16:59:13.527243+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-039",
+    "from": "Spam <win@lottery.com>",
+    "subject": "YOU WON!",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDb5dwVc3fgQXj2feo'}",
+    "errors": [
+      "[2026-07-27T16:59:13.555654+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDb5dwVc3fgQXj2feo'}"
+    ],
+    "failed_at": "2026-07-27T16:59:14.198228+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-040",
+    "from": "HR <hr@agency.com>",
+    "subject": "Candidate profiles",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDdraNQpGEk6DAUJGG'}",
+    "errors": [
+      "[2026-07-27T16:59:14.233923+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDdraNQpGEk6DAUJGG'}"
+    ],
+    "failed_at": "2026-07-27T16:59:14.726453+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-041",
+    "from": "IT <it@services.com>",
+    "subject": "Laptop repair quote",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDgBy2P5g1HytNH6pX'}",
+    "errors": [
+      "[2026-07-27T16:59:14.753757+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDgBy2P5g1HytNH6pX'}"
+    ],
+    "failed_at": "2026-07-27T16:59:15.291007+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-042",
+    "from": "Furniture <desk@office.com>",
+    "subject": "Ergonomic chairs",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDjB44fSgJsxfFBeLy'}",
+    "errors": [
+      "[2026-07-27T16:59:15.317057+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDjB44fSgJsxfFBeLy'}"
+    ],
+    "failed_at": "2026-07-27T16:59:15.978592+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-043",
+    "from": "Bank <alerts@bank.com>",
+    "subject": "Account statement",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDmWheyGShZYtLLZ52'}",
+    "errors": [
+      "[2026-07-27T16:59:15.983533+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDmWheyGShZYtLLZ52'}"
+    ],
+    "failed_at": "2026-07-27T16:59:16.600995+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-044",
+    "from": "Newsletter <news@industry.com>",
+    "subject": "Weekly Sugar Trends",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDphSX5ADgYu2vPBQh'}",
+    "errors": [
+      "[2026-07-27T16:59:16.606869+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDphSX5ADgYu2vPBQh'}"
+    ],
+    "failed_at": "2026-07-27T16:59:17.341583+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-045",
+    "from": "Insurance <agent@insure.com>",
+    "subject": "Policy renewal",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDsPQyb7d42LqZ2NDd'}",
+    "errors": [
+      "[2026-07-27T16:59:17.349917+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDsPQyb7d42LqZ2NDd'}"
+    ],
+    "failed_at": "2026-07-27T16:59:17.909911+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-046",
+    "from": "Empty <no@body.com>",
+    "subject": "",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "skipped",
+    "errors": [
+      "[2026-07-27T22:29:17.919036+05:30] ingest_email: missing fields: ['subject', 'body']",
+      "[2026-07-27T16:59:17.919724+00:00] classify_email: skipping due to prior errors"
+    ],
+    "failed_at": "2026-07-27T16:59:17.920617+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-047",
+    "from": "Ambiguous <huh@what.com>",
+    "subject": "Hello",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDukYq1eeUqZzYQ1Dc'}",
+    "errors": [
+      "[2026-07-27T16:59:17.941664+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDukYq1eeUqZzYQ1Dc'}"
+    ],
+    "failed_at": "2026-07-27T16:59:18.455231+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-048",
+    "from": "Attachment Only <att@chment.com>",
+    "subject": "See attached",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "skipped",
+    "errors": [
+      "[2026-07-27T22:29:18.465000+05:30] ingest_email: missing fields: ['body']",
+      "[2026-07-27T16:59:18.465608+00:00] classify_email: skipping due to prior errors"
+    ],
+    "failed_at": "2026-07-27T16:59:18.466025+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-049",
+    "from": "Marketing <promo@ad.com>",
+    "subject": "Boost your SEO",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDx8RNyyFGyh2vEhyk'}",
+    "errors": [
+      "[2026-07-27T16:59:18.488280+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvDx8RNyyFGyh2vEhyk'}"
+    ],
+    "failed_at": "2026-07-27T16:59:19.015278+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-050",
+    "from": "Event <invite@gala.com>",
+    "subject": "Charity Dinner",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvE19VNYFQnV8gdoCJv'}",
+    "errors": [
+      "[2026-07-27T16:59:19.021020+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvE19VNYFQnV8gdoCJv'}"
+    ],
+    "failed_at": "2026-07-27T16:59:19.766811+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-001",
+    "from": "Buyer <buyer@example.com>",
+    "subject": "Need quotation for 100 MT",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGByfiAPiqs6RzuANK'}",
+    "errors": [
+      "[2026-07-27T16:59:48.722266+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGByfiAPiqs6RzuANK'}"
+    ],
+    "failed_at": "2026-07-27T16:59:49.414796+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-002",
+    "from": "Wholesale <ws@example.com>",
+    "subject": "Looking for wholesale supply",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGEL3ocR9KHWmdeeru'}",
+    "errors": [
+      "[2026-07-27T16:59:49.425097+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGEL3ocR9KHWmdeeru'}"
+    ],
+    "failed_at": "2026-07-27T16:59:49.926490+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-003",
+    "from": "Export <ex@example.com>",
+    "subject": "Can you export to Dubai?",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGHKPZqNzMRyc7QkHf'}",
+    "errors": [
+      "[2026-07-27T16:59:49.930909+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGHKPZqNzMRyc7QkHf'}"
+    ],
+    "failed_at": "2026-07-27T16:59:50.692599+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-004",
+    "from": "Dealer <dlr@example.com>",
+    "subject": "Interested in dealership",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGKxtFcDUAAuWDv9Q5'}",
+    "errors": [
+      "[2026-07-27T16:59:50.702232+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGKxtFcDUAAuWDv9Q5'}"
+    ],
+    "failed_at": "2026-07-27T16:59:51.252602+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-005",
+    "from": "Tender <gov@example.com>",
+    "subject": "Government Tender Enquiry",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGNCKkBcHV2PNYhyYJ'}",
+    "errors": [
+      "[2026-07-27T16:59:51.261449+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGNCKkBcHV2PNYhyYJ'}"
+    ],
+    "failed_at": "2026-07-27T16:59:51.774255+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-006",
+    "from": "Procurement <procure@bakery.com>",
+    "subject": "Monthly Supply Contract",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGQXEBRHbktHVLbETK'}",
+    "errors": [
+      "[2026-07-27T16:59:51.784214+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGQXEBRHbktHVLbETK'}"
+    ],
+    "failed_at": "2026-07-27T16:59:52.313850+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-007",
+    "from": "Factory <ops@bev.com>",
+    "subject": "Liquid Sugar bulk pricing",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGSr8DnMTor2q6T5Bt'}",
+    "errors": [
+      "[2026-07-27T16:59:52.323327+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGSr8DnMTor2q6T5Bt'}"
+    ],
+    "failed_at": "2026-07-27T16:59:52.859343+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-008",
+    "from": "Retailer <owner@supermarket.com>",
+    "subject": "Product Catalogue request",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGV6K4sZBXodVYBM2k'}",
+    "errors": [
+      "[2026-07-27T16:59:52.866389+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGV6K4sZBXodVYBM2k'}"
+    ],
+    "failed_at": "2026-07-27T16:59:53.377772+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-009",
+    "from": "Import <import@europe.com>",
+    "subject": "Export capabilities to EU",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGXrkEp7vjTRzeyKEu'}",
+    "errors": [
+      "[2026-07-27T16:59:53.385613+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGXrkEp7vjTRzeyKEu'}"
+    ],
+    "failed_at": "2026-07-27T16:59:54.227673+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-010",
+    "from": "Bakery <sales@sweettooth.com>",
+    "subject": "Sample request",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGb3F7HDRL8bVkDY2D'}",
+    "errors": [
+      "[2026-07-27T16:59:54.241954+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGb3F7HDRL8bVkDY2D'}"
+    ],
+    "failed_at": "2026-07-27T16:59:54.775559+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-011",
+    "from": "Distributor <dist@region.com>",
+    "subject": "Exclusive distributorship",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGdLuFssJjwY2zDZ8X'}",
+    "errors": [
+      "[2026-07-27T16:59:54.785654+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGdLuFssJjwY2zDZ8X'}"
+    ],
+    "failed_at": "2026-07-27T16:59:55.308871+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-012",
+    "from": "Sweets <purchase@sweets.com>",
+    "subject": "RFQ: 50 MT Brown Sugar",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGfkGHQ29nnnwNssx9'}",
+    "errors": [
+      "[2026-07-27T16:59:55.314792+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGfkGHQ29nnnwNssx9'}"
+    ],
+    "failed_at": "2026-07-27T16:59:55.908535+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-013",
+    "from": "Corporate <gifts@corp.com>",
+    "subject": "Corporate gifting bulk order",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGiK3k325j4r4dcjDw'}",
+    "errors": [
+      "[2026-07-27T16:59:55.918602+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGiK3k325j4r4dcjDw'}"
+    ],
+    "failed_at": "2026-07-27T16:59:56.475786+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-014",
+    "from": "Trading <trade@global.com>",
+    "subject": "Tender for Sugar Supply",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGkiAFEboknDPchPEr'}",
+    "errors": [
+      "[2026-07-27T16:59:56.481064+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGkiAFEboknDPchPEr'}"
+    ],
+    "failed_at": "2026-07-27T16:59:57.057935+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-015",
+    "from": "Vendor <vendor@platform.com>",
+    "subject": "Become a vendor",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGoBjtemgKcWYTZroZ'}",
+    "errors": [
+      "[2026-07-27T16:59:57.068123+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGoBjtemgKcWYTZroZ'}"
+    ],
+    "failed_at": "2026-07-27T16:59:57.624333+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-016",
+    "from": "Restaurant <chef@diner.com>",
+    "subject": "Sugar packets for restaurant",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGqb6oTgqSH9FNRzbR'}",
+    "errors": [
+      "[2026-07-27T16:59:57.634520+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGqb6oTgqSH9FNRzbR'}"
+    ],
+    "failed_at": "2026-07-27T16:59:58.180489+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-017",
+    "from": "Beverages <supply@drink.com>",
+    "subject": "Availability of industrial sugar",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGt9e6TD6yQZjSpv7r'}",
+    "errors": [
+      "[2026-07-27T16:59:58.193318+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGt9e6TD6yQZjSpv7r'}"
+    ],
+    "failed_at": "2026-07-27T16:59:58.780914+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-018",
+    "from": "Caterer <cater@events.com>",
+    "subject": "Event supply",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGvfSrcjkvfG8ZoZxx'}",
+    "errors": [
+      "[2026-07-27T16:59:58.791809+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGvfSrcjkvfG8ZoZxx'}"
+    ],
+    "failed_at": "2026-07-27T16:59:59.370609+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-019",
+    "from": "Hospitality <purchase@hotel.com>",
+    "subject": "Annual contract renewal",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGy54TXSyPWZ2cKR56'}",
+    "errors": [
+      "[2026-07-27T16:59:59.380355+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvGy54TXSyPWZ2cKR56'}"
+    ],
+    "failed_at": "2026-07-27T16:59:59.929548+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-020",
+    "from": "Reseller <resell@market.com>",
+    "subject": "Reseller terms",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvH1SgjtVBXZzxuaxNu'}",
+    "errors": [
+      "[2026-07-27T16:59:59.942899+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvH1SgjtVBXZzxuaxNu'}"
+    ],
+    "failed_at": "2026-07-27T17:00:00.488585+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-021",
+    "from": "Customer A <custA@example.com>",
+    "subject": "Shipment delayed",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvH3n5RgqBpPZtcaGjS'}",
+    "errors": [
+      "[2026-07-27T17:00:00.500301+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvH3n5RgqBpPZtcaGjS'}"
+    ],
+    "failed_at": "2026-07-27T17:00:01.022431+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-022",
+    "from": "Customer B <custB@example.com>",
+    "subject": "Invoice missing",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvH6NbbqyVNZzPLXTAS'}",
+    "errors": [
+      "[2026-07-27T17:00:01.055807+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvH6NbbqyVNZzPLXTAS'}"
+    ],
+    "failed_at": "2026-07-27T17:00:01.644855+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-023",
+    "from": "Customer C <custC@example.com>",
+    "subject": "Password reset",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvH8kyBh9LgXNABjq1r'}",
+    "errors": [
+      "[2026-07-27T17:00:01.656027+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvH8kyBh9LgXNABjq1r'}"
+    ],
+    "failed_at": "2026-07-27T17:00:02.228578+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-024",
+    "from": "Complaint <comp@angry.com>",
+    "subject": "Quality issue - Urgent",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHBGXiQ9nvtRTDE7Ty'}",
+    "errors": [
+      "[2026-07-27T17:00:02.241178+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHBGXiQ9nvtRTDE7Ty'}"
+    ],
+    "failed_at": "2026-07-27T17:00:02.789016+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-025",
+    "from": "Returns <return@shop.com>",
+    "subject": "Damaged goods in transit",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHDkMQCUXuQjhKcwYo'}",
+    "errors": [
+      "[2026-07-27T17:00:02.802394+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHDkMQCUXuQjhKcwYo'}"
+    ],
+    "failed_at": "2026-07-27T17:00:03.385390+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-026",
+    "from": "Accounts <acct@buyer.com>",
+    "subject": "Incorrect billing",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHGPbnX6hAUDa9PMts'}",
+    "errors": [
+      "[2026-07-27T17:00:03.392199+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHGPbnX6hAUDa9PMts'}"
+    ],
+    "failed_at": "2026-07-27T17:00:03.990561+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-027",
+    "from": "Logistics <log@trans.com>",
+    "subject": "Missing items",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHK4qG83LFs8G8qJgC'}",
+    "errors": [
+      "[2026-07-27T17:00:03.997982+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHK4qG83LFs8G8qJgC'}"
+    ],
+    "failed_at": "2026-07-27T17:00:04.628021+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-028",
+    "from": "User <user@portal.com>",
+    "subject": "Website down?",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHMWRfPMbRe5FZMeDj'}",
+    "errors": [
+      "[2026-07-27T17:00:04.636291+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHMWRfPMbRe5FZMeDj'}"
+    ],
+    "failed_at": "2026-07-27T17:00:05.179319+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-029",
+    "from": "Client <client@corp.com>",
+    "subject": "Modify my order",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHPtZ9WE3YrJfQtxpg'}",
+    "errors": [
+      "[2026-07-27T17:00:05.189552+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHPtZ9WE3YrJfQtxpg'}"
+    ],
+    "failed_at": "2026-07-27T17:00:05.733642+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-030",
+    "from": "Store <store@retail.com>",
+    "subject": "Replacement request",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHSK9qvSB71gifvsju'}",
+    "errors": [
+      "[2026-07-27T17:00:05.745881+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHSK9qvSB71gifvsju'}"
+    ],
+    "failed_at": "2026-07-27T17:00:06.341067+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-031",
+    "from": "Manager <mgr@branch.com>",
+    "subject": "Where is my truck?",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHVE2a6neCckRyrFii'}",
+    "errors": [
+      "[2026-07-27T17:00:06.351613+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHVE2a6neCckRyrFii'}"
+    ],
+    "failed_at": "2026-07-27T17:00:06.980894+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-032",
+    "from": "Billing <bill@corp.com>",
+    "subject": "Need ledger statement",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHYcRCkNqt2Zpv7Son'}",
+    "errors": [
+      "[2026-07-27T17:00:06.990573+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHYcRCkNqt2Zpv7Son'}"
+    ],
+    "failed_at": "2026-07-27T17:00:07.772205+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-033",
+    "from": "Support <supp@client.com>",
+    "subject": "Account suspension",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHb4WMxtPWgEmMw6RY'}",
+    "errors": [
+      "[2026-07-27T17:00:07.782290+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHb4WMxtPWgEmMw6RY'}"
+    ],
+    "failed_at": "2026-07-27T17:00:08.344104+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-034",
+    "from": "Admin <admin@buy.com>",
+    "subject": "Change delivery address",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHdYLRifQdkXhi6urT'}",
+    "errors": [
+      "[2026-07-27T17:00:08.355973+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHdYLRifQdkXhi6urT'}"
+    ],
+    "failed_at": "2026-07-27T17:00:08.923987+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-035",
+    "from": "Quality <qa@food.com>",
+    "subject": "Certificate of Analysis missing",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHg2ucPqTnSbUF3Xci'}",
+    "errors": [
+      "[2026-07-27T17:00:08.943683+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHg2ucPqTnSbUF3Xci'}"
+    ],
+    "failed_at": "2026-07-27T17:00:09.508176+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-036",
+    "from": "Applicant <app@example.com>",
+    "subject": "Job application",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHiP3dzt8d1EYMJs6V'}",
+    "errors": [
+      "[2026-07-27T17:00:09.520103+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHiP3dzt8d1EYMJs6V'}"
+    ],
+    "failed_at": "2026-07-27T17:00:10.059359+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-037",
+    "from": "Travel <travel@example.com>",
+    "subject": "Hotel booking",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHkmQo94geHQ66iRrC'}",
+    "errors": [
+      "[2026-07-27T17:00:10.069571+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHkmQo94geHQ66iRrC'}"
+    ],
+    "failed_at": "2026-07-27T17:00:10.620197+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-038",
+    "from": "Sales <sales@printers.com>",
+    "subject": "Printer sale",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHoFVJhNNsz76RAgGL'}",
+    "errors": [
+      "[2026-07-27T17:00:10.626661+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHoFVJhNNsz76RAgGL'}"
+    ],
+    "failed_at": "2026-07-27T17:00:11.556536+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-039",
+    "from": "Spam <win@lottery.com>",
+    "subject": "YOU WON!",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHs4Bo3w5Yx6sNCk78'}",
+    "errors": [
+      "[2026-07-27T17:00:11.562472+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHs4Bo3w5Yx6sNCk78'}"
+    ],
+    "failed_at": "2026-07-27T17:00:12.104681+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-040",
+    "from": "HR <hr@agency.com>",
+    "subject": "Candidate profiles",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHuN6MtxDRPF8t35gx'}",
+    "errors": [
+      "[2026-07-27T17:00:12.114773+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHuN6MtxDRPF8t35gx'}"
+    ],
+    "failed_at": "2026-07-27T17:00:12.655769+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-041",
+    "from": "IT <it@services.com>",
+    "subject": "Laptop repair quote",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHwt9T8VVFhAEKDe1y'}",
+    "errors": [
+      "[2026-07-27T17:00:12.664106+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHwt9T8VVFhAEKDe1y'}"
+    ],
+    "failed_at": "2026-07-27T17:00:13.217120+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-042",
+    "from": "Furniture <desk@office.com>",
+    "subject": "Ergonomic chairs",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHzqze8QtJo7RNMphF'}",
+    "errors": [
+      "[2026-07-27T17:00:13.223326+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvHzqze8QtJo7RNMphF'}"
+    ],
+    "failed_at": "2026-07-27T17:00:13.913578+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-043",
+    "from": "Bank <alerts@bank.com>",
+    "subject": "Account statement",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvJ3MohZix9ewp6CVut'}",
+    "errors": [
+      "[2026-07-27T17:00:13.926288+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvJ3MohZix9ewp6CVut'}"
+    ],
+    "failed_at": "2026-07-27T17:00:14.513689+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-044",
+    "from": "Newsletter <news@industry.com>",
+    "subject": "Weekly Sugar Trends",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvJ5tMVVjFNsim1GbFS'}",
+    "errors": [
+      "[2026-07-27T17:00:14.525356+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvJ5tMVVjFNsim1GbFS'}"
+    ],
+    "failed_at": "2026-07-27T17:00:15.080244+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-045",
+    "from": "Insurance <agent@insure.com>",
+    "subject": "Policy renewal",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvJ8LCYe6VJ5EbnV1DH'}",
+    "errors": [
+      "[2026-07-27T17:00:15.095052+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvJ8LCYe6VJ5EbnV1DH'}"
+    ],
+    "failed_at": "2026-07-27T17:00:15.676394+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-046",
+    "from": "Empty <no@body.com>",
+    "subject": "",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "skipped",
+    "errors": [
+      "[2026-07-27T22:30:15.688499+05:30] ingest_email: missing fields: ['subject', 'body']",
+      "[2026-07-27T17:00:15.688901+00:00] classify_email: skipping due to prior errors"
+    ],
+    "failed_at": "2026-07-27T17:00:15.689541+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-047",
+    "from": "Ambiguous <huh@what.com>",
+    "subject": "Hello",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvJAxww1qJaDjHub843'}",
+    "errors": [
+      "[2026-07-27T17:00:15.719701+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvJAxww1qJaDjHub843'}"
+    ],
+    "failed_at": "2026-07-27T17:00:16.523174+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-048",
+    "from": "Attachment Only <att@chment.com>",
+    "subject": "See attached",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "skipped",
+    "errors": [
+      "[2026-07-27T22:30:16.545094+05:30] ingest_email: missing fields: ['body']",
+      "[2026-07-27T17:00:16.546117+00:00] classify_email: skipping due to prior errors"
+    ],
+    "failed_at": "2026-07-27T17:00:16.547396+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-049",
+    "from": "Marketing <promo@ad.com>",
+    "subject": "Boost your SEO",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvJGbnFnKmcJp1NAdLh'}",
+    "errors": [
+      "[2026-07-27T17:00:16.624753+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvJGbnFnKmcJp1NAdLh'}"
+    ],
+    "failed_at": "2026-07-27T17:00:17.606244+00:00",
+    "token_usage": {}
+  },
+  {
+    "message_id": "msg-050",
+    "from": "Event <invite@gala.com>",
+    "subject": "Charity Dinner",
+    "classification": "other",
+    "confidence": 0.0,
+    "reasoning": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvJNXURYbiA8cMDhSPY'}",
+    "errors": [
+      "[2026-07-27T17:00:17.688030+00:00] classify_email error: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSvJNXURYbiA8cMDhSPY'}"
+    ],
+    "failed_at": "2026-07-27T17:00:18.987554+00:00",
+    "token_usage": {}
   }
 ]

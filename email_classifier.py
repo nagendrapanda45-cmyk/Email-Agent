@@ -51,12 +51,13 @@ Step 2 – Classification Rules
 
 LEAD
 Classify as Lead if the sender is interested in buying our products, starting a business relationship, or making a commercial enquiry about any of our products/services.
-This includes:
-- Product pricing or catalogue requests
+This explicitly includes:
+- Any Product enquiry (e.g., asking for quantities, bags, or details of our products)
+- Bulk purchase enquiry or wholesale enquiry
 - Quotation requests, RFQs, or Tender enquiries
-- Bulk orders or monthly supply requests
-- Dealership, distributorship, or export enquiries
-Whenever the sender expresses genuine commercial interest in our offerings, classify as Lead.
+- Dealer enquiry, distributor enquiry, or export enquiry
+- Commercial purchase requests
+Whenever the sender expresses genuine commercial interest in our offerings or asks for our products, classify as Lead.
 
 SUPPORT
 Classify as Support only if the sender already purchased from us or is an existing customer requesting help.
