@@ -2,7 +2,8 @@ import re
 import time
 from dataclasses import dataclass, field
 
-import anthropic
+import openai
+import os
 
 from config import BUSINESS_CONTEXT
 
@@ -99,15 +100,12 @@ Do not return JSON."""
 
 
 def _calculate_cost(usage) -> float:
-    input_tokens = usage.input_tokens
-    output_tokens = usage.output_tokens
-    cache_creation = getattr(usage, "cache_creation_input_tokens", 0) or 0
-    cache_read = getattr(usage, "cache_read_input_tokens", 0) or 0
-    regular_input = max(0, input_tokens - cache_creation - cache_read)
+    if not usage:
+        return 0.0
+    input_tokens = getattr(usage, "prompt_tokens", 0) or 0
+    output_tokens = getattr(usage, "completion_tokens", 0) or 0
     return (
-        regular_input * _PRICE_INPUT / 1_000_000
-        + cache_creation * _PRICE_CACHE_WRITE / 1_000_000
-        + cache_read * _PRICE_CACHE_READ / 1_000_000
+        input_tokens * _PRICE_INPUT / 1_000_000
         + output_tokens * _PRICE_OUTPUT / 1_000_000
     )
 
@@ -136,24 +134,23 @@ Subject: {subject}
 
 {body}"""
 
-    client = anthropic.Anthropic()
+    client = openai.OpenAI(
+        base_url="https://openrouter.ai/api/v1",
+        api_key=os.environ.get("ANTHROPIC_API_KEY"),
+    )
 
     last_error = None
     response = None
     system_prompt = generate_system_prompt()
     for attempt in range(MAX_RETRIES):
         try:
-            response = client.messages.create(
-                model="claude-opus-4-7",
-                max_tokens=1024,
-                system=[
-                    {
-                        "type": "text",
-                        "text": system_prompt,
-                        "cache_control": {"type": "ephemeral"},
-                    }
-                ],
+            response = client.chat.completions.create(
+                model="anthropic/claude-3-haiku",
                 messages=[
+                    {
+                        "role": "system",
+                        "content": system_prompt,
+                    },
                     {
                         "role": "user",
                         "content": f"Classify this email:\n\n{email_text}",
@@ -161,7 +158,7 @@ Subject: {subject}
                 ],
             )
             break
-        except anthropic.APIStatusError as e:
+        except openai.APIStatusError as e:
             if e.status_code in RETRYABLE_STATUS_CODES and attempt < MAX_RETRIES - 1:
                 wait = RETRY_BACKOFF[attempt]
                 print(
@@ -170,16 +167,16 @@ Subject: {subject}
                 time.sleep(wait)
                 last_error = e
                 continue
-            raise ClassificationError(f"Anthropic API error: {e}") from e
-        except anthropic.APIError as e:
-            raise ClassificationError(f"Anthropic API error: {e}") from e
+            raise ClassificationError(f"OpenRouter API error: {e}") from e
+        except Exception as e:
+            raise ClassificationError(f"OpenRouter API error: {e}") from e
     else:
         raise ClassificationError(
-            f"Anthropic API unavailable after {MAX_RETRIES} attempts: {last_error}"
+            f"OpenRouter API unavailable after {MAX_RETRIES} attempts: {last_error}"
         )
 
     try:
-        text = response.content[0].text
+        text = response.choices[0].message.content
 
         classification_match = re.search(
             r"Classification:\s*(Lead|Support|Other)", text, re.IGNORECASE
@@ -208,11 +205,10 @@ Subject: {subject}
 
     usage = response.usage
     token_usage = {
-        "input_tokens": usage.input_tokens,
-        "output_tokens": usage.output_tokens,
-        "cache_creation_input_tokens": getattr(usage, "cache_creation_input_tokens", 0)
-        or 0,
-        "cache_read_input_tokens": getattr(usage, "cache_read_input_tokens", 0) or 0,
+        "input_tokens": getattr(usage, "prompt_tokens", 0) if usage else 0,
+        "output_tokens": getattr(usage, "completion_tokens", 0) if usage else 0,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
         "cost_usd": _calculate_cost(usage),
     }
 

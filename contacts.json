@@ -610,5 +610,120 @@
       "cache_read_input_tokens": 0,
       "cost_usd": 0.00791
     }
+  },
+  {
+    "id": 1,
+    "name": "Enquiry",
+    "email": "enquiry@example.com",
+    "create_date": "2026-07-27T23:57:24.628956+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-000",
+    "original_subject": "Product Enquiry",
+    "confidence": 0.95,
+    "reasoning": "The email is a clear product enquiry for 500 bags of sugar, indicating a commercial interest in purchasing our products. This meets the criteria for a Lead classification.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 765,
+      "output_tokens": 52,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005124999999999999
+    }
+  },
+  {
+    "id": 2,
+    "name": "Buyer",
+    "email": "buyer@example.com",
+    "create_date": "2026-07-27T23:57:34.559196+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-001",
+    "original_subject": "Need quotation for 100 MT",
+    "confidence": 0.95,
+    "reasoning": "The email is a clear request for a quotation on 100 MT of refined sugar, which indicates a commercial interest in purchasing our products. This should be classified as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 773,
+      "output_tokens": 55,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00524
+    }
+  },
+  {
+    "id": 3,
+    "name": "Wholesale",
+    "email": "ws@example.com",
+    "create_date": "2026-07-27T23:57:40.322337+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-002",
+    "original_subject": "Looking for wholesale supply",
+    "confidence": 0.95,
+    "reasoning": "The email indicates that the sender is a food manufacturer looking for a wholesale supplier, which suggests a genuine commercial interest in purchasing our products. The sender is explicitly asking to discuss rates, indicating they are interested in making a bulk purchase. Therefore, this should be classified as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 771,
+      "output_tokens": 74,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005705
+    }
+  },
+  {
+    "id": 4,
+    "name": "Export",
+    "email": "ex@example.com",
+    "create_date": "2026-07-27T23:57:46.938755+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-003",
+    "original_subject": "Can you export to Dubai?",
+    "confidence": 0.9,
+    "reasoning": "The email is from a customer based in the UAE who is interested in importing the company's products, which indicates a genuine commercial enquiry. The sender is asking about exporting to Dubai, which suggests they are interested in purchasing the company's products. While the email is relatively brief, the intent to explore a business relationship is clear.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 774,
+      "output_tokens": 85,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.005995
+    }
+  },
+  {
+    "id": 5,
+    "name": "Dealer",
+    "email": "dlr@example.com",
+    "create_date": "2026-07-27T23:57:53.462266+05:30",
+    "stage": "new",
+    "tags": [
+      "email-lead"
+    ],
+    "source": "email",
+    "message_id": "msg-004",
+    "original_subject": "Interested in dealership",
+    "confidence": 0.95,
+    "reasoning": "The email sender is expressing interest in becoming a dealer for the company's products, which indicates a genuine commercial interest. This should be classified as a Lead.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 775,
+      "output_tokens": 49,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.0051
+    }
   }
 ]

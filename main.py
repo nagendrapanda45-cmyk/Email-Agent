@@ -8,7 +8,7 @@ from langgraph.graph import END, StateGraph
 
 from config import MIN_CONFIDENCE_THRESHOLD
 from email_classifier import ClassificationError, classify_email
-from json_output import append_others
+from json_output import append_others, append_failed
 from routing import route_lead, route_support
 from test_data import TEST_EMAILS
 
@@ -63,7 +63,7 @@ def classify_email_node(state: EmailState) -> dict:
     if state.get("errors"):
         errors.append(f"[{ts}] classify_email: skipping due to prior errors")
         return {
-            "classification": "other",
+            "classification": "failed",
             "confidence": 0.0,
             "reasoning": "skipped",
             "token_usage": {},
@@ -90,7 +90,7 @@ def classify_email_node(state: EmailState) -> dict:
     except ClassificationError as e:
         errors.append(f"[{ts}] classify_email error: {e}")
         return {
-            "classification": "other",
+            "classification": "failed",
             "confidence": 0.0,
             "reasoning": str(e),
             "token_usage": {},
@@ -125,15 +125,41 @@ def handle_others(state: EmailState) -> dict:
     }
 
 
+def handle_failed(state: EmailState) -> dict:
+    logs = list(state.get("logs", []))
+    ts = datetime.now(timezone.utc).isoformat()
+    errors = state.get("errors", [])
+    email = state.get("parsed_email") or state.get("raw_email", {})
+    classification = state.get("classification", "failed")
+    confidence = state.get("confidence", 0.0)
+    reasoning = state.get("reasoning", "")
+    token_usage = state.get("token_usage", {})
+
+    try:
+        append_failed(
+            email, classification, confidence, reasoning, errors, ts, token_usage
+        )
+        logs.append(
+            f"[{ts}] handle_failed: recorded to failed_classifications.json"
+        )
+    except Exception as e:
+        logs.append(f"[{ts}] handle_failed: failed to write failed_classifications.json: {e}")
+
+    return {
+        "routing_result": {"success": False, "errors": errors},
+        "logs": logs,
+    }
+
+
 # ---------------------------------------------------------------------------
 # Conditional edge
 # ---------------------------------------------------------------------------
 
 
 def decide_route(state: EmailState) -> str:
-    if state.get("errors"):
-        return "handle_others"
     classification = state.get("classification", "other")
+    if classification == "failed" or state.get("errors"):
+        return "handle_failed"
     confidence = state.get("confidence", 0.0)
     if confidence < MIN_CONFIDENCE_THRESHOLD or classification == "other":
         return "handle_others"
@@ -157,6 +183,7 @@ def build_graph():
     graph.add_node("handle_support", route_support)
     graph.add_node("handle_lead", route_lead)
     graph.add_node("handle_others", handle_others)
+    graph.add_node("handle_failed", handle_failed)
 
     graph.set_entry_point("ingest_email")
     graph.add_edge("ingest_email", "classify_email")
@@ -167,11 +194,13 @@ def build_graph():
             "handle_support": "handle_support",
             "handle_lead": "handle_lead",
             "handle_others": "handle_others",
+            "handle_failed": "handle_failed",
         },
     )
     graph.add_edge("handle_support", END)
     graph.add_edge("handle_lead", END)
     graph.add_edge("handle_others", END)
+    graph.add_edge("handle_failed", END)
 
     return graph.compile()
 
@@ -259,6 +288,8 @@ if __name__ == "__main__":
             routed = f"ticket #{routing['ticket']['id']}"
         elif routing.get("contact"):
             routed = f"odoo #{routing['contact']['id']}"
+        elif s.get("classification") == "failed" or s.get("errors"):
+            routed = "failed handler"
         else:
             routed = "others handler"
         from_short = e.get("from", "")[:34]

@@ -51,7 +51,7 @@ def run_tests():
         if expected is not None and classification != expected:
             print(f"  FAIL - expected {expected!r}, got {classification!r}")
             ok = False
-        elif expected is None and classification not in ("support", "lead", "other"):
+        elif expected is None and classification not in ("support", "lead", "other", "failed"):
             print(f"  FAIL - invalid classification value: {classification!r}")
             ok = False
 

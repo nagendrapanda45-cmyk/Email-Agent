@@ -7,6 +7,7 @@ OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "."))
 TICKETS_FILE = OUTPUT_DIR / "tickets.json"
 CONTACTS_FILE = OUTPUT_DIR / "contacts.json"
 OTHERS_FILE = OUTPUT_DIR / "others.json"
+FAILED_FILE = OUTPUT_DIR / "failed_classifications.json"
 
 
 def _read_existing(filepath: Path) -> list:
@@ -85,3 +86,28 @@ def append_others(
     records = _read_existing(OTHERS_FILE)
     records.append(record)
     _atomic_write(OTHERS_FILE, records)
+
+
+def append_failed(
+    email: dict,
+    classification: str,
+    confidence: float,
+    reasoning: str,
+    pipeline_errors: list,
+    failed_at: str,
+    token_usage: dict,
+):
+    record = {
+        "message_id": email.get("message_id", ""),
+        "from": email.get("from", ""),
+        "subject": email.get("subject", ""),
+        "classification": classification,
+        "confidence": confidence,
+        "reasoning": reasoning,
+        "errors": pipeline_errors,
+        "failed_at": failed_at,
+        "token_usage": token_usage,
+    }
+    records = _read_existing(FAILED_FILE)
+    records.append(record)
+    _atomic_write(FAILED_FILE, records)
