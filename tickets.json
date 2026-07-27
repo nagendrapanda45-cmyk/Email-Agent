@@ -126,5 +126,85 @@
       "cache_read_input_tokens": 0,
       "cost_usd": 0.01111
     }
+  },
+  {
+    "id": 2,
+    "message_id": "msg-021",
+    "from": "Customer A <custA@example.com>",
+    "subject": "Shipment delayed",
+    "body": "My order #12345 was supposed to arrive yesterday but I haven't received it yet.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-27T22:15:56.285386+05:30",
+    "confidence": 0.97,
+    "reasoning": "The sender is an existing customer with an order number (#12345) reporting a delivery delay, which clearly falls under post-purchase support.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 1111,
+      "output_tokens": 69,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00728
+    }
+  },
+  {
+    "id": 3,
+    "message_id": "msg-022",
+    "from": "Customer B <custB@example.com>",
+    "subject": "Invoice missing",
+    "body": "The delivery was received, but the invoice was not attached. Can you email it?",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-27T22:16:02.824526+05:30",
+    "confidence": 0.97,
+    "reasoning": "The sender is an existing customer who has already received a delivery and is requesting the missing invoice. This is a clear post-purchase support request.",
+    "priority": "Medium",
+    "token_usage": {
+      "input_tokens": 1105,
+      "output_tokens": 69,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00725
+    }
+  },
+  {
+    "id": 4,
+    "message_id": "msg-023",
+    "from": "Customer C <custC@example.com>",
+    "subject": "Password reset",
+    "body": "I am locked out of my wholesale ordering portal account. Can you help reset my password?",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-27T22:16:09.837158+05:30",
+    "confidence": 0.9,
+    "reasoning": "The sender refers to being locked out of their wholesale ordering portal account, indicating they are an existing customer with an active account. They are requesting account assistance (password reset), which is a support request related to their existing relationship with us.",
+    "priority": "Urgent",
+    "token_usage": {
+      "input_tokens": 1107,
+      "output_tokens": 95,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00791
+    }
+  },
+  {
+    "id": 5,
+    "message_id": "msg-024",
+    "from": "Complaint <comp@angry.com>",
+    "subject": "Quality issue - Urgent",
+    "body": "The last batch of sugar bags we received were damp and clumpy. This is unacceptable. Order #999.",
+    "classification": "support",
+    "status": "open",
+    "created_at": "2026-07-27T22:16:17.012127+05:30",
+    "confidence": 0.97,
+    "reasoning": "The sender references a specific order number (#999) and is complaining about the quality of sugar already delivered (damp and clumpy). This is a clear existing customer quality complaint.",
+    "priority": "Urgent",
+    "token_usage": {
+      "input_tokens": 1121,
+      "output_tokens": 81,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cost_usd": 0.00763
+    }
   }
 ]

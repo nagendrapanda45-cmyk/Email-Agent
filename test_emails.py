@@ -41,18 +41,18 @@ def run_tests():
         ok = True
 
         if errors:
-            print(f"  FAIL — unexpected errors: {errors}")
+            print(f"  FAIL - unexpected errors: {errors}")
             ok = False
 
         if confidence < MIN_CONFIDENCE_THRESHOLD:
-            print(f"  FAIL — confidence too low: {confidence:.2f}")
+            print(f"  FAIL - confidence too low: {confidence:.2f}")
             ok = False
 
         if expected is not None and classification != expected:
-            print(f"  FAIL — expected {expected!r}, got {classification!r}")
+            print(f"  FAIL - expected {expected!r}, got {classification!r}")
             ok = False
         elif expected is None and classification not in ("support", "lead", "other"):
-            print(f"  FAIL — invalid classification value: {classification!r}")
+            print(f"  FAIL - invalid classification value: {classification!r}")
             ok = False
 
         if ok:

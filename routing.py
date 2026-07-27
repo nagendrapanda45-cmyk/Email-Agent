@@ -93,7 +93,7 @@ def route_support(state: dict) -> dict:
         ticket = result["ticket"]
         append_ticket(ticket, confidence, reasoning, priority, token_usage)
         logs.append(
-            f"[{ts}] route_support: created ticket #{ticket['id']} priority={priority} → tickets.json"
+            f"[{ts}] route_support: created ticket #{ticket['id']} priority={priority} -> tickets.json"
         )
 
         try:
@@ -133,7 +133,7 @@ def route_lead(state: dict) -> dict:
         contact = result["contact"]
         append_contact(contact, confidence, reasoning, priority, token_usage)
         logs.append(
-            f"[{ts}] route_lead: created Odoo contact #{contact['id']} priority={priority} → contacts.json"
+            f"[{ts}] route_lead: created Odoo contact #{contact['id']} priority={priority} -> contacts.json"
         )
 
         try:

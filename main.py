@@ -219,11 +219,11 @@ def print_result(state: dict):
     routing = state.get("routing_result", {})
     if routing.get("ticket"):
         print(
-            f"  Ticket #   : {routing['ticket']['id']} — status: {routing['ticket']['status']}"
+            f"  Ticket #   : {routing['ticket']['id']} - status: {routing['ticket']['status']}"
         )
     elif routing.get("contact"):
         print(
-            f"  Odoo ID    : {routing['contact']['id']} — {routing['contact']['email']}"
+            f"  Odoo ID    : {routing['contact']['id']} - {routing['contact']['email']}"
         )
     if state.get("errors"):
         print(f"  Errors     : {state['errors']}")
