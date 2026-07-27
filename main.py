@@ -9,6 +9,7 @@ from langgraph.graph import END, StateGraph
 from email_classifier import ClassificationError, classify_email
 from routing import route_lead, route_support
 from json_output import append_others
+from config import MIN_CONFIDENCE_THRESHOLD
 
 load_dotenv()
 
@@ -119,7 +120,7 @@ def decide_route(state: EmailState) -> str:
         return "handle_others"
     classification = state.get("classification", "other")
     confidence = state.get("confidence", 0.0)
-    if confidence < 0.5 or classification == "other":
+    if confidence < MIN_CONFIDENCE_THRESHOLD or classification == "other":
         return "handle_others"
     if classification == "support":
         return "handle_support"
@@ -212,28 +213,64 @@ def print_result(state: dict):
 
 TEST_EMAILS = [
     {
-        "from": "Customer A <a@example.com>",
-        "subject": "Need Sugar pricing",
-        "body": "Hi, can you provide the latest pricing for sugar?",
+        "from": "Buyer <buyer@example.com>",
+        "subject": "Need quotation for 100 MT",
+        "body": "Please provide a quotation for 100 metric tons of refined product.",
         "message_id": "msg-001",
     },
     {
-        "from": "Customer B <b@example.com>",
-        "subject": "Looking for bulk Sugar supply",
-        "body": "Hello, we are looking for a bulk supply of sugar for our factory. What are your wholesale rates?",
+        "from": "Wholesale <ws@example.com>",
+        "subject": "Looking for wholesale supply",
+        "body": "We are a food manufacturer looking for a reliable wholesale supplier. Can we discuss rates?",
         "message_id": "msg-002",
     },
     {
-        "from": "Customer C <c@example.com>",
-        "subject": "Need password reset",
-        "body": "Hi, I cannot access my wholesale portal account. Please help me reset my password.",
+        "from": "Export <ex@example.com>",
+        "subject": "Can you export to Dubai?",
+        "body": "We are based in the UAE and looking to import your products. Do you export to Dubai?",
         "message_id": "msg-003",
     },
     {
-        "from": "Spammer <spam@example.com>",
-        "subject": "Buy cheap watches",
-        "body": "Click here to buy cheap watches!",
+        "from": "Dealer <dlr@example.com>",
+        "subject": "Interested in dealership",
+        "body": "I have a large distribution network in my state and want to become a dealer for your products.",
         "message_id": "msg-004",
+    },
+    {
+        "from": "Customer A <custA@example.com>",
+        "subject": "Shipment delayed",
+        "body": "My order #12345 was supposed to arrive yesterday but I haven't received it yet.",
+        "message_id": "msg-005",
+    },
+    {
+        "from": "Customer B <custB@example.com>",
+        "subject": "Invoice missing",
+        "body": "The delivery was received, but the invoice was not attached. Can you email it?",
+        "message_id": "msg-006",
+    },
+    {
+        "from": "Customer C <custC@example.com>",
+        "subject": "Password reset",
+        "body": "I am locked out of my wholesale ordering portal account. Can you help reset my password?",
+        "message_id": "msg-007",
+    },
+    {
+        "from": "Applicant <app@example.com>",
+        "subject": "Job application",
+        "body": "Please find my resume attached for the open position.",
+        "message_id": "msg-008",
+    },
+    {
+        "from": "Travel <travel@example.com>",
+        "subject": "Hotel booking",
+        "body": "Your hotel booking confirmation is ready.",
+        "message_id": "msg-009",
+    },
+    {
+        "from": "Sales <sales@printers.com>",
+        "subject": "Printer sale",
+        "body": "Buy our new office printers at 20% off!",
+        "message_id": "msg-010",
     },
 ]
 

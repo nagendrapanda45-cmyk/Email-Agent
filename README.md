@@ -34,12 +34,13 @@ tickets.json     contacts.json      errors.json
 | File | Purpose |
 |---|---|
 | `poller.py` | Gmail IMAP polling loop — fetches unseen emails and feeds them to the graph |
+| `config.py` | Business context configuration (Company Name, Products, Routing Thresholds) |
 | `main.py` | LangGraph workflow: `EmailState`, all nodes, conditional routing, graph assembly |
-| `email_classifier.py` | Claude API integration — forced tool use, prompt caching |
+| `email_classifier.py` | Claude API integration — dynamically generates intent-based prompts |
 | `routing.py` | LangGraph node functions for support and lead routing |
 | `mock_odoo.py` | In-memory mock Odoo CRM client (singleton) |
 | `json_output.py` | Atomic JSON file writer — appends records to `tickets.json`, `contacts.json`, `errors.json` |
-| `test_emails.py` | 3 sample emails with pass/fail assertions (no live inbox required) |
+| `test_emails.py` | 10 sample emails with pass/fail assertions (no live inbox required) |
 
 ---
 
@@ -170,13 +171,13 @@ Every email the agent processes ends up in exactly one of these three files. All
 
 ## Classification Logic
 
-Claude is called with a **forced tool use** pattern: the API is instructed to call the `classify_email` tool with a strict JSON schema, guaranteeing structured output every time. The system prompt uses **prompt caching** (`cache_control: ephemeral`) so the large classification instructions are only processed once per session, reducing cost on repeated calls.
+Claude is called with a prompt dynamically generated from `config.py`, instructing it to infer the primary intent of the email based on the business domain. The model returns plain text parsed by regex into a structured output.
 
 | Outcome | Condition |
 |---|---|
-| → `tickets.json` | `classification == "support"` and `confidence ≥ 0.5` |
-| → `contacts.json` | `classification == "lead"` and `confidence ≥ 0.5` |
-| → `errors.json` | `confidence < 0.5`, `classification == "unknown"`, or any API/parse error |
+| → `tickets.json` | `classification == "support"` and `confidence ≥ MIN_CONFIDENCE_THRESHOLD` |
+| → `contacts.json` | `classification == "lead"` and `confidence ≥ MIN_CONFIDENCE_THRESHOLD` |
+| → `errors.json` | `confidence < MIN_CONFIDENCE_THRESHOLD`, `classification == "other"`, or any API/parse error |
 
 ---
 

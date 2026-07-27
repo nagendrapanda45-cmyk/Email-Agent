@@ -13,8 +13,18 @@ from main import TEST_EMAILS, run_email
 from mock_odoo import odoo_client
 from routing import ticket_queue
 
-# Expected: lead, lead, support, unknown
-EXPECTED_CLASSIFICATIONS = ["lead", "lead", "support", "other"]
+EXPECTED_CLASSIFICATIONS = [
+    "lead",    # Need quotation for 100 MT
+    "lead",    # Looking for wholesale supply
+    "lead",    # Can you export to Dubai?
+    "lead",    # Interested in dealership
+    "support", # Shipment delayed
+    "support", # Invoice missing
+    "support", # Password reset
+    "other",   # Job application
+    "other",   # Hotel booking
+    "other",   # Printer sale
+]
 
 
 def run_tests():
@@ -43,7 +53,8 @@ def run_tests():
             print(f"  FAIL — unexpected errors: {errors}")
             ok = False
 
-        if confidence < 0.5:
+        from config import MIN_CONFIDENCE_THRESHOLD
+        if confidence < MIN_CONFIDENCE_THRESHOLD:
             print(f"  FAIL — confidence too low: {confidence:.2f}")
             ok = False
 
